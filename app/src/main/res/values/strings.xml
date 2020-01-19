@@ -1,0 +1,50 @@
+<resources>
+
+    <string name="app_name">Wifi Master</string>
+    <string name="title_activity_speedtest">Speedtest</string>
+
+    <!--    TEST ADS -->
+
+            <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+            <string name="Banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+            <string name="Interstitial" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+            <string name="nativead" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+
+    <string name="test_product_id" translatable="false" >android.test.purchased</string>
+
+
+
+<!--    ORIGINAL ADS-->
+
+
+    <!--<string name="nativead">ca-app-pub-7796659861450905/4006416168</string>
+    <string name="app_id">ca-app-pub-7796659861450905~6965662202</string>
+
+    &lt;!&ndash;    New Original Ads&ndash;&gt;
+    <string name="Banner">ca-app-pub-7796659861450905/7480667527</string>
+    <string name="Interstitial">ca-app-pub-7796659861450905/2228340847</string>-->
+
+    <string name="term1">Our product i.e. (WIFI PASSWORD MASTER-SHOW ALL PASSWORD) asks user to grant certain permissions that are required for the app to perform its actions properly. As the application helps the user to scan wifi, internet speed uploading and downloading, generate password, show password etc. it needs special privileges. We ensure you that the users personal data or information is not collected by the company nor does the application host users data.</string>
+    <string name="terms2">The application requires the user to agree certain permission and rules to access. This access is used by the application in the following ways:</string>
+    <string name="term3">1.	The application requires CHANGE_WIFI permission to access different wifi available.</string>
+    <string name="term4">2.	The application needs WRTIE_SETTING permission to write to wifi settings.</string>
+    <string name="term5">3.	The application requires LOCATION permission to scan wifi in nearby area.</string>
+    <string name="term6">4.	The application generates password with alpha-numeric combination to connect to wifi.</string>
+    <string name="term7">5.	The application shows password and SSID of the connected wifi.</string>
+    <string name="name">Terms and Conditions</string>
+    <string name="no_wifi">Wifi not connected</string>
+    <string name="permission_denied_location">Location</string>
+    <string name="setting">Setting</string>
+    <string name="show_npassword">Show  password</string>
+    <string name="wifi_speed">Wifi Speed</string>
+    <string name="scan_wifi">Scan Wifi</string>
+    <string name="generate_n_password">Generate  password</string>
+    <string name="hotspot">Hotspot</string>
+    <string name="wifi_n_information">Wifi  Information</string>
+    <string name="share">Share</string>
+    <string name="choose_your_language">Choose Your Language</string>
+    <string name="start">Start</string>
+    <string name="change_language">Change Language</string>
+
+
+</resources>
