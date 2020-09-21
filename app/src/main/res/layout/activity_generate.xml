@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="120dp"
         android:gravity="center"
-        android:hint="Press the button to show generated key"
+        android:hint="@string/press_the_button_to_show_generated_key"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
         android:textSize="22sp" />
@@ -35,7 +35,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/darkblue"
         android:padding="16dp"
-        android:text="Generate Key"
+        android:text="@string/generate_key"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#fff"

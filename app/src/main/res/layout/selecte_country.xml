@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/choose_your_language"
+            android:textStyle="bold"
             android:textColor="@color/main_text_color"
             android:textSize="25dp" />
     </LinearLayout>
@@ -41,44 +42,23 @@
             android:layout_weight="2"
             android:gravity="center"
             android:orientation="horizontal"
-            android:weightSum="5">
+            android:weightSum="4">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_80sdp"
-                android:id="@+id/turkish"
+                android:id="@+id/english"
                 android:layout_weight="2"
-                android:src="@drawable/img_turkish" />
+                android:src="@drawable/englishmdpi" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_80sdp"
-                android:id="@+id/russian"
-                android:layout_weight="2"
-                android:src="@drawable/img_russian" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="5">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:id="@+id/filpino"
-                android:layout_height="@dimen/_80sdp"
-                android:layout_weight="2"
-                android:src="@drawable/img_filpino" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_80sdp"
                 android:id="@+id/indo"
                 android:layout_weight="2"
-                android:src="@drawable/img_indo" />
+                android:src="@drawable/indonesianmdpi" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -87,20 +67,47 @@
             android:layout_weight="2"
             android:gravity="center"
             android:orientation="horizontal"
-            android:weightSum="5">
+            android:weightSum="4">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/filpino"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_weight="2"
+                android:src="@drawable/filipinomdpi" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_80sdp"
+                android:id="@+id/russian"
+                android:layout_weight="2"
+                android:src="@drawable/russianmdpi" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_80sdp"
                 android:id="@+id/vietnamese"
                 android:layout_weight="2"
-                android:src="@drawable/img_vitnamese" />
+                android:src="@drawable/vitnamesemdpi" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_80sdp"
-                android:id="@+id/english"
+                android:id="@+id/turkish"
                 android:layout_weight="2"
-                android:src="@drawable/img_english" />
+                android:src="@drawable/turkishmdpi" />
+
         </LinearLayout>
     </LinearLayout>
 

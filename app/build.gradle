@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.internet.speed.test.analyzer.wifi.key.generator.app"
         minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 15
-        versionName "1.0.15"
+        targetSdkVersion 30
+        versionCode 21
+        versionName "1.0.21"
         aaptOptions.cruncherEnabled = false
         aaptOptions.useNewCruncher = false
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,20 +25,41 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    buildscript {
+        repositories {
+            jcenter()
+            maven { url "https://jitpack.io" }
+        }
+
+    }
+
+    allprojects {
+        repositories {
+            jcenter()
+            maven { url "https://jitpack.io" }
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.mediarouter:mediarouter:1.1.0'
-    implementation 'com.google.android.gms:play-services-ads:18.3.0'
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
     implementation 'me.drakeet.support:toastcompat:1.1.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'io.paperdb:paperdb:2.5'
@@ -46,4 +67,8 @@ dependencies {
     implementation 'com.anjlab.android.iab.v3:library:1.0.44'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
+    implementation 'com.github.sujithkanna:smileyrating:1.6.8'
+
+    implementation 'com.airbnb.android:lottie:3.4.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
 }

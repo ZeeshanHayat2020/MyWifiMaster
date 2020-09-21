@@ -33,5 +33,5 @@
         <item name="android:height">15dp</item>
     </style>
 
-    <string name="ad_attribution">adsatibution</string>
+    <string name="ad_attribution" translatable="false">adsatibution</string>
 </resources>

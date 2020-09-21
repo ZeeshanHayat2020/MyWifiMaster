@@ -17,47 +17,89 @@
         android:layout_below="@id/toolbar"
         android:layout_centerInParent="true"
         android:gravity="center"
+        android:weightSum="2"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Uploading"
-            android:textColor="#4CAF50"
-            android:textSize="40sp" />
 
-        <TextView
-            android:layout_marginBottom="16dp"
-            android:id="@+id/TX"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
 
-        <TextView
-            android:layout_marginBottom="8dp"
-            android:id="@+id/txtdown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Downloading"
-            android:textColor="#F44336"
-            android:textSize="40sp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:src="@mipmap/meter"
+                android:layout_centerInParent="true"/>
 
-        <TextView
-            android:id="@+id/RX"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtdown"
-            android:gravity="center"
-            android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/ups"
+                android:layout_below="@+id/TX"
+                android:layout_centerHorizontal="true"
+                android:text="@string/uploading"
+                android:textColor="#00FF0A"
+                android:textSize="@dimen/_20sdp" />
+
+            <TextView
+                android:id="@+id/TX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:text="0"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:src="@mipmap/meter"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:layout_marginBottom="8dp"
+                android:id="@+id/txtdown"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RX"
+                android:gravity="center"
+                android:text="@string/downloading"
+                android:textColor="#FF1100"
+                android:textSize="@dimen/_20sdp" />
+
+            <TextView
+                android:id="@+id/RX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints" />
+
+
+        </RelativeLayout>
+
+
 
     </LinearLayout>
 

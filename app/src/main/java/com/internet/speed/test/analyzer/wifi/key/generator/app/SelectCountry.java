@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -18,42 +19,49 @@ import java.util.Locale;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import io.paperdb.Paper;
 
 @SuppressLint("Registered")
 public class SelectCountry extends AppCompatActivity implements View.OnClickListener {
 
     Button Start;
-    ImageView Turkish, Russian, Filipino, Indo, Vietnamese , english;
-    SharedPreferences preferences;
+    ImageView Turkish, Russian, Filipino, Indo, Vietnamese, english;
     SharedPreferences prefFirsTime;
+    Preferences preferences;
+    final String PREFS_NAME = "enter";
+    String languageToLoad;
+    PrefManager prefManager;
+    RecyclerView language_rcv;
+    boolean check;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        loadLocal();
-        prefFirsTime = getSharedPreferences("PREFSs", 0);
-        String chk = prefFirsTime.getString("firsttimedisp", "0");
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        // this.settings = getSharedPreferences("enter", 0);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        preferences = new Preferences(this);
+        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.languageToLoad = this.preferences.GetValueStringlang(preferences.LANG_VALUE);
+        Locale locale = new Locale(this.languageToLoad);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        setContentView(R.layout.selecte_country);
+        prefManager = new PrefManager(this);
 
-        if (chk.equals("yess")) {
-            try {
-                Intent intent = new Intent(SelectCountry.this,MainActivity.class);
-                intent.putExtra("language","selected");
-                startActivity(intent);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            setContentView(R.layout.selecte_country);
-            init();
-            Turkish.setOnClickListener(this);
-            Russian.setOnClickListener(this);
-            Filipino.setOnClickListener(this);
-            Indo.setOnClickListener(this);
-            Vietnamese.setOnClickListener(this);
-            english.setOnClickListener(this);
-
+        if (prefManager.isAcceptedLanguage()) {
+            startActivity(new Intent(SelectCountry.this, TermsandConditionActivity.class));
+            finish();
         }
+        init();
+        Turkish.setOnClickListener(this::onClick);
+        Russian.setOnClickListener(this::onClick);
+        english.setOnClickListener(this::onClick);
+        Indo.setOnClickListener(this::onClick);
+        Vietnamese.setOnClickListener(this::onClick);
+        Filipino.setOnClickListener(this::onClick);
 
     }
 
@@ -72,46 +80,22 @@ public class SelectCountry extends AppCompatActivity implements View.OnClickList
         int id = v.getId();
         switch (id) {
             case R.id.turkish:
-                Intent intent = new Intent(SelectCountry.this, MainActivity.class);
-                intent.putExtra("language", "tr");
-                firstimepref();
-                startActivity(intent);
-//                setlocal("tr");
+                onTurkishLanguageSelected();
                 break;
             case R.id.indo:
-                Intent intentindo = new Intent(SelectCountry.this, MainActivity.class);
-                intentindo.putExtra("language", "in");
-                firstimepref();
-                startActivity(intentindo);
-//                setlocal("in");
+                onIndonesianLanguageSelected();
                 break;
             case R.id.russian:
-                Intent intentrus = new Intent(SelectCountry.this, MainActivity.class);
-                intentrus.putExtra("language", "ru");
-                firstimepref();
-                startActivity(intentrus);
-//                setlocal("ru");
+                onRussiaLanguageSelected();
                 break;
             case R.id.vietnamese:
-                Intent intentvie = new Intent(SelectCountry.this, MainActivity.class);
-                intentvie.putExtra("language", "vi");
-                firstimepref();
-                startActivity(intentvie);
-//                setlocal("vi");
+                onVietnameseLanguageSelected();
                 break;
             case R.id.filpino:
-                Intent intentfil = new Intent(SelectCountry.this, MainActivity.class);
-                intentfil.putExtra("language", "b+fil");
-                firstimepref();
-                startActivity(intentfil);
-//                setlocal("b+fil");
+                onFilipinoLanguageSelected();
                 break;
             case R.id.english:
-                Intent intentEng = new Intent(SelectCountry.this, MainActivity.class);
-                intentEng.putExtra("language", "eng");
-                firstimepref();
-                startActivity(intentEng);
-//                setlocal("b+fil");
+                onAmericaLanguageSelected();
                 break;
         }
     }
@@ -120,6 +104,96 @@ public class SelectCountry extends AppCompatActivity implements View.OnClickList
         SharedPreferences.Editor editor = prefFirsTime.edit();
         editor.putString("firsttimedisp", "yess");
         editor.apply();
+    }
+
+    public void onFilipinoLanguageSelected() {
+        // this.settings.edit().putString(preferences.LANG_VALUE, "en").apply();
+        this.preferences.SetValueStringLang(preferences.LANG_VALUE, "fil");
+        Locale locale = new Locale("b+fi");
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        recreate();
+        startMap();
+    }
+
+    public void onIndonesianLanguageSelected() {
+        // this.settings.edit().putString(preferences.LANG_VALUE, "en").apply();
+        this.preferences.SetValueStringLang(preferences.LANG_VALUE, "in");
+        Locale locale = new Locale("in");
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        recreate();
+        startMap();
+    }
+
+    public void onTurkishLanguageSelected() {
+        // this.settings.edit().putString(preferences.LANG_VALUE, "en").apply();
+        this.preferences.SetValueStringLang(preferences.LANG_VALUE, "tr");
+        Locale locale = new Locale("tr");
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        recreate();
+        startMap();
+    }
+
+    public void onVietnameseLanguageSelected() {
+        // this.settings.edit().putString(preferences.LANG_VALUE, "en").apply();
+        this.preferences.SetValueStringLang(preferences.LANG_VALUE, "vi");
+        Locale locale = new Locale("vi");
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        recreate();
+        startMap();
+    }
+
+    public void onAmericaLanguageSelected() {
+        // this.settings.edit().putString(preferences.LANG_VALUE, "en").apply();
+        this.preferences.SetValueStringLang(preferences.LANG_VALUE, "en");
+        Locale locale = new Locale("en");
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        recreate();
+        startMap();
+    }
+
+    public void onRussiaLanguageSelected() {
+        //this.settings.edit().putString(preferences.LANG_VALUE, "ru").apply();
+        this.preferences.SetValueStringLang(preferences.LANG_VALUE, "ru");
+        Locale locale = new Locale("ru");
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+        recreate();
+        startMap();
+    }
+
+
+    private void startMap() {
+        if (preferences.GetValue(preferences.LANG_SELECT)) {
+            prefManager.setAcceptLanguage(true);
+            startActivity(new Intent(this, TermsandConditionActivity.class));
+            finish();
+
+        } else {
+
+
+            preferences.SetValue(preferences.LANG_SELECT, true);
+            prefManager.setAcceptLanguage(true);
+            startActivity(new Intent(SelectCountry.this, TermsandConditionActivity.class));
+            finish();
+
+        }
     }
 
 }

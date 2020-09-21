@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@drawable/bg_country"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    >
 
-  <!--  <include
-        android:id="@+id/firsttool"
-        layout="@layout/hearder_first" />-->
+    <!--  <include
+          android:id="@+id/firsttool"
+          layout="@layout/hearder_first" />-->
 
-   <!-- <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/headerfirst"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+    <!-- <androidx.appcompat.widget.Toolbar
+         android:id="@+id/toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="?attr/actionBarSize"
+         android:background="@drawable/headerfirst"
+         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
 
 
     <LinearLayout
         android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/darkblue">
+        android:background="@color/darkblue"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/select_languages"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/select_language" />
 
         <ImageView
             android:id="@+id/button1"
@@ -33,11 +42,26 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:src="@drawable/disable" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/qrCodeScannerLottie"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rateus" />
+
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
 
         <LinearLayout
             android:id="@+id/l2"
@@ -51,32 +75,23 @@
                 android:id="@+id/l3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/Scanwiffi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:layout_gravity="center"
-
+                        android:scaleType="center"
                         android:src="@drawable/scanwifi" />
 
-
-
-
-
-
-
-
-
-
-                    ....................................
                     <TextView
                         android:id="@+id/tv_scanwifi"
                         android:layout_width="wrap_content"
@@ -87,29 +102,32 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/Speedtest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_autoConnectWifi"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_80sdp"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:src="@drawable/speed"
-                        tools:ignore="NestedWeights" />
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@mipmap/btnautowifi" />
 
                     <TextView
-                        android:id="@+id/tv_wifispeed"
+                        android:id="@+id/tv_autoWifi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="@string/wifi_speed"
+                        android:gravity="center"
+                        android:text="@string/auto_wifi"
                         android:textColor="@android:color/black" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
 
@@ -121,10 +139,9 @@
                 android:weightSum="2">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:orientation="vertical">
 
                     <ImageView
@@ -146,7 +163,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -205,36 +222,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
+                    android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/wifisettings"
+                        android:id="@+id/Speedtest"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-
-                        android:src="@drawable/setting" />
+                        android:layout_weight="1"
+                        android:src="@drawable/speed"
+                        tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/tv_setting"
+                        android:id="@+id/tv_wifispeed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="@string/setting"
+                        android:layout_weight="1"
+                        android:text="@string/wifi_speed"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <FrameLayout
-                    android:id="@+id/fl_adplaceholderf"
-                    android:layout_width="match_parent"
-                    android:layout_height="228dp" />
             </LinearLayout>
 
 
@@ -246,7 +254,7 @@
                 android:weightSum="2">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -271,6 +279,80 @@
 
                 </LinearLayout>
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:onClick="changeLang"
+                        android:src="@drawable/change" />
+
+                    <TextView
+                        android:id="@+id/tv_changelang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/change_language"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fl_adplaceholderf"
+                    android:layout_width="match_parent"
+                    android:layout_height="228dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:id="@+id/wifisettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:src="@drawable/setting" />
+
+                    <TextView
+                        android:id="@+id/tv_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/setting"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -292,35 +374,10 @@
                         android:text="@string/share"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:onClick="changeLang"
-                        android:src="@drawable/change" />
-
-                    <TextView
-                        android:id="@+id/tv_changelang"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/change_language"
-                        android:textColor="@android:color/black" />
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

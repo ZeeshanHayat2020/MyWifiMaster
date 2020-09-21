@@ -3,17 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.internet.speed.test.analyzer.wifi.key.generator.app">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
-
-    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:name=".MainApplication"
@@ -24,40 +29,70 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TermsandConditionActivity">
+        <activity android:name=".activities.ActivityWifiInformation"></activity>
+        <activity android:name=".activities.ActivityLiveLocation" />
+        <activity android:name=".activities.BluetoothConnectivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.BluetoothActivityN" />
+        <activity android:name=".activities.PasswordGeneratorActivity" />
+        <activity android:name=".activities.SignalGraphActivity" />
+        <activity android:name=".activities.ActivityWifiChannels" /> <!-- Older Work -->
+        <service
+            android:name=".autoConnectWifi.ConnectToWifi_Service"
+            android:enabled="true"
+            android:exported="false" />
 
-        <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP" android:value="true"/>
-        <activity android:name=".SelectCountry"/>
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".autoConnectWifi.AutoConnectWifi"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".TermsandConditionActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
 
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <activity
+            android:name=".SelectCountry"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".ListDataActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Speedtest"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".GenerateActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".scanwifi"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"
-           />
-        <activity android:name=".WifiScanActivity"
-            android:theme="@style/AppTheme2"/>
-
-        <activity android:name=".WifiInfoActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".WifiScanActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".WifiInfoActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

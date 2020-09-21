@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/headerfirst"
-        app:title="Wi-Fi Available"
+        app:title="@string/wifi_available"
         app:titleTextColor="#fff" />
 
     <ListView

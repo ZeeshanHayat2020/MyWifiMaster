@@ -8,15 +8,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,8 +40,11 @@ import com.google.android.gms.ads.MobileAds;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.InAppPrefManager;
 
 import java.util.List;
+import java.util.Locale;
 
 import me.drakeet.support.toast.ToastCompat;
+
+import static android.os.Build.VERSION.SDK_INT;
 
 public class scanwifi extends ListActivity {
     static int keyone2 = 0;
@@ -86,10 +93,30 @@ public class scanwifi extends ListActivity {
             }
         });
     }
-
+    @SuppressLint("ObsoleteSdkInt")
+    @SuppressWarnings("deprecation")
+    private void setLocale(Locale locale){
+        // optional - Helper method to save the selected language to SharedPreferences in case you might need to attach to activity context (you will need to code this)
+        Resources resources = getResources();
+        Configuration configuration = resources.getConfiguration();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+            configuration.setLocale(locale);
+        } else{
+            configuration.locale=locale;
+        }
+        if (SDK_INT > Build.VERSION_CODES.N){
+            getApplicationContext().createConfigurationContext(configuration);
+        } else {
+            resources.updateConfiguration(configuration,displayMetrics);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Preferences preferences1 = new Preferences(this);
+        Locale locale = new Locale(preferences1.GetValueStringlang(preferences1.LANG_VALUE));
+        setLocale(locale);
         setContentView(R.layout.activity_scanwifi);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
 

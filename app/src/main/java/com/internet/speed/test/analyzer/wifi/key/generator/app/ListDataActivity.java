@@ -1,7 +1,12 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app;
 
+import android.annotation.SuppressLint;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,6 +25,9 @@ import com.google.android.gms.ads.MobileAds;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.InAppPrefManager;
 
 import java.util.ArrayList;
+import java.util.Locale;
+
+import static android.os.Build.VERSION.SDK_INT;
 
 public class ListDataActivity extends AppCompatActivity {
 
@@ -31,10 +39,29 @@ public class ListDataActivity extends AppCompatActivity {
     AdView adView;
     //myDbAdapter obj;
     private ListView mListView;
-
+    @SuppressLint("ObsoleteSdkInt")
+    @SuppressWarnings("deprecation")
+    private void setLocale(Locale locale){
+        // optional - Helper method to save the selected language to SharedPreferences in case you might need to attach to activity context (you will need to code this)
+        Resources resources = getResources();
+        Configuration configuration = resources.getConfiguration();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+            configuration.setLocale(locale);
+        } else{
+            configuration.locale=locale;
+        }
+        if (SDK_INT > Build.VERSION_CODES.N){
+            getApplicationContext().createConfigurationContext(configuration);
+        } else {
+            resources.updateConfiguration(configuration,displayMetrics);
+        }
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);Preferences preferences1 = new Preferences(this);
+        Locale locale = new Locale(preferences1.GetValueStringlang(preferences1.LANG_VALUE));
+        setLocale(locale);
         setContentView(R.layout.list_layout);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
 

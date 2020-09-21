@@ -1,9 +1,16 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +21,11 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.InAppPrefManager;
 
+import java.util.Locale;
+
 import me.drakeet.support.toast.ToastCompat;
+
+import static android.os.Build.VERSION.SDK_INT;
 
 public class GenerateActivity extends AppCompatActivity {
     TextView t1;
@@ -25,28 +36,51 @@ public class GenerateActivity extends AppCompatActivity {
     ClipData myClip;
     AdView banner;
 
+    @SuppressLint("ObsoleteSdkInt")
+    @SuppressWarnings("deprecation")
+    private void setLocale(Locale locale) {
+        // optional - Helper method to save the selected language to SharedPreferences in case you might need to attach to activity context (you will need to code this)
+        Resources resources = getResources();
+        Configuration configuration = resources.getConfiguration();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            configuration.setLocale(locale);
+        } else {
+            configuration.locale = locale;
+        }
+        if (SDK_INT > Build.VERSION_CODES.N) {
+            getApplicationContext().createConfigurationContext(configuration);
+        } else {
+            resources.updateConfiguration(configuration, displayMetrics);
+        }
+    }
 
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Preferences preferences1 = new Preferences(this);
+        Locale locale = new Locale(preferences1.GetValueStringlang(preferences1.LANG_VALUE));
+        setLocale(locale);
         setContentView(R.layout.activity_generate);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
 
         banner = (AdView) findViewById(R.id.banner_ad);
-        t1=(TextView) findViewById(R.id.generatestring);
-        b1=(Button)findViewById(R.id.key);
+        t1 = (TextView) findViewById(R.id.generatestring);
+        b1 = (Button) findViewById(R.id.key);
         if (!InAppPrefManager.getInstance(GenerateActivity.this).getInAppStatus()) {
             adview();
         }
 
-        myClipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+        myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     t1.setText(getRandomString());
-                }catch (Exception e){e.printStackTrace();}
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
         });
@@ -67,9 +101,10 @@ public class GenerateActivity extends AppCompatActivity {
             }
         });
     }
-    static String getRandomString(){
-        int r = (int) (Math.random()*100);
-        String name = new String [] {
+
+    static String getRandomString() {
+        int r = (int) (Math.random() * 100);
+        String name = new String[]{
                 "myhome_mefiase",
                 "wsdasd_039427r23",
                 "leather123",
@@ -87,93 +122,94 @@ public class GenerateActivity extends AppCompatActivity {
                 "123456",
                 "paasword",
                 "Azweyes_enfowefnas"
-                ,"Wufwiuefbaasdasd",
+                , "Wufwiuefbaasdasd",
                 "123456789",
                 "qwerty",
                 "livelishell"
-                ,"abc123"
-                ,"12345678"
-                ,"111111"
-                ,"jorden"
-                ,"nearstreet123"
-                ,"123123"
-                ,"admin"
-                ,"letmein"
-                ,"hello"
-                ,"strettt_anskndas"
-                ,"wasjbfsounsdjf"
-                ,"shop"
-                ,"cuttingboard"
-                ,"password1"
-                ,"monkey"
-                ,"shadow"
-                ,"sunshine"
-                ,"likewise"
-                ,"tommorrow"
-                ,"today"
-                ,"yesplease"
-                ,"sareygamapa"
-                ,"000000"
-                ,"trustno1"
-                ,"princess"
-                ,"zaq1zaq1"
-                ,"charming"
-                ,"nightrider"
-                ,"kjk4v,ns2b7"
-                ,"publicplace"
-                ,"jolta123"
-                ,"azerty"
-                ,"liberty"
-                ,"market"
-                ,"place"
-                ,"bukingumpalace"
-                ,"newpassword"
-                ,"southperth"
-                ,"random123"
-                ,"google"
-                ,"googlechro"
-                ,"NETGEAR"
-                ,"belkin54g"
-                ,"MiniAP"
-                ,"AppleNetwork0273df"
-                ,"public"
-                ,"user"
-                ,"p4@$W0Rd"
-                ,"Wireless"
-                ,"77777777"
-                ,"88888888"
-                ,"66666666"
-                ,"hatershateme"
-                ,"login"
-                ,"master"
-                ,"hellowWorld"
-                ,"give_me_ldnas"
-                ,"qazwsx"
-                ,"whatsapp"
-                ,"lily"
-                ,"plantytong"
-                ,"chuenli"
-                ,"bottle"
-                ,"lamp121"
-                ,"121321432"
-                ,"0987654321"
-                ,"poiuytrewq"
-                ,"lkjhgfdsa"
-                ,"mnbvcxz_mnbvcxz"
-                ,"wasnaodfune_oeifjw"
-                ,"myownpaswwrod_1234123"
-                ,"trustno1"
-                ,"football"
-                ,"1q2w3e4r"
-                ,"18atcskd2w"
-                ,"3rjs1la7qe"
-                ,"zxcvbnm"
-                ,"123qwe"
-                ,"superman"
-                ,"yankees"
+                , "abc123"
+                , "12345678"
+                , "111111"
+                , "jorden"
+                , "nearstreet123"
+                , "123123"
+                , "admin"
+                , "letmein"
+                , "hello"
+                , "strettt_anskndas"
+                , "wasjbfsounsdjf"
+                , "shop"
+                , "cuttingboard"
+                , "password1"
+                , "monkey"
+                , "shadow"
+                , "sunshine"
+                , "likewise"
+                , "tommorrow"
+                , "today"
+                , "yesplease"
+                , "sareygamapa"
+                , "000000"
+                , "trustno1"
+                , "princess"
+                , "zaq1zaq1"
+                , "charming"
+                , "nightrider"
+                , "kjk4v,ns2b7"
+                , "publicplace"
+                , "jolta123"
+                , "azerty"
+                , "liberty"
+                , "market"
+                , "place"
+                , "bukingumpalace"
+                , "newpassword"
+                , "southperth"
+                , "random123"
+                , "google"
+                , "googlechro"
+                , "NETGEAR"
+                , "belkin54g"
+                , "MiniAP"
+                , "AppleNetwork0273df"
+                , "public"
+                , "user"
+                , "p4@$W0Rd"
+                , "Wireless"
+                , "77777777"
+                , "88888888"
+                , "66666666"
+                , "hatershateme"
+                , "login"
+                , "master"
+                , "hellowWorld"
+                , "give_me_ldnas"
+                , "qazwsx"
+                , "whatsapp"
+                , "lily"
+                , "plantytong"
+                , "chuenli"
+                , "bottle"
+                , "lamp121"
+                , "121321432"
+                , "0987654321"
+                , "poiuytrewq"
+                , "lkjhgfdsa"
+                , "mnbvcxz_mnbvcxz"
+                , "wasnaodfune_oeifjw"
+                , "myownpaswwrod_1234123"
+                , "trustno1"
+                , "football"
+                , "1q2w3e4r"
+                , "18atcskd2w"
+                , "3rjs1la7qe"
+                , "zxcvbnm"
+                , "123qwe"
+                , "superman"
+                , "yankees"
         }[r];
         return name;
     }
+
     public void adview() {
 
         AdRequest adRequest = new AdRequest.Builder().build();
