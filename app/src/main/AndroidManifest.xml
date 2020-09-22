@@ -19,6 +19,9 @@
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:name=".MainApplication"
@@ -29,7 +32,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.ActivityWifiInformation"></activity>
+        <activity android:name=".activities.ActivityAppUsage" />
+        <activity android:name=".activities.ActivityWifiInformation" />
         <activity android:name=".activities.ActivityLiveLocation" />
         <activity android:name=".activities.BluetoothConnectivity" />
         <activity android:name=".activities.MainActivity">
@@ -42,7 +46,21 @@
         <activity android:name=".activities.BluetoothActivityN" />
         <activity android:name=".activities.PasswordGeneratorActivity" />
         <activity android:name=".activities.SignalGraphActivity" />
-        <activity android:name=".activities.ActivityWifiChannels" /> <!-- Older Work -->
+        <activity android:name=".activities.ActivityWifiChannels" />
+        <activity android:name=".activities.DetailActivity" />
+        <activity android:name=".appsNetBlocker.NetBlockerMainActivity" />
+        <activity
+            android:name=".allRouterPassword.AllRouterPasswords"
+            android:theme="@style/AppTheme.NotActionBar" />
+
+        <service
+            android:name=".appsNetBlocker.AppsNetBlockerService"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <!-- Older Work -->
         <service
             android:name=".autoConnectWifi.ConnectToWifi_Service"
             android:enabled="true"

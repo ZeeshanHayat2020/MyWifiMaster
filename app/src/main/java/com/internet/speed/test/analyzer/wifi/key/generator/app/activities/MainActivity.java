@@ -81,6 +81,8 @@ import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.InAppPrefMa
 import com.internet.speed.test.analyzer.wifi.key.generator.app.WifiInfoActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.WifiScanActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.adapters.AdapterMain;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.allRouterPassword.AllRouterPasswords;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.appsNetBlocker.NetBlockerMainActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.autoConnectWifi.AutoConnectWifi;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.interfaces.OnRecyclerItemClickeListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.models.ModelMain;
@@ -316,7 +318,10 @@ public class MainActivity extends AppCompatActivity {
                 "Wifi information",
                 "Bluetooth connect",
                 "Live location",
-                "Wifi Signal Strength"
+                "Wifi Signal Strength",
+                "App Data Usage",
+                "Net Block",
+                "All Router Password"
         };
         for (int i = 0; i < title.length; i++) {
             bottomViewList.add(new ModelMain(0, title[i]));
@@ -501,6 +506,21 @@ public class MainActivity extends AppCompatActivity {
             break;
             case 9: {
                 Intent intent = new Intent(this, SignalGraphActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case 10: {
+                Intent intent = new Intent(this, ActivityAppUsage.class);
+                startActivity(intent);
+            }
+            break;
+            case 11: {
+                Intent intent = new Intent(this, NetBlockerMainActivity.class);
+                startActivity(intent);
+            }
+            break;
+            case 12: {
+                Intent intent = new Intent(this, AllRouterPasswords.class);
                 startActivity(intent);
             }
             break;

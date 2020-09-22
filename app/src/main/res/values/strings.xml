@@ -83,5 +83,39 @@
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
 
+    <string name="menu_search">Search application</string>
+    <string name="menu_network">Internet settings</string>
+    <string name="menu_whitelist_wifi">Block Wifi For All</string>
+    <string name="menu_whitelist_other">Block Mobile Data</string>
+    <string name="menu_reset_wifi">Reset Wi-Fi</string>
+    <string name="menu_reset_other">Reset Mobile data</string>
+    <string name="menu_vpn_settings">Manage VPN</string>
+    <string name="menu_support">Support</string>
+    <string name="menu_about">About</string>
+
+    <array name="duration">
+        <item>TODAY</item>
+        <item>YESTERDAY</item>
+        <item>WEEK</item>
+        <item>MONTH</item>
+    </array>
+
+    <plurals name="times_launched">
+        <item quantity="one">Time Launched</item>
+        <item quantity="other">Times Launched</item>
+    </plurals>
+    <string name="not_active">Device was not active for</string>
+    <string name="in_use">In Use</string>
+    <string name="brand">Brand</string>
+    <string name="protocol">Protocol</string>
+
+    <string-array name="array_palette">
+        <item>#00acb0</item>
+        <item>#92ac01</item>
+        <item>#fc0d60</item>
+        <item>#cd10cc</item>
+        <item>#fe8301</item>
+    </string-array>
+
 
 </resources>

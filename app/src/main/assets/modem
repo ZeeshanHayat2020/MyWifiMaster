@@ -1,0 +1,7781 @@
+{
+  "modem": [
+    {
+      "brand": "2WIRE",
+      "model": "HOMEPORTAL Rev. SBC YAHOO! DSL",
+      "protocol": "(none)",
+      "username": "2Wire",
+      "password": "(none)"
+    },
+    {
+      "brand": "2WIRE",
+      "model": "ALL WIFI ROUTERS",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "Wireless"
+    },
+    {
+      "brand": "3COM",
+      "model": "COREBUILDER Rev. 7000/6000/3500/2500",
+      "protocol": "TELNET",
+      "username": "debug",
+      "password": "synnet"
+    },
+    {
+      "brand": "3COM",
+      "model": "COREBUILDER Rev. 7000/6000/3500/2500",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "3COM",
+      "model": "HIPERARC Rev. V4.1.X",
+      "protocol": "TELNET",
+      "username": "adm",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "LANPLEX Rev. 2500",
+      "protocol": "TELNET",
+      "username": "debug",
+      "password": "synnet"
+    },
+    {
+      "brand": "3COM",
+      "model": "LANPLEX Rev. 2500",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "3COM",
+      "model": "LINKSWITCH Rev. 2000/2700",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "3COM",
+      "model": "NETBUILDER",
+      "protocol": "SNMP",
+      "username": "(none)",
+      "password": "ANYCOM"
+    },
+    {
+      "brand": "3COM",
+      "model": "NETBUILDER",
+      "protocol": "SNMP",
+      "username": "(none)",
+      "password": "ILMI"
+    },
+    {
+      "brand": "3COM",
+      "model": "NETBUILDER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICE CONNECT ISDN ROUTERS Rev. 5X0",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "PASSWORD"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK II SWITCH Rev. 2200",
+      "protocol": "TELNET",
+      "username": "debug",
+      "password": "synnet"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK II SWITCH Rev. 2700",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT 812 ADSL",
+      "protocol": "MULTI",
+      "username": "adminttd",
+      "password": "adminttd"
+    },
+    {
+      "brand": "3COM",
+      "model": "WIRELESS AP Rev. ANY",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "comcomcom"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "HIPERARC Rev. V4.1.X",
+      "protocol": "TELNET",
+      "username": "adm",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "LANPLEX Rev. 2500",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "synnet"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK II SWITCH Rev. 2700",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "HIPERACT Rev. V4.1.X",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK 3 Rev. 4XXX",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK 3 Rev. 4XXX",
+      "protocol": "MULTI",
+      "username": "monitor",
+      "password": "monitor"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK 3 Rev. 4400-49XX",
+      "protocol": "MULTI",
+      "username": "manager",
+      "password": "manager"
+    },
+    {
+      "brand": "3COM",
+      "model": "NETBUILDER",
+      "protocol": "HTTP",
+      "username": "Root",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "3C16450",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "3C16406",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICE CONNECT ISDN ROUTERS Rev. 5X0",
+      "protocol": "TELNET?",
+      "username": "n/a",
+      "password": "PASSWORD"
+    },
+    {
+      "brand": "3COM",
+      "model": "COREBUILDER Rev. 7000/6000/3500/2500",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "COREBUILDER Rev. 7000/6000/3500/2500",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT ADSL WIRELESS 11G FIREWALL ROUTER Rev. 3CRWDR100-72",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "INTERNET FIREWALL Rev. 3C16770",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "3COM",
+      "model": "SHARK FIN Rev. COMCAST-SUPPLIED",
+      "protocol": "HTTP",
+      "username": "User",
+      "password": "password"
+    },
+    {
+      "brand": "3COM",
+      "model": 812,
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "operator",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "3COM SUPERSTACK 3 SWITCH 3300XM",
+      "protocol": "MULTI",
+      "username": "security",
+      "password": "security"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK II Rev. 1100/3300",
+      "protocol": "CONSOLE",
+      "username": "3comcso",
+      "password": "RIP000"
+    },
+    {
+      "brand": "3COM",
+      "model": "NETBUILDER",
+      "protocol": "SNMP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPER",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "NETBUILDER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "operator",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT 812 ADSL Rev. 01.50-01",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "HIPERACT Rev. V4.1.X",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "3C16405",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "3C16405",
+      "protocol": "CONSOLE",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "SWITCH Rev. 3300XM",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "SS III SWITCH Rev. 4XXX (4900 - SURE)",
+      "protocol": "TELNET",
+      "username": "recovery",
+      "password": "recovery"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT WIRELESS 11G CABLE/DSL GATEWAY",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "3C16405",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT 812 ADSL Rev. 01.50-01",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "HIPERACT Rev. V4.1.X",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "3C16405",
+      "protocol": "CONSOLE",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "CELLPLEX Rev. 7000",
+      "protocol": "TELNET",
+      "username": "tech",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "SWITCH Rev. 3300XM",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "SS III SWITCH Rev. 4XXX (4900 - SURE)",
+      "protocol": "TELNET",
+      "username": "recovery",
+      "password": "recovery"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT WIRELESS 11G CABLE/DSL GATEWAY",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "3CRADSL72 Rev. 1.2",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "1234admin"
+    },
+    {
+      "brand": "3COM",
+      "model": "CB9000 / 4007 Rev. 3",
+      "protocol": "CONSOLE",
+      "username": "Type User: FORCE",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "SUPERSTACK II NETBUILDER Rev. 11.1",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICECONNECT",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3COM",
+      "model": "OFFICE CONNECT Rev. 11G",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "3M",
+      "model": "VOL-0215 ETC.",
+      "protocol": "SNMP",
+      "username": "volition",
+      "password": "volition"
+    },
+    {
+      "brand": "3WARE",
+      "model": "3DM",
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "3ware"
+    },
+    {
+      "brand": "ACCELERATED NETWORKS",
+      "model": "DSL CPE AND DSLAM",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "anicust"
+    },
+    {
+      "brand": "ACCONET",
+      "model": "ROUTER",
+      "protocol": "(none)",
+      "username": "Admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ACCTON",
+      "model": "WIRELESSROUTER Rev. T-ONLINE",
+      "protocol": "HTTP",
+      "username": "none",
+      "password": 0
+    },
+    {
+      "brand": "ACCTON T-ONLINE",
+      "model": "ACCTON",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": 0
+    },
+    {
+      "brand": "ACCTON T-ONLINE",
+      "model": "ACCTON",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": 0
+    },
+    {
+      "brand": "ACEEX",
+      "model": "MODEM ADSL ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "ACEEX",
+      "model": "MODEM ADSL ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "ACTIONTEC",
+      "model": "GE344000-01",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "ACTIONTEC",
+      "model": "W1424WR",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "ACTIONTEC",
+      "model": "R1520SU",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "ACTIONTEC",
+      "model": "GT704-WG",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "ADC KENTROX",
+      "model": "PACESETTER ROUTER",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "secret"
+    },
+    {
+      "brand": "ADIC",
+      "model": "SCALAR 100/1000",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "secure"
+    },
+    {
+      "brand": "ADIC",
+      "model": "SCALAR I2000",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "MX2800",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "adtran"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "SMART 16/16E",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "ATLAS 800/800PLUS/810PLUS/550",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "SMART 16/16E",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "PASSWORD"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "NXIQ",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "adtran"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "TSU IQ/DSU IQ",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "EXPRESS 5110/5200/5210",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "adtran"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "AGENT CARD",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "ADTRAN"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "TSU ROUTER MODULE/L128/L768/1.5",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "ADTRAN",
+      "model": "T3SU 300",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "adtran"
+    },
+    {
+      "brand": "ADVANTEK NETWORKS",
+      "model": "WIRELESS LAN 802.11 G/B",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "AETHRA",
+      "model": "STARBRIDGE EU",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "AIRTIES",
+      "model": "ALL",
+      "protocol": "HTTP",
+      "username": "(blank)",
+      "password": "(blank)"
+    },
+    {
+      "brand": "ALAXALA",
+      "model": "AX7800R",
+      "protocol": "(none)",
+      "username": "operator",
+      "password": "(none)"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": 4400,
+      "protocol": "CONSOLE",
+      "username": "mtcl",
+      "password": "(none)"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "kermit",
+      "password": "kermit"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "dhs3mt",
+      "password": "dhs3mt"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "at4400",
+      "password": "at4400"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "mtch",
+      "password": "mtch"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "mtcl",
+      "password": "mtcl"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "root",
+      "password": "letacla"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "dhs3pms",
+      "password": "dhs3pms"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "adfexc",
+      "password": "adfexc"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "client",
+      "password": "client"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "install",
+      "password": "llatsni"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "PBX Rev. 4400",
+      "protocol": "PORT 2533",
+      "username": "halt",
+      "password": "tlah"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OFFICE 4200",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": 1064
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OMNISTACK 6024",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "switch"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OMNISTACK/OMNISWITCH",
+      "protocol": "TELNET/CONSOLE",
+      "username": "diag",
+      "password": "switch"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OMNISTACK/OMNISWITCH",
+      "protocol": "TELNET",
+      "username": "diag",
+      "password": "switch"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "TIMESTEP VPN 1520 Rev. 3.00.026",
+      "protocol": "PERMIT CONFIG AND CONSOLE",
+      "username": "root",
+      "password": "permit"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OXO Rev. 1.3",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OMNIPCX OFFICE Rev. 4.1",
+      "protocol": "FTP",
+      "username": "ftp_inst",
+      "password": "pbxk1064"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OMNIPCX OFFICE Rev. 4.1",
+      "protocol": "FTP",
+      "username": "ftp_admi",
+      "password": "kilo1987"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OMNIPCX OFFICE Rev. 4.1",
+      "protocol": "FTP",
+      "username": "ftp_oper",
+      "password": "help1954"
+    },
+    {
+      "brand": "ALCATEL",
+      "model": "OMNIPCX OFFICE Rev. 4.1",
+      "protocol": "FTP",
+      "username": "ftp_nmc",
+      "password": "tuxalize"
+    },
+    {
+      "brand": "ALLIED",
+      "model": "TELESYN",
+      "protocol": "MULTI",
+      "username": "manager",
+      "password": "friend"
+    },
+    {
+      "brand": "ALLIED TELESYN",
+      "model": "AT-8024(GB)",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "ALLIED TELESYN",
+      "model": "AT-8024(GB)",
+      "protocol": "HTTP",
+      "username": "manager",
+      "password": "admin"
+    },
+    {
+      "brand": "ALLIED TELESYN",
+      "model": "AT ROUTER",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "ALLIED TELESYN",
+      "model": "ALAT8326GB",
+      "protocol": "MULTI",
+      "username": "manager",
+      "password": "manager"
+    },
+    {
+      "brand": "ALLIED TELESYN",
+      "model": "AT8016F",
+      "protocol": "CONSOLE",
+      "username": "manager",
+      "password": "friend"
+    },
+    {
+      "brand": "ALLIED TELESYN",
+      "model": "AT-AR130 (U) -10",
+      "protocol": "HTTP",
+      "username": "Manager",
+      "password": "friend"
+    },
+    {
+      "brand": "ALLNET",
+      "model": "T-DSL MODEM Rev. SOFTWARE VERSION: V1.51",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ALLNET",
+      "model": "ALL0275 802.11G AP Rev. 1.0.6",
+      "protocol": "HTTP",
+      "username": "none",
+      "password": "admin"
+    },
+    {
+      "brand": "ALTEON",
+      "model": "ACEDIRECTOR3",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "ALTEON",
+      "model": "ACESWITCH Rev. 180E",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ALTEON",
+      "model": "ACESWITCH Rev. 180E",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "ALTEON",
+      "model": "ACESWITCH Rev. 180E",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "linga"
+    },
+    {
+      "brand": "ALTEON",
+      "model": "AD4 Rev. 9",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "AMBIT",
+      "model": "ADSL",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "AMBIT",
+      "model": "CABLE MODEM 60678EU Rev. 1.12",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "AMBIT",
+      "model": "CABLE MODEM",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "AMBIT",
+      "model": "NTL:HOME 200 Rev. 2.67.1011",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "AMBIT",
+      "model": "U10C019",
+      "protocol": "(none)",
+      "username": "user",
+      "password": "user - (admin:cableroot)"
+    },
+    {
+      "brand": "AMITECH",
+      "model": "WIRELESS ROUTER AND ACCESS POINT 802.11G 802.11B Rev. ANY",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ANDOVER CONTROLS",
+      "model": "INFINITY Rev. ANY",
+      "protocol": "CONSOLE",
+      "username": "acc",
+      "password": "acc"
+    },
+    {
+      "brand": "AOC",
+      "model": "ZENWORKS 4.0",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "APC",
+      "model": "9606 SMART SLOT",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "backdoor"
+    },
+    {
+      "brand": "APC",
+      "model": "USV NETWORK MANAGEMENT CARD",
+      "protocol": "SNMP",
+      "username": "n/a",
+      "password": "TENmanUFactOryPOWER"
+    },
+    {
+      "brand": "APC",
+      "model": "UPSES (WEB/SNMP MGMT CARD)",
+      "protocol": "HTTP",
+      "username": "device",
+      "password": "device"
+    },
+    {
+      "brand": "APC",
+      "model": "SMART UPS",
+      "protocol": "MULTI",
+      "username": "apc",
+      "password": "apc"
+    },
+    {
+      "brand": "APC",
+      "model": "SMARTUPS 3000",
+      "protocol": "HTTP",
+      "username": "apc",
+      "password": "apc"
+    },
+    {
+      "brand": "APPLE",
+      "model": "AIRPORT BASE STATION (GRAPHITE) Rev. 2",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "public"
+    },
+    {
+      "brand": "APPLE",
+      "model": "AIRPORT BASE STATION (DUAL ETHERNET) Rev. 2",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "APPLE",
+      "model": "AIRPORT EXTREME BASE STATION Rev. 2",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "APPLE",
+      "model": "AIRPORT5 Rev. 1.0.09",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "admin"
+    },
+    {
+      "brand": "APPLE",
+      "model": "IPHONE IOS4.X Rev. ALL",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "alpine"
+    },
+    {
+      "brand": "ARECA",
+      "model": "RAID CONTROLLERS",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": 0
+    },
+    {
+      "brand": "ARESCOM",
+      "model": "MODEM/ROUTER Rev. 10XX",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "atc123"
+    },
+    {
+      "brand": "ARESCOM",
+      "model": "ROUTER Rev. ANY",
+      "protocol": "N/A",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "ARTEM",
+      "model": "COMPOINT - CPD-XT-B Rev. CPD-XT-B",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "ASANTE",
+      "model": "INTRASWITCH",
+      "protocol": "MULTI",
+      "username": "IntraSwitch",
+      "password": "Asante"
+    },
+    {
+      "brand": "ASANTE",
+      "model": "INTRASTACK",
+      "protocol": "MULTI",
+      "username": "IntraStack",
+      "password": "Asante"
+    },
+    {
+      "brand": "ASANTE",
+      "model": "FM2008",
+      "protocol": "TELNET",
+      "username": "superuser",
+      "password": "(none)"
+    },
+    {
+      "brand": "ASANTE",
+      "model": "FM2008",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "asante"
+    },
+    {
+      "brand": "ASCEND",
+      "model": "YURIE",
+      "protocol": "MULTI",
+      "username": "readonly",
+      "password": "lucenttech2"
+    },
+    {
+      "brand": "ASCEND",
+      "model": "ROUTER",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "ascend"
+    },
+    {
+      "brand": "ASCEND",
+      "model": "SAHARA",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "ascend"
+    },
+    {
+      "brand": "ASCOM",
+      "model": "ASCOTEL PBX Rev. ALL",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "3ascotel"
+    },
+    {
+      "brand": "ASMACK",
+      "model": "ROUTER Rev. AR804U",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "ASMAX",
+      "model": "AR701U / ASMAX AR6024",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "ASMAX",
+      "model": "AR800C2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "ASMAX",
+      "model": "AR800C2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "ASMAX",
+      "model": "AR-804U",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "ASPECT",
+      "model": "ACD Rev. 6",
+      "protocol": "HTTP",
+      "username": "customer",
+      "password": "none"
+    },
+    {
+      "brand": "ASPECT",
+      "model": "ACD Rev. 6",
+      "protocol": "ORACLE",
+      "username": "DTA",
+      "password": "TJM"
+    },
+    {
+      "brand": "ASPECT",
+      "model": "ACD Rev. 7",
+      "protocol": "ORACLE",
+      "username": "DTA",
+      "password": "TJM"
+    },
+    {
+      "brand": "ASPECT",
+      "model": "ACD Rev. 8",
+      "protocol": "ORACLE",
+      "username": "DTA",
+      "password": "TJM"
+    },
+    {
+      "brand": "ASUS",
+      "model": "WL-500G Rev. 1.7.5.6",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ASUS",
+      "model": "WL503G Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ASUS",
+      "model": "WL500 Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ASUS",
+      "model": "WL300 Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ASUS",
+      "model": "WL500G DELUXE",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ASUS",
+      "model": "P5P800",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "ASUS",
+      "model": "WL500G",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ATLANTIS",
+      "model": "A02-RA141",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "atlantis"
+    },
+    {
+      "brand": "ATLANTIS",
+      "model": "I-STORM LAN ROUTER ADSL",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "atlantis"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "G3R Rev. V6",
+      "protocol": "CONSOLE",
+      "username": "root",
+      "password": "ROOT500"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "CAJUN P33X Rev. FIRMWARE BEFORE 3.11.0",
+      "protocol": "SNMP",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "DEFINITY Rev. G3SI",
+      "protocol": "MULTI",
+      "username": "craft",
+      "password": "(none)"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "CAJUN PXXX",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "CAJUN Rev. P550R P580 P880 AND P882",
+      "protocol": "MULTI",
+      "username": "diag",
+      "password": "danger"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "CAJUN Rev. P550R P580 P880 AND P882",
+      "protocol": "MULTI",
+      "username": "manuf",
+      "password": "xxyyzz"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "PXXX Rev. 5.2.14",
+      "protocol": "MULTI",
+      "username": "diag",
+      "password": "danger"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "PXXX Rev. 5.2.14",
+      "protocol": "MULTI",
+      "username": "manuf",
+      "password": "xxyyzz"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "DEFINITY Rev. UP TO REV. 6",
+      "protocol": "ANY",
+      "username": "craft",
+      "password": "crftpw"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "CMS SUPERVISOR Rev. 11",
+      "protocol": "CONSOLE",
+      "username": "root",
+      "password": "cms500"
+    },
+    {
+      "brand": "AVAYA",
+      "model": "DEFINITY",
+      "protocol": "MULTI",
+      "username": "dadmin",
+      "password": "dadmin01"
+    },
+    {
+      "brand": "AXIS",
+      "model": "NETCAM Rev. 200/240",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "pass"
+    },
+    {
+      "brand": "AXIS",
+      "model": "ALL AXIS PRINTSERVER Rev. ALL",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "pass"
+    },
+    {
+      "brand": "AXIS",
+      "model": "WEBCAMS",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "pass"
+    },
+    {
+      "brand": "AXIS",
+      "model": "540/542 PRINT SERVER",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "pass"
+    },
+    {
+      "brand": "AXIS",
+      "model": "NETCAM Rev. 200/240",
+      "protocol": "(none)",
+      "username": "root",
+      "password": "pass"
+    },
+    {
+      "brand": "AXIS",
+      "model": 2100,
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "AXUS",
+      "model": "AXUS YOTTA",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": 0
+    },
+    {
+      "brand": "AZTECH",
+      "model": "DSL-600E",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "BAUSCH DATACOM",
+      "model": "PROXIMA PRI ADSL PSTN ROUTER4 WIRELESS",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "BAY NETWORKS",
+      "model": "SWITCH Rev. 350T",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "NetICs"
+    },
+    {
+      "brand": "BAY NETWORKS",
+      "model": "SUPERSTACK II",
+      "protocol": "TELNET",
+      "username": "security",
+      "password": "security"
+    },
+    {
+      "brand": "BAY NETWORKS",
+      "model": "ROUTER",
+      "protocol": "TELNET",
+      "username": "User",
+      "password": "(none)"
+    },
+    {
+      "brand": "BAY NETWORKS",
+      "model": "ROUTER",
+      "protocol": "TELNET",
+      "username": "Manager",
+      "password": "(none)"
+    },
+    {
+      "brand": "BAY NETWORKS",
+      "model": "ROUTER",
+      "protocol": "(none)",
+      "username": "User",
+      "password": "(none)"
+    },
+    {
+      "brand": "BAY NETWORKS",
+      "model": "SUPERSTACK II",
+      "protocol": "(none)",
+      "username": "security",
+      "password": "security"
+    },
+    {
+      "brand": "BAY NETWORKS",
+      "model": "SWITCH Rev. 350T",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "NetICs"
+    },
+    {
+      "brand": "BELKIN",
+      "model": "F5D6130",
+      "protocol": "SNMP",
+      "username": "(none)",
+      "password": "MiniAP"
+    },
+    {
+      "brand": "BELKIN",
+      "model": "F5D7150 Rev. FB",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "BELKIN",
+      "model": "F5D8233-4",
+      "protocol": "HTTP",
+      "username": "(blank)",
+      "password": "(blank)"
+    },
+    {
+      "brand": "BELKIN",
+      "model": "F5D7231",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(blank)"
+    },
+    {
+      "brand": "BENQ",
+      "model": "AWL 700 WIRELESS ROUTER Rev. 1.3.6 BETA-002",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "BILLION",
+      "model": "BIPAC 5100",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "BILLION",
+      "model": "BIPAC-640 AC Rev. 640AE100",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "BINTEC",
+      "model": "BIANCA/BRICK Rev. XM-5.1",
+      "protocol": "SNMP",
+      "username": "n/a",
+      "password": "snmp-Trap"
+    },
+    {
+      "brand": "BINTEC",
+      "model": "X1200 Rev. 37834",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "bintec"
+    },
+    {
+      "brand": "BINTEC",
+      "model": "X2300I Rev. 37834",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "bintec"
+    },
+    {
+      "brand": "BINTEC",
+      "model": "X3200 Rev. 37834",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "bintec"
+    },
+    {
+      "brand": "BINTEC",
+      "model": "BIANKA ROUTERS",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "bintec"
+    },
+    {
+      "brand": "BLUE COAT SYSTEMS",
+      "model": "PROXYSG Rev. 3.X",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "articon"
+    },
+    {
+      "brand": "BMC",
+      "model": "PATROL Rev. 6",
+      "protocol": "MULTI",
+      "username": "patrol",
+      "password": "patrol"
+    },
+    {
+      "brand": "BMC SOFTWARE",
+      "model": "PATROL Rev. ALL",
+      "protocol": "BMC UNIQUE",
+      "username": "Administrator",
+      "password": "the same all over"
+    },
+    {
+      "brand": "BREEZECOM",
+      "model": "BREEZECOM ADAPTERS Rev. 3.X",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "Master"
+    },
+    {
+      "brand": "BREEZECOM",
+      "model": "BREEZECOM ADAPTERS Rev. 2.X",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "laflaf"
+    },
+    {
+      "brand": "BREEZECOM",
+      "model": "BREEZECOM ADAPTERS Rev. 4.4.X",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "Helpdesk"
+    },
+    {
+      "brand": "BREEZECOM",
+      "model": "BREEZECOM ADAPTERS Rev. 4.X",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "Super"
+    },
+    {
+      "brand": "BREEZECOM",
+      "model": "BREEZECOM ADAPTERS Rev. 3.X",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "Master"
+    },
+    {
+      "brand": "BREEZECOM",
+      "model": "BREEZECOM ADAPTERS Rev. 2.X",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "laflaf"
+    },
+    {
+      "brand": "BROADLOGIC",
+      "model": "XLT ROUTER",
+      "protocol": "HTTP",
+      "username": "webadmin",
+      "password": "webadmin"
+    },
+    {
+      "brand": "BROADLOGIC",
+      "model": "XLT ROUTER",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "BROADLOGIC",
+      "model": "XLT ROUTER",
+      "protocol": "TELNET",
+      "username": "installer",
+      "password": "installer"
+    },
+    {
+      "brand": "BROCADE",
+      "model": "FABRIC OS Rev. ALL",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "fivranne"
+    },
+    {
+      "brand": "BROCADE",
+      "model": "SILKWORM Rev. ALL",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "BROCADE",
+      "model": "FABRIC OS",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "BROTHER",
+      "model": "NC-3100H",
+      "protocol": "(none)",
+      "username": "(none)",
+      "password": "access"
+    },
+    {
+      "brand": "BROTHER",
+      "model": "NC-4100H",
+      "protocol": "(none)",
+      "username": "(none)",
+      "password": "access"
+    },
+    {
+      "brand": "BROTHER",
+      "model": "HL-1270N",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "access"
+    },
+    {
+      "brand": "BUFFALO",
+      "model": "BUFFALO Rev. ALL",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "n/a"
+    },
+    {
+      "brand": "BUFFALO",
+      "model": "WIRELESS BROADBAND BASE STATION-G Rev. WLA-G54 WBR-G54",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "CABLE AND WIRELESS",
+      "model": "ADSL MODEM/ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "CABLETRON",
+      "model": "NETGEAR MODEM/ROUTER AND SSR",
+      "protocol": "(none)",
+      "username": "netman",
+      "password": "(none)"
+    },
+    {
+      "brand": "CANYON",
+      "model": "ROUTER",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "CAYMAN",
+      "model": "CAYMAN DSL",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "CELERITY",
+      "model": "MEDIATOR Rev. MULTI",
+      "protocol": "MULTI",
+      "username": "mediator",
+      "password": "mediator"
+    },
+    {
+      "brand": "CELERITY",
+      "model": "MEDIATOR",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "Mau'dib"
+    },
+    {
+      "brand": "CELLIT",
+      "model": "CCPRO",
+      "protocol": "MULTI",
+      "username": "cellit",
+      "password": "cellit"
+    },
+    {
+      "brand": "CHECKPOINT",
+      "model": "SECUREPLATFORM Rev. NG FP3",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "CIPHERTRUST",
+      "model": "IRONMAIL Rev. ANY",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CACHE ENGINE",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "diamond"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CONFIGMAKER",
+      "protocol": "(none)",
+      "username": "cmaker",
+      "password": "cmaker"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CNR Rev. ALL",
+      "protocol": "CNR GUI",
+      "username": "admin",
+      "password": "changeme"
+    },
+    {
+      "brand": "CISCO",
+      "model": "NETRANGER/SECURE IDS",
+      "protocol": "MULTI",
+      "username": "netrangr",
+      "password": "attack"
+    },
+    {
+      "brand": "CISCO",
+      "model": "BBSM Rev. 5.0 AND 5.1",
+      "protocol": "TELNET OR NAMED PIPES",
+      "username": "bbsd-client",
+      "password": "changeme2"
+    },
+    {
+      "brand": "CISCO",
+      "model": "BBSD MSDE CLIENT Rev. 5.0 AND 5.1",
+      "protocol": "TELNET OR NAMED PIPES",
+      "username": "bbsd-client",
+      "password": "(none)"
+    },
+    {
+      "brand": "CISCO",
+      "model": "BBSM ADMINISTRATOR Rev. 5.0 AND 5.1",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "changeme"
+    },
+    {
+      "brand": "CISCO",
+      "model": "NETRANGER/SECURE IDS Rev. 3.0(5)S17",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "attack"
+    },
+    {
+      "brand": "CISCO",
+      "model": "BBSM MSDE ADMINISTRATOR Rev. 5.0 AND 5.1",
+      "protocol": "IP AND NAMED PIPES",
+      "username": "sa",
+      "password": "(none)"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CATALYST 4000/5000/6000 Rev. ALL",
+      "protocol": "SNMP",
+      "username": "(none)",
+      "password": "public/private/secret"
+    },
+    {
+      "brand": "CISCO",
+      "model": "PIX FIREWALL",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": "cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "VPN CONCENTRATOR 3000 SERIES Rev. 3",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CONTENT ENGINE",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "default"
+    },
+    {
+      "brand": "CISCO",
+      "model": "AP1200 Rev. IOS",
+      "protocol": "MULTI",
+      "username": "Cisco",
+      "password": "Cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CISCOWORKS 2000",
+      "protocol": "(none)",
+      "username": "guest",
+      "password": "(none)"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CISCOWORKS 2000",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CONFIGMAKER",
+      "protocol": "(none)",
+      "username": "cmaker",
+      "password": "cmaker"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CISO AIRONET 1100 SERIES Rev. REV. 01",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "Cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "AIRONET",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "_Cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "AIRONET",
+      "protocol": "MULTI",
+      "username": "Cisco",
+      "password": "Cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "HSE",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "blender"
+    },
+    {
+      "brand": "CISCO",
+      "model": "HSE",
+      "protocol": "MULTI",
+      "username": "hsa",
+      "password": "hsadb"
+    },
+    {
+      "brand": "CISCO",
+      "model": "WLSE",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "blender"
+    },
+    {
+      "brand": "CISCO",
+      "model": "WLSE",
+      "protocol": "MULTI",
+      "username": "wlse",
+      "password": "wlsedb"
+    },
+    {
+      "brand": "CISCO",
+      "model": "AIRONET 1200",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "Cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "ARROWPOINT",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "system"
+    },
+    {
+      "brand": "CISCO",
+      "model": "RTP300 W/2 PHONE PORTS Rev. 1.0",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "CISCO",
+      "model": "RTP300 W/2 PHONE PORTS Rev. 1.0",
+      "protocol": "HTTP",
+      "username": "user",
+      "password": "tivonpw"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CVA 122",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "CISCO",
+      "model": 3600,
+      "protocol": "TELNET",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "CISCO",
+      "model": 1,
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "CISCO",
+      "model": 2600,
+      "protocol": "TELNET",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "CISCO",
+      "model": "CISCO ATA-186 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "(blank)",
+      "password": "(blank)"
+    },
+    {
+      "brand": "CISCO",
+      "model": 3700,
+      "protocol": "TELNET",
+      "username": "cisco",
+      "password": "cisco"
+    },
+    {
+      "brand": "CISCO",
+      "model": "VALET - M10 Rev.",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "CNET",
+      "model": "CNET 4PORT ADSL MODEM Rev. CNAD NF400",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "COM3",
+      "model": "OLE",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "COMPAQ",
+      "model": "INSIGHT MANAGER",
+      "protocol": "(none)",
+      "username": "administrator",
+      "password": "administrator"
+    },
+    {
+      "brand": "COMPAQ",
+      "model": "INSIGHT MANAGER",
+      "protocol": "(none)",
+      "username": "anonymous",
+      "password": "(none)"
+    },
+    {
+      "brand": "COMPAQ",
+      "model": "INSIGHT MANAGER",
+      "protocol": "(none)",
+      "username": "user",
+      "password": "user"
+    },
+    {
+      "brand": "COMPAQ",
+      "model": "INSIGHT MANAGER",
+      "protocol": "(none)",
+      "username": "operator",
+      "password": "operator"
+    },
+    {
+      "brand": "COMPAQ",
+      "model": "INSIGHT MANAGER",
+      "protocol": "(none)",
+      "username": "user",
+      "password": "public"
+    },
+    {
+      "brand": "COMPAQ",
+      "model": "INSIGHT MANAGER",
+      "protocol": "(none)",
+      "username": "PFCUser",
+      "password": "240653C9467E45"
+    },
+    {
+      "brand": "COMTREND",
+      "model": "CT536+",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "COMTREND",
+      "model": "CT-536+",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "CONEXANT",
+      "model": "ROUTER",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "CONEXANT",
+      "model": "ROUTER",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "CONEXANT",
+      "model": "ACCESS RUNNER ADSL CONSOLE PORT 3.27",
+      "protocol": "TELNET",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "CORECESS",
+      "model": "CORECESS 3112",
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "CORECESS",
+      "model": "6808 APC",
+      "protocol": "TELNET",
+      "username": "corecess",
+      "password": "corecess"
+    },
+    {
+      "brand": "CORECESS",
+      "model": 3113,
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "CREATIVE",
+      "model": "2015U",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "CTC UNION",
+      "model": "ATU-R130 Rev. 81001A",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "CYBERGUARD",
+      "model": "ALL FIREWALLS Rev. ALL",
+      "protocol": "CONSOLE + PASSPORT1",
+      "username": "cgadmin",
+      "password": "cgadmin"
+    },
+    {
+      "brand": "CYCLADES",
+      "model": "PR 1000",
+      "protocol": "TELNET",
+      "username": "super",
+      "password": "surt"
+    },
+    {
+      "brand": "CYCLADES",
+      "model": "TS800",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "tslinux"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL-G664T Rev. A1",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "HUBS/SWITCHES",
+      "protocol": "TELNET",
+      "username": "D-Link",
+      "password": "D-Link"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-704 Rev. REV A",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-804 Rev. V2.03",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL 900AP",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "public"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-614+",
+      "protocol": "HTTP",
+      "username": "user",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL-614+ Rev. REV A REV B",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "D-704P Rev. REV B",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-604 Rev. REV A REV B REV C REV E",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL-614+ Rev. 2.03",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "D-704P",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL-900+",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-704",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-604 Rev. 1.62B+",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-624 Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-624 Rev. ALL",
+      "protocol": "HTTP",
+      "username": "User",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-604 Rev. 2.02",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL 1000",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-514",
+      "protocol": "MULTI",
+      "username": "user",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-614+ Rev. ANY",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL 2100AP",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL-302G",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-624+ Rev. A3",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL-2000AP+ Rev. 1.13",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-614+",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL-300G+ Rev. TEO",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": "private"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL-300G+ Rev. TEO",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-524 Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "FIREWALL Rev. DFL-200",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-524 Rev. ALL",
+      "protocol": "HTTP",
+      "username": "user",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DWL-900AP+ Rev. REV A REV B REV C",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL500G",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL-504T",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL-G604T",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-707P ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI624 Rev. C3",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "D-LINK",
+      "model": 604,
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DSL-500",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "504G ADSL ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DI-524",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "ADSL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "VWR (VONAGE) Rev. WIRELESS BROADBAND ROUTER",
+      "protocol": "HTTP",
+      "username": "user",
+      "password": "user"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "DGL4300 Rev. D-LINK'S DGL-4300 GAME SERIES ROUTER",
+      "protocol": "HTTP",
+      "username": "Admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "D-LINK",
+      "model": "VTA (VONAGE)",
+      "protocol": "HTTP",
+      "username": "user",
+      "password": "user"
+    },
+    {
+      "brand": "DALLAS SEMICONDUCTORS",
+      "model": "TINI EMBEDDED JAVA MODULE Rev.",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "tini"
+    },
+    {
+      "brand": "DATACOM",
+      "model": "BSASX/101",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "letmein"
+    },
+    {
+      "brand": "DATAWIZARD.NET",
+      "model": "FTPXQ SERVER",
+      "protocol": "FTP",
+      "username": "anonymous",
+      "password": "any@"
+    },
+    {
+      "brand": "DAVOX",
+      "model": "UNISON",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "davox"
+    },
+    {
+      "brand": "DAVOX",
+      "model": "UNISON",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "DAVOX",
+      "model": "UNISON",
+      "protocol": "MULTI",
+      "username": "davox",
+      "password": "davox"
+    },
+    {
+      "brand": "DAVOX",
+      "model": "UNISON",
+      "protocol": "SYBASE",
+      "username": "sa",
+      "password": "(none)"
+    },
+    {
+      "brand": "DD-WRT",
+      "model": "DD-WRT V23 SP2 (09/15/06)",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "admin"
+    },
+    {
+      "brand": "DEERFIELD",
+      "model": "MDAEMON",
+      "protocol": "HTTP",
+      "username": "MDaemon",
+      "password": "MServer"
+    },
+    {
+      "brand": "DELL",
+      "model": "LASER PRINTER 3000CN / 3100CN",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "DELL",
+      "model": "REMOTE ACCESS CARD",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "calvin"
+    },
+    {
+      "brand": "DEMARC",
+      "model": "NETWORK MONITOR",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "my_DEMARC"
+    },
+    {
+      "brand": "DEUTSCH TELEKOMM",
+      "model": "T-SINUS 130 DSL",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": 0
+    },
+    {
+      "brand": "DEUTSCHE TELEKOM",
+      "model": "T-SINUS DSL 130",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "DEUTSCHE TELEKOM",
+      "model": "T-SINUS 154 DSL Rev. 13.9.38",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": 0
+    },
+    {
+      "brand": "DEUTSCHE TELEKOM",
+      "model": "SPEEDPORT W701",
+      "protocol": "(none)",
+      "username": "(none)",
+      "password": "0000 This is also their standard for the W700 and"
+    },
+    {
+      "brand": "DEVELCON",
+      "model": "ORBITOR DEFAULT CONSOLE",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "BRIDGE"
+    },
+    {
+      "brand": "DEVELCON",
+      "model": "ORBITOR DEFAULT CONSOLE",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "DICTAPHONE",
+      "model": "PROLOG",
+      "protocol": "(none)",
+      "username": "PBX",
+      "password": "PBX"
+    },
+    {
+      "brand": "DICTAPHONE",
+      "model": "PROLOG",
+      "protocol": "(none)",
+      "username": "NETWORK",
+      "password": "NETWORK"
+    },
+    {
+      "brand": "DICTAPHONE",
+      "model": "PROLOG",
+      "protocol": "(none)",
+      "username": "NETOP",
+      "password": "(none)"
+    },
+    {
+      "brand": "DIGICOM",
+      "model": "MICHELANGELO",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "michelangelo"
+    },
+    {
+      "brand": "DIGICOM",
+      "model": "MICHELANGELO",
+      "protocol": "MULTI",
+      "username": "user",
+      "password": "password"
+    },
+    {
+      "brand": "DIGICORP",
+      "model": "VIPER",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "BRIDGE"
+    },
+    {
+      "brand": "DIGICORP",
+      "model": "VIPER",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "DIGICORP",
+      "model": "ROUTER",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "BRIDGE"
+    },
+    {
+      "brand": "DIGICORP",
+      "model": "ROUTER",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "DRAYTEK",
+      "model": "VIGOR Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "DRAYTEK",
+      "model": "VIGOR 2600",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "DRAYTEK",
+      "model": "VIGOR 2900+",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "DRAYTEK",
+      "model": 2800,
+      "protocol": "(none)",
+      "username": "(blank)",
+      "password": "(blank)"
+    },
+    {
+      "brand": "DRAYTEK",
+      "model": "VIGOR 3300",
+      "protocol": "HTTP",
+      "username": "draytek",
+      "password": 1234
+    },
+    {
+      "brand": "DYNALINK",
+      "model": "RTA230",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "DYNALINK",
+      "model": "RTA700W",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "E-CON",
+      "model": "ECON DSL ROUTER",
+      "protocol": "ROUTER",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "E-TECH",
+      "model": "ADSL ETHERNET ROUTER Rev. ANNEX A V2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "E-TECH",
+      "model": "WIRELESS 11MBPS ROUTER MODEL:WLRT03",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "E-TECH",
+      "model": "ROUTER Rev. RTBR03",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "ECHOLIFE",
+      "model": "GATEWAY Rev.",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "EDIMAX",
+      "model": "BROADBAND ROUTER Rev. HARDWARE: REV A. BOOT CODE: 1.0 RUNTIME CODE 2.63",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "EDIMAX",
+      "model": "EW-7205APL Rev. FIRMWARE RELEASE 2.40A-00",
+      "protocol": "MULTI",
+      "username": "guest",
+      "password": "(none)"
+    },
+    {
+      "brand": "EDIMAX",
+      "model": "ES-5224RXM",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 123
+    },
+    {
+      "brand": "EDIMAX",
+      "model": "WIRELESS ADSL ROUTER Rev. AR-7024",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "EFFICIENT",
+      "model": "SPEEDSTREAM DSL",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "EFFICIENT",
+      "model": "5871 DSL ROUTER Rev. V 5.3.3-0",
+      "protocol": "MULTI",
+      "username": "login",
+      "password": "admin"
+    },
+    {
+      "brand": "EFFICIENT",
+      "model": 5851,
+      "protocol": "TELNET",
+      "username": "login",
+      "password": "password"
+    },
+    {
+      "brand": "EFFICIENT",
+      "model": "SPEEDSTREAM DSL",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "EFFICIENT NETWORKS",
+      "model": "SPEEDSTREAM 5711 Rev. TELEDANMARK VERSION (ONLY .DK)",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "4getme2"
+    },
+    {
+      "brand": "EFFICIENT NETWORKS",
+      "model": "EN 5861",
+      "protocol": "TELNET",
+      "username": "login",
+      "password": "admin"
+    },
+    {
+      "brand": "EFFICIENT NETWORKS",
+      "model": "5851 SDSL ROUTER Rev. N/A",
+      "protocol": "CONSOLE",
+      "username": "(none)",
+      "password": "hs7mwxkk"
+    },
+    {
+      "brand": "ELSA",
+      "model": "LANCOM OFFICE ISDN ROUTER Rev. 800/1000/1100",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "cisco"
+    },
+    {
+      "brand": "ENTERASYS",
+      "model": "ANG-1105 Rev. UNKNOWN",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "netadmin"
+    },
+    {
+      "brand": "ENTERASYS",
+      "model": "ANG-1105 Rev. UNKNOWN",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": "netadmin"
+    },
+    {
+      "brand": "ENTERASYS",
+      "model": "VERTICAL HORIZON Rev. ANY",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "ENTERASYS",
+      "model": "VERTICAL HORIZON Rev. VH-2402S",
+      "protocol": "MULTI",
+      "username": "tiger",
+      "password": "tiger123"
+    },
+    {
+      "brand": "ENTRUST",
+      "model": "GETACCESS Rev. 4.X AND 7.X",
+      "protocol": "WEB ADMIN GUI",
+      "username": "websecadm",
+      "password": "changeme"
+    },
+    {
+      "brand": "ERICSSON",
+      "model": "ERICSSON ACC",
+      "protocol": "(none)",
+      "username": "netman",
+      "password": "netman"
+    },
+    {
+      "brand": "ERICSSON",
+      "model": "ERICSSON ACC",
+      "protocol": "(none)",
+      "username": "netman",
+      "password": "netman"
+    },
+    {
+      "brand": "ERICSSON",
+      "model": "TIGRIS PLATFORM Rev. ALL",
+      "protocol": "MULTI",
+      "username": "public",
+      "password": "(none)"
+    },
+    {
+      "brand": "ERICSSON",
+      "model": "MD110 PABX Rev. UP-TO-BC9",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "help"
+    },
+    {
+      "brand": "ERICSSON",
+      "model": "ERICSSON ACC",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "ESP",
+      "model": "DIGIVIEW PRO4N",
+      "protocol": "HTTP",
+      "username": 1111,
+      "password": 1111
+    },
+    {
+      "brand": "EVERFOCUS",
+      "model": "POWERPLEX Rev. EDR1600",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "EVERFOCUS",
+      "model": "POWERPLEX Rev. EDR1600",
+      "protocol": "MULTI",
+      "username": "supervisor",
+      "password": "supervisor"
+    },
+    {
+      "brand": "EVERFOCUS",
+      "model": "POWERPLEX Rev. EDR1600",
+      "protocol": "MULTI",
+      "username": "operator",
+      "password": "operator"
+    },
+    {
+      "brand": "EXABYTE",
+      "model": "MAGNUM20",
+      "protocol": "FTP",
+      "username": "anonymous",
+      "password": "Exabyte"
+    },
+    {
+      "brand": "EXTREME NETWORKS",
+      "model": "ALL SWITCHES",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "F5",
+      "model": "BIGIP 540",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "default"
+    },
+    {
+      "brand": "F5-NETWORKS",
+      "model": "BIGIP",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "FLOWPOINT",
+      "model": "2200 SDSL",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "FLOWPOINT",
+      "model": "DSL",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "FLOWPOINT",
+      "model": "100 IDSN",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "FLOWPOINT",
+      "model": "40 IDSL",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "FLOWPOINT",
+      "model": "FLOWPOINT DSL",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "FORTINET",
+      "model": "FORTIGATE",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "FOUNDRY NETWORKS",
+      "model": "IRONVIEW NETWORK MANAGER Rev. VERSION 01.6.00A(SERVICE PACK) 0620031754",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "FREETECH",
+      "model": "PC BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "Posterie"
+    },
+    {
+      "brand": "FREETECH",
+      "model": "BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "Posterie"
+    },
+    {
+      "brand": "FUJITSU SIEMENS",
+      "model": "ROUTERS",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "connect"
+    },
+    {
+      "brand": "FUNK SOFTWARE",
+      "model": "STEEL BELTED RADIUS Rev. 3.X",
+      "protocol": "PROPRIETARY",
+      "username": "admin",
+      "password": "radius"
+    },
+    {
+      "brand": "GERICOM",
+      "model": "PHOENIX",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "GIGA",
+      "model": "8IPPRO1000",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "GVC",
+      "model": "E800/RB4",
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "HP",
+      "model": "ISEE",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "isee"
+    },
+    {
+      "brand": "HP",
+      "model": "POWER MANAGER Rev. 3",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "HPP187"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "HPP189"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "HPP196"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "INTX3"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "ITF3000"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "NETBASE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "REGO"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "RJE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "CONV"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "OPERATOR",
+      "password": "SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "OPERATOR",
+      "password": "DISC"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "OPERATOR",
+      "password": "SYSTEM"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "OPERATOR",
+      "password": "SUPPORT"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "OPERATOR",
+      "password": "COGNOS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "PCUSER",
+      "password": "SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "RSBCMON",
+      "password": "SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "SPOOLMAN",
+      "password": "HPOFFICE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "WP",
+      "password": "HPOFFICE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "ADVMAIL",
+      "password": "HPOFFICE DATA"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "ADVMAIL",
+      "password": "HP"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "SUPPORT"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "MGR"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "SERVICE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "MANAGER"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "HPP187 SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "LOTUS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "HPWORD PUB"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "FIELD",
+      "password": "HPONLY"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "HELLO",
+      "password": "MANAGER.SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "HELLO",
+      "password": "MGR.SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "HELLO",
+      "password": "FIELD.SUPPORT"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "HELLO",
+      "password": "OP.OPERATOR"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MAIL",
+      "password": "MAIL"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MAIL",
+      "password": "REMOTE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MAIL",
+      "password": "TELESUP"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MAIL",
+      "password": "HPOFFICE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MAIL",
+      "password": "MPE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MANAGER",
+      "password": "TCH"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MANAGER",
+      "password": "SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MANAGER",
+      "password": "SECURITY"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MANAGER",
+      "password": "ITF3000"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MANAGER",
+      "password": "HPOFFICE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MANAGER",
+      "password": "COGNOS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MANAGER",
+      "password": "TELESUP"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "SYS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "CAROLIAN"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "VESOFT"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "XLSERVER"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "SECURITY"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "TELESUP"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "HPDESK"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "CCC"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "CNAS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "WORD"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "COGNOS"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "ROBELLE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "HPOFFICE"
+    },
+    {
+      "brand": "HP",
+      "model": "HP 2000/3000 MPE/XX",
+      "protocol": "MULTI",
+      "username": "MGR",
+      "password": "HPONLY"
+    },
+    {
+      "brand": "HP",
+      "model": "LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "HP",
+      "model": "LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "HP",
+      "model": "LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM",
+      "protocol": "FTP",
+      "username": "Anonymous",
+      "password": "(none)"
+    },
+    {
+      "brand": "HP",
+      "model": "LASERJET NET PRINTERS Rev. ONES WITH JETDIRECT ON THEM",
+      "protocol": 9100,
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "HP",
+      "model": "WEBMIN Rev. 0.84",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "hp.com"
+    },
+    {
+      "brand": "HP",
+      "model": "SA7200",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "HP",
+      "model": "SA7200",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "HUAWEI",
+      "model": "MT880R",
+      "protocol": "MULTI",
+      "username": "TMAR#HWMT8007079",
+      "password": "(none)"
+    },
+    {
+      "brand": "HUAWEI",
+      "model": "MT882 ADSL2+",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "HUAWEI",
+      "model": "HG8405 Rev.",
+      "protocol": "(none)",
+      "username": "user",
+      "password": "user"
+    },
+    {
+      "brand": "IBLITZZ",
+      "model": "BWA711/ALL MODELS Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "IBM",
+      "model": "ASCEND OEM ROUTERS",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "ascend"
+    },
+    {
+      "brand": "IBM",
+      "model": "A21M",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "IBM",
+      "model": "390E",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "IBM",
+      "model": "TOTALSTORAGE ENTERPRISE SERVER",
+      "protocol": "MULTI",
+      "username": "storwatch",
+      "password": "specialist"
+    },
+    {
+      "brand": "IBM",
+      "model": "8239 TOKEN RING HUB Rev. 2.5",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "R1QTPS"
+    },
+    {
+      "brand": "IBM",
+      "model": "8224 HUB",
+      "protocol": "MULTI",
+      "username": "vt100",
+      "password": "public"
+    },
+    {
+      "brand": "IBM",
+      "model": "3534 F08 FIBRE SWITCH",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "IBM",
+      "model": "SWITCH Rev. 8275-217",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "IBM",
+      "model": "DIRECTORY - WEB ADMINISTRATION TOOL Rev. 5.1",
+      "protocol": "HTTP",
+      "username": "superadmin",
+      "password": "secret"
+    },
+    {
+      "brand": "IBM",
+      "model": "HARDWARE MANAGEMENT CONSOLE Rev. 3",
+      "protocol": "SSH",
+      "username": "hscroot",
+      "password": "abc123"
+    },
+    {
+      "brand": "IBM",
+      "model": "3583 TAPE LIBRARY",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "secure"
+    },
+    {
+      "brand": "IBM",
+      "model": "INFOPRINT 6700 Rev. HTTP://WWW.PHENOELIT.DE/DPL/DPL.HTML",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "IBM",
+      "model": "T20",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "IBM",
+      "model": "IBM",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "IBM",
+      "model": "REMOTE SUPERVISOR ADAPTER (RSA)",
+      "protocol": "HTTP",
+      "username": "USERID",
+      "password": "PASSW0RD"
+    },
+    {
+      "brand": "IBM",
+      "model": "BLADECENTER MGMT CONSOLE",
+      "protocol": "HTTP",
+      "username": "USERID",
+      "password": "PASSW0RD"
+    },
+    {
+      "brand": "IBM",
+      "model": "T42",
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "IBM",
+      "model": "A20M",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "IHOI",
+      "model": "OIHOH Rev. LKNLKN",
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "pilou"
+    },
+    {
+      "brand": "IMAI",
+      "model": "TRAFFIC SHAPER Rev. TS-1012",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "INCHON",
+      "model": "INCHON Rev. INCHON",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "INFOSMART",
+      "model": "SOHO ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 0
+    },
+    {
+      "brand": "INTEGRAL TECHNOLOGIES",
+      "model": "REMOTEVIEW Rev. 4",
+      "protocol": "CONSOLE",
+      "username": "Administrator",
+      "password": "letmein"
+    },
+    {
+      "brand": "INTEL",
+      "model": "SHIVA",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "INTEL",
+      "model": "EXPRESS 9520 ROUTER",
+      "protocol": "MULTI",
+      "username": "NICONEX",
+      "password": "NICONEX"
+    },
+    {
+      "brand": "INTEL",
+      "model": "EXPRESS 520T SWITCH",
+      "protocol": "MULTI",
+      "username": "setup",
+      "password": "setup"
+    },
+    {
+      "brand": "INTEL",
+      "model": "WIRELESS AP 2011 Rev. 2.21",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "Intel"
+    },
+    {
+      "brand": "INTEL",
+      "model": "WIRELESS GATEWAY Rev. 3.X",
+      "protocol": "HTTP",
+      "username": "intel",
+      "password": "intel"
+    },
+    {
+      "brand": "INTEL",
+      "model": "SHIVA",
+      "protocol": "(none)",
+      "username": "Guest",
+      "password": "(none)"
+    },
+    {
+      "brand": "INTEL",
+      "model": "SHIVA",
+      "protocol": "(none)",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "INTEL",
+      "model": "NETSTRUCTURE Rev. 480T",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "INTENO",
+      "model": "DG201 Rev.",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "giraff"
+    },
+    {
+      "brand": "INTERBASE",
+      "model": "INTERBASE DATABASE SERVER Rev. ALL",
+      "protocol": "MULTI",
+      "username": "SYSDBA",
+      "password": "masterkey"
+    },
+    {
+      "brand": "INTERMEC",
+      "model": "MOBILE LAN Rev. 5.25",
+      "protocol": "MULTI",
+      "username": "intermec",
+      "password": "intermec"
+    },
+    {
+      "brand": "INTERSHOP",
+      "model": "INTERSHOP Rev. 4",
+      "protocol": "HTTP",
+      "username": "operator",
+      "password": "$chwarzepumpe"
+    },
+    {
+      "brand": "INTERSYSTEMS",
+      "model": "CACHE POST-RDMS",
+      "protocol": "CONSOLE",
+      "username": "system",
+      "password": "sys"
+    },
+    {
+      "brand": "INTEX",
+      "model": "ORGANIZER",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "INVENTEL",
+      "model": "LIVEBOX",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ION",
+      "model": "NELU Rev. NEL",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "ION",
+      "model": "NELU Rev. NEL",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "IPSTAR",
+      "model": "IPSTAR SATELLITE ROUTER/RADIO Rev. V2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "operator"
+    },
+    {
+      "brand": "IPSTAR",
+      "model": "IPSTAR NETWORK BOX Rev. V.2+",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "operator"
+    },
+    {
+      "brand": "IRONPORT",
+      "model": "MESSAGING GATEWAY APPLIANCE",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "ironport"
+    },
+    {
+      "brand": "JAHT",
+      "model": "ADSL ROUTER Rev. AR41/2A",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "JD EDWARDS",
+      "model": "WORLDVISION/ONEWORLD Rev. ALL(?)",
+      "protocol": "CONSOLE",
+      "username": "JDE",
+      "password": "JDE"
+    },
+    {
+      "brand": "JDE",
+      "model": "WORLDVISION/ONEWORLD",
+      "protocol": "MULTI",
+      "username": "PRODDTA",
+      "password": "PRODDTA"
+    },
+    {
+      "brand": "JDS MICROPROCESSING",
+      "model": "HYDRA 3000 Rev. R2.02",
+      "protocol": "CONSOLE",
+      "username": "hydrasna",
+      "password": "(none)"
+    },
+    {
+      "brand": "JUNIPER",
+      "model": "ISG2000",
+      "protocol": "MULTI",
+      "username": "netscreen",
+      "password": "netscreen"
+    },
+    {
+      "brand": "KALATEL",
+      "model": "CALIBUR DSR-2000E",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": 3477
+    },
+    {
+      "brand": "KALATEL",
+      "model": "CALIBUR DSR-2000E",
+      "protocol": "ON-SCREEN MENU SYSTEM",
+      "username": "n/a",
+      "password": 8111
+    },
+    {
+      "brand": "KONICA MINOLTA",
+      "model": "MAGICOLOR 2300 DL",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": 1234
+    },
+    {
+      "brand": "KONICA MINOLTA",
+      "model": "MAGICOLOR 2430DL Rev. ALL",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "KONICA MINOLTA",
+      "model": "DI 2010F Rev. N/A",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": 0
+    },
+    {
+      "brand": "KTI",
+      "model": "KS-2260",
+      "protocol": "TELNET",
+      "username": "superuser",
+      "password": 123456
+    },
+    {
+      "brand": "KTI",
+      "model": "KS2600",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": 123456
+    },
+    {
+      "brand": "KTI",
+      "model": "KS2260",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": 123
+    },
+    {
+      "brand": "KYOCERA",
+      "model": "ECOLINK Rev. 7.2",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "PASSWORD"
+    },
+    {
+      "brand": "KYOCERA",
+      "model": "TELNET SERVER IB-20/21",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "KYOCERA",
+      "model": "INTERMATE LAN FS PRO 10/100 Rev. K82_0371",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "KYOCERA",
+      "model": "KR1",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "(blank)"
+    },
+    {
+      "brand": "LANCOM",
+      "model": "IL11",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LANTRONICS",
+      "model": "LANTRONICS TERMINAL SERVER",
+      "protocol": "TCP 7000",
+      "username": "n/a",
+      "password": "access"
+    },
+    {
+      "brand": "LANTRONICS",
+      "model": "LANTRONICS TERMINAL SERVER",
+      "protocol": "TCP 7000",
+      "username": "n/a",
+      "password": "system"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "LANTRONIX TERMINAL",
+      "protocol": "TCP 7000",
+      "username": "n/a",
+      "password": "lantronix"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "SCS1620",
+      "protocol": "MULTI",
+      "username": "sysadmin",
+      "password": "PASS"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "SCS3200",
+      "protocol": "EZWEBCON DOWNLOADED FROM FTP.LANTRONIX.COM",
+      "username": "login",
+      "password": "access"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "SCS400",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "SCS200",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "SCS100",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "access"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "ETS4P",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "ETS16P",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "ETS32PR",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LANTRONIX",
+      "model": "ETS422PR",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LATIS NETWORK",
+      "model": "BORDER GUARD",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LG",
+      "model": "ARIA IPECS Rev. ALL",
+      "protocol": "CONSOLE",
+      "username": "(none)",
+      "password": "jannie"
+    },
+    {
+      "brand": "LG",
+      "model": "LAM200E / LAM200R",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WAP11",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "DSL",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "ETHERFAST CABLE/DSL ROUTER",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "LINKSYS ROUTER DSL/CABLE",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "BEFW11S4 Rev. 1",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "BEFSR41 Rev. 2",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WRT54G",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WAG54G",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "LINKSYS DSL",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WAP54G Rev. 2.0",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WRT54G Rev. ALL REVISIONS",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "MODEL WRT54GC COMPACT WIRELESS-G BROADBAND ROUTER",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "AG 241 - ADSL2 GATEWAY WITH 4-PORT SWITCH",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "COMCAST Rev. COMCAST-SUPPLIED",
+      "protocol": "HTTP",
+      "username": "comcast",
+      "password": 1234
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WAG54GS",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "AP 1120",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "PAP2 / PAP2V2 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "RT31P2 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "RTP300 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WRT54GP2 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "WRTP54G (VONAGE)",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LINKSYS",
+      "model": "EA6700",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "LIVINGSTON",
+      "model": "IRX ROUTER",
+      "protocol": "TELNET",
+      "username": "!root",
+      "password": "(none)"
+    },
+    {
+      "brand": "LIVINGSTON",
+      "model": "LIVINGSTON PORTMASTER 3",
+      "protocol": "TELNET",
+      "username": "!root",
+      "password": "(none)"
+    },
+    {
+      "brand": "LIVINGSTON",
+      "model": "OFFICEROUTER",
+      "protocol": "TELNET",
+      "username": "!root",
+      "password": "(none)"
+    },
+    {
+      "brand": "LIVINGSTON",
+      "model": "PORTMASTER 2R",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "LOCKDOWN NETWORKS",
+      "model": "ALL LOCKDOWN PRODUCTS Rev. UP TO 2.7",
+      "protocol": "CONSOLE",
+      "username": "setup",
+      "password": "changeme(exclamation)"
+    },
+    {
+      "brand": "LOGITECH",
+      "model": "LOGITECH MOBILE HEADSET",
+      "protocol": "BLUETOOTH",
+      "username": "(none)",
+      "password": 0
+    },
+    {
+      "brand": "LONGSHINE",
+      "model": "ISSCFG",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 0
+    },
+    {
+      "brand": "LOOPCOM",
+      "model": "(none)",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "M770",
+      "protocol": "TELNET",
+      "username": "super",
+      "password": "super"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "B-STDX9000",
+      "protocol": "MULTI",
+      "username": "(any 3 characters)",
+      "password": "cascade"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "B-STDX9000",
+      "protocol": "DEBUG MODE",
+      "username": "n/a",
+      "password": "cascade"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "B-STDX9000 Rev. ALL",
+      "protocol": "SNMP",
+      "username": "n/a",
+      "password": "cascade"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "CBX 500",
+      "protocol": "MULTI",
+      "username": "(any 3 characters)",
+      "password": "cascade"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "CBX 500",
+      "protocol": "DEBUG MODE",
+      "username": "n/a",
+      "password": "cascade"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "GX 550",
+      "protocol": "SNMP READWRITE",
+      "username": "n/a",
+      "password": "cascade"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "MAX-TNT",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "Ascend"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "PSAX 1200 AND BELOW",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "ascend"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "PSAX 1250 AND ABOVE",
+      "protocol": "MULTI",
+      "username": "readwrite",
+      "password": "lucenttech1"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "PSAX 1250 AND ABOVE",
+      "protocol": "MULTI",
+      "username": "readonly",
+      "password": "lucenttech2"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "ANYMEDIA",
+      "protocol": "CONSOLE",
+      "username": "LUCENT01",
+      "password": "UI-PSWD-01"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "ANYMEDIA",
+      "protocol": "CONSOLE",
+      "username": "LUCENT02",
+      "password": "UI-PSWD-02"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "PACKETSTAR",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "CELLPIPE 22A-BX-AR USB D",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "AitbISP4eCiG"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "bciim",
+      "password": "bciimpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "bcim",
+      "password": "bcimpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "bcms",
+      "password": "bcmspw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "bcnas",
+      "password": "bcnaspw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "blue",
+      "password": "bluepw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "browse",
+      "password": "browsepw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "browse",
+      "password": "looker"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "craft",
+      "password": "craft"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "craft",
+      "password": "craftpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "cust",
+      "password": "custpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "enquiry",
+      "password": "enquirypw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "field",
+      "password": "support"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "inads",
+      "password": "indspw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "inads",
+      "password": "inads"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "init",
+      "password": "initpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "locate",
+      "password": "locatepw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "maint",
+      "password": "maintpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "maint",
+      "password": "rwmaint"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "nms",
+      "password": "nmspw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "rcust",
+      "password": "rcustpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "support",
+      "password": "supportpw"
+    },
+    {
+      "brand": "LUCENT",
+      "model": "SYSTEM 75",
+      "protocol": "(none)",
+      "username": "tech",
+      "password": "field"
+    },
+    {
+      "brand": "MARCONI",
+      "model": "FORE ATM SWITCHES",
+      "protocol": "MULTI",
+      "username": "ami",
+      "password": "(none)"
+    },
+    {
+      "brand": "MAXDATA",
+      "model": "MS2137",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "MCAFEE",
+      "model": "SCM 3100 Rev. 4.1",
+      "protocol": "MULTI",
+      "username": "scmadmin",
+      "password": "scmchangeme"
+    },
+    {
+      "brand": "MCDATA",
+      "model": "FC SWITCHES/DIRECTORS",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "password"
+    },
+    {
+      "brand": "MEDIATRIX 2102",
+      "model": "MEDIATRIX 2102",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "MEDION",
+      "model": "ROUTERS",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "medion"
+    },
+    {
+      "brand": "MEGASTAR",
+      "model": "BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "star"
+    },
+    {
+      "brand": "MENTEC",
+      "model": "MICRO/RSX",
+      "protocol": "MULTI",
+      "username": "MICRO",
+      "password": "RSX"
+    },
+    {
+      "brand": "MENTEC",
+      "model": "MICRO/RSX",
+      "protocol": "(none)",
+      "username": "MICRO",
+      "password": "RSX"
+    },
+    {
+      "brand": "MERCURY",
+      "model": "234234 Rev. 234234",
+      "protocol": "SNMP",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "MERCURY",
+      "model": "KT133A/686B",
+      "protocol": "SNMP",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "MERIDIAN",
+      "model": "PBX Rev. ANY",
+      "protocol": "TELNET",
+      "username": "service",
+      "password": "smile"
+    },
+    {
+      "brand": "MICRONET",
+      "model": "ACCESS POINT Rev. SP912",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "default"
+    },
+    {
+      "brand": "MICRONET",
+      "model": "MICRONET SP5002",
+      "protocol": "CONSOLE",
+      "username": "mac",
+      "password": "(none)"
+    },
+    {
+      "brand": "MICRONET",
+      "model": "3351 / 3354",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "MICRONET",
+      "model": "SP918GK",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "MICROPLEX",
+      "model": "PRINT SERVER",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "MICROROUTER",
+      "model": "900I",
+      "protocol": "CONSOLE/MULTI",
+      "username": "n/a",
+      "password": "letmein"
+    },
+    {
+      "brand": "MICROSOFT",
+      "model": "MN-SERIES",
+      "protocol": "(none)",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "MIKROTIK",
+      "model": "ROUTER OS Rev. ALL",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "MIKROTIK",
+      "model": "ROUTER OS Rev. 2.9.17",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "MILAN",
+      "model": "MIL-SM801P",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "MINOLTA QMS",
+      "model": "MAGICOLOR 3100 Rev. 3.0.0",
+      "protocol": "HTTP",
+      "username": "operator",
+      "password": "(none)"
+    },
+    {
+      "brand": "MINOLTA QMS",
+      "model": "MAGICOLOR 3100 Rev. 3.0.0",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "MINTEL",
+      "model": "MINTEL PBX",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "SYSTEM"
+    },
+    {
+      "brand": "MINTEL",
+      "model": "MINTEL PBX",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "SYSTEM"
+    },
+    {
+      "brand": "MITEL",
+      "model": "3300 ICP Rev. ALL",
+      "protocol": "HTTP",
+      "username": "system",
+      "password": "password"
+    },
+    {
+      "brand": "MITEL",
+      "model": "SX2000 Rev. ALL",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "CABLEROUTER",
+      "protocol": "TELNET",
+      "username": "cablecom",
+      "password": "router"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "WR850G Rev. 4.03",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "motorola"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "WIRELESS ROUTER Rev. WR850G",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "motorola"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "SBG900",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "motorola"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "MOTOROLA CABLEROUTER",
+      "protocol": "(none)",
+      "username": "cablecom",
+      "password": "router"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "VANGUARD",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "VT1005 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "(blank)",
+      "password": "(blank)"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "VT2142 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "router",
+      "password": "router"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "VT2442 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "router",
+      "password": "router"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "VT2542 (VONAGE)",
+      "protocol": "HTTP",
+      "username": "router",
+      "password": "router"
+    },
+    {
+      "brand": "MOTOROLA",
+      "model": "5DB26 Rev.",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "motorola"
+    },
+    {
+      "brand": "MRO SOFTWARE",
+      "model": "MAXIMO Rev. V4.1",
+      "protocol": "MULTI",
+      "username": "SYSADM",
+      "password": "sysadm"
+    },
+    {
+      "brand": "MUTARE SOFTWARE",
+      "model": "EVM ADMIN Rev. ALL",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "NAI",
+      "model": "INTRUSHIELD IPS Rev. 1200/2600/4000",
+      "protocol": "SSH + WEB CONSOLE",
+      "username": "admin",
+      "password": "admin123"
+    },
+    {
+      "brand": "NAI",
+      "model": "ENTERCEPT",
+      "protocol": "MANAGEMENT CONSOLE",
+      "username": "GlobalAdmin",
+      "password": "GlobalAdmin"
+    },
+    {
+      "brand": "NEC",
+      "model": "WARPSTAR-BASESTATION",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETCOMM",
+      "model": "NB1300",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETCOMM",
+      "model": "NB5",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "RM356 Rev. NONE",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": 1234
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WGT624 Rev. 2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "COMCAST Rev. COMCAST-SUPPLIED",
+      "protocol": "HTTP",
+      "username": "comcast",
+      "password": 1234
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "FR314",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "MR-314 Rev. 3.26",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "RT314",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "RP614",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "RP114 Rev. 3.26",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": 1234
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WG602 Rev. FIRMWARE VERSION 1.04.0",
+      "protocol": "HTTP",
+      "username": "super",
+      "password": 5777364
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WG602 Rev. FIRMWARE VERSION 1.7.14",
+      "protocol": "HTTP",
+      "username": "superman",
+      "password": 21241036
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WG602 Rev. FIRMWARE VERSION 1.5.67",
+      "protocol": "HTTP",
+      "username": "super",
+      "password": 5777364
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "MR814",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "FVS318",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "DM602",
+      "protocol": "FTP TELNET AND HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "FR114P",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "ME102",
+      "protocol": "SNMP",
+      "username": "(none)",
+      "password": "private"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WGR614 Rev. V4",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "RP114 Rev. 3.20-3.26",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "DG834G",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "ROUTER/MODEM",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "MR314",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "GSM7224",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "ADSL MODEM DG632 Rev. V3.3.0A_CX",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WGT634U",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "FWG114P",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "GS724T Rev. V1.0.1_1104",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "FM114P",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "DG834",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WNR834 BV2",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WNR834BV2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WPN824 / WPN824V2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGEAR",
+      "model": "WGR614 Rev. V9",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETGENESIS",
+      "model": "NETANALYSIS WEB REPORTING",
+      "protocol": "HTTP",
+      "username": "naadmin",
+      "password": "naadmin"
+    },
+    {
+      "brand": "NETOPIA",
+      "model": "NETOPIA 9500",
+      "protocol": "TELNET",
+      "username": "netopia",
+      "password": "netopia"
+    },
+    {
+      "brand": "NETOPIA",
+      "model": "R910",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETOPIA",
+      "model": 3351,
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETOPIA",
+      "model": 4542,
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "noway"
+    },
+    {
+      "brand": "NETOPIA",
+      "model": "NETOPIA 7100",
+      "protocol": "(none)",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETOPIA",
+      "model": "NETOPIA 9500",
+      "protocol": "(none)",
+      "username": "netopia",
+      "password": "netopia"
+    },
+    {
+      "brand": "NETPORT",
+      "model": "EXPRESS 10/100",
+      "protocol": "MULTI",
+      "username": "setup",
+      "password": "setup"
+    },
+    {
+      "brand": "NETSCREEN",
+      "model": "FIREWALL",
+      "protocol": "MULTI",
+      "username": "netscreen",
+      "password": "netscreen"
+    },
+    {
+      "brand": "NETSCREEN",
+      "model": "FIREWALL",
+      "protocol": "TELNET",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETSCREEN",
+      "model": "FIREWALL",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETSCREEN",
+      "model": "FIREWALL",
+      "protocol": "TELNET",
+      "username": "operator",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETSCREEN",
+      "model": "FIREWALL",
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "NETSTAR",
+      "model": "NETPILOT",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "NETWORK APPLIANCE",
+      "model": "NETCACHE Rev. ANY",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "NetCache"
+    },
+    {
+      "brand": "NETWORK ASSOCIATES",
+      "model": "WEBSHIELD SECURITY APPLIANCE E500",
+      "protocol": "HTTP",
+      "username": "e500",
+      "password": "e500changeme"
+    },
+    {
+      "brand": "NETWORK ASSOCIATES",
+      "model": "WEBSHIELD SECURITY APPLIANCE E250",
+      "protocol": "HTTP",
+      "username": "e250",
+      "password": "e250changeme"
+    },
+    {
+      "brand": "NETWORK EVERYWHERE",
+      "model": "NWR11B",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "NEXXT SOLUTIONS",
+      "model": "NW230NXT14",
+      "protocol": "HTTP",
+      "username": "guest",
+      "password": "guest"
+    },
+    {
+      "brand": "NGSEC",
+      "model": "NGSECUREWEB",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "NGSEC",
+      "model": "NGSECUREWEB",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "asd"
+    },
+    {
+      "brand": "NIKSUN",
+      "model": "NETDETECTOR",
+      "protocol": "MULTI",
+      "username": "vcr",
+      "password": "NetVCR"
+    },
+    {
+      "brand": "NIMBLE",
+      "model": "PC BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "xdfk9874t3"
+    },
+    {
+      "brand": "NIMBLE",
+      "model": "BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "xdfk9874t3"
+    },
+    {
+      "brand": "NOKIA",
+      "model": 7360,
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": 9999
+    },
+    {
+      "brand": "NOKIA",
+      "model": "DSL ROUTER M1122 Rev. 1.1 - 1.2",
+      "protocol": "MULTI",
+      "username": "m1122",
+      "password": "m1122"
+    },
+    {
+      "brand": "NOKIA",
+      "model": "MW1122",
+      "protocol": "MULTI",
+      "username": "telecom",
+      "password": "telecom"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN LINK",
+      "protocol": "MULTI",
+      "username": "disttech",
+      "password": "4tas"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN LINK",
+      "protocol": "MULTI",
+      "username": "maint",
+      "password": "maint"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN LINK",
+      "protocol": "MULTI",
+      "username": "mlusr",
+      "password": "mlusr"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "REMOTE OFFICE 9150",
+      "protocol": "CLIENT",
+      "username": "admin",
+      "password": "root"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES",
+      "protocol": "MULTI",
+      "username": "l2",
+      "password": "l2"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES",
+      "protocol": "MULTI",
+      "username": "l3",
+      "password": "l3"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES",
+      "protocol": "MULTI",
+      "username": "ro",
+      "password": "ro"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES",
+      "protocol": "MULTI",
+      "username": "rw",
+      "password": "rw"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "ACCELAR (PASSPORT) 1000 SERIES ROUTING SWITCHES",
+      "protocol": "MULTI",
+      "username": "rwa",
+      "password": "rwa"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "EXTRANET SWITCHES",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "setup"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "BAYSTACK 350-24T",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "secure"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN PBX",
+      "protocol": "SERIAL",
+      "username": "login",
+      "password": 0
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN PBX",
+      "protocol": "SERIAL",
+      "username": "login",
+      "password": 1111
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN PBX",
+      "protocol": "SERIAL",
+      "username": "login",
+      "password": 8429
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN PBX",
+      "protocol": "SERIAL",
+      "username": "spcl",
+      "password": 0
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN MAX",
+      "protocol": "MULTI",
+      "username": "service",
+      "password": "smile"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN MAX",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "3ep5w2u"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MATRA 6501 PBX",
+      "protocol": "CONSOLE",
+      "username": "(none)",
+      "password": 0
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN MAX",
+      "protocol": "MULTI",
+      "username": "maint",
+      "password": "ntacdmax"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN CCR",
+      "protocol": "MULTI",
+      "username": "service",
+      "password": "smile"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN CCR",
+      "protocol": "MULTI",
+      "username": "disttech",
+      "password": "4tas"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN CCR",
+      "protocol": "MULTI",
+      "username": "maint",
+      "password": "maint"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN CCR",
+      "protocol": "MULTI",
+      "username": "ccrusr",
+      "password": "ccrusr"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "MERIDIAN LINK",
+      "protocol": "MULTI",
+      "username": "service",
+      "password": "smile"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "CONTIVITY Rev. EXTRANET/VPN SWITCHES",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "setup"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "BUSINESS COMMUNICATIONS MANAGER / BCM400 3.6 / BCM Rev. 3.5 AND 3.6. YOU CAN ALSO ACCESS THESE SYSTEMS FRO",
+      "protocol": "HTTPS",
+      "username": "supervisor",
+      "password": "PlsChgMe!"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "PHONE SYSTEM Rev. ALL",
+      "protocol": "FROM PHONE",
+      "username": "n/a",
+      "password": 266344
+    },
+    {
+      "brand": "NORTEL",
+      "model": "NORSTAR",
+      "protocol": "CONSOLE",
+      "username": 266344,
+      "password": 266344
+    },
+    {
+      "brand": "NORTEL",
+      "model": "DMS",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "P8600",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "NORTEL",
+      "model": "BCM50 RELEASE 2.0 Rev. YOU CAN ALSO ACCESS THESE SYSTEMS FROM THE PHONE B",
+      "protocol": "HTTPS",
+      "username": "supervisor",
+      "password": "PlsChgMe1"
+    },
+    {
+      "brand": "NRG OR RICOH",
+      "model": "DSC338 PRINTER Rev. 1.19",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "password"
+    },
+    {
+      "brand": "NULLSOFT",
+      "model": "SHOUTCAST Rev. 1.9.5",
+      "protocol": "PLS",
+      "username": "admin",
+      "password": "changeme"
+    },
+    {
+      "brand": "OKI",
+      "model": "C5700",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "the 6 last digit of the MAC adress"
+    },
+    {
+      "brand": "OLITEC",
+      "model": "SX 200 ADSL MODEM ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "adslolitec"
+    },
+    {
+      "brand": "OLITEC (TRENDCHIP)",
+      "model": "SX 202 ADSL MODEM ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "OMNITRONIX",
+      "model": "DATA-LINK Rev. DL150",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "SUPER"
+    },
+    {
+      "brand": "OMNITRONIX",
+      "model": "DATA-LINK Rev. DL150",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "SMDR"
+    },
+    {
+      "brand": "OMRON",
+      "model": "MR104FH",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "ONIXON",
+      "model": "DSL X402",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "OPENCONNECT",
+      "model": "OC://WEBCONNECT PRO",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "OCS"
+    },
+    {
+      "brand": "OPENCONNECT",
+      "model": "OC://WEBCONNECT PRO",
+      "protocol": "MULTI",
+      "username": "adminstat",
+      "password": "OCS"
+    },
+    {
+      "brand": "OPENCONNECT",
+      "model": "OC://WEBCONNECT PRO",
+      "protocol": "MULTI",
+      "username": "adminview",
+      "password": "OCS"
+    },
+    {
+      "brand": "OPENCONNECT",
+      "model": "OC://WEBCONNECT PRO",
+      "protocol": "MULTI",
+      "username": "adminuser",
+      "password": "OCS"
+    },
+    {
+      "brand": "OPENCONNECT",
+      "model": "OC://WEBCONNECT PRO",
+      "protocol": "MULTI",
+      "username": "adminview",
+      "password": "OCS"
+    },
+    {
+      "brand": "OPENCONNECT",
+      "model": "OC://WEBCONNECT PRO",
+      "protocol": "MULTI",
+      "username": "helpdesk",
+      "password": "OCS"
+    },
+    {
+      "brand": "OPENWAVE",
+      "model": "WAP GATEWAY Rev. ANY",
+      "protocol": "HTTP",
+      "username": "sys",
+      "password": "uplink"
+    },
+    {
+      "brand": "OPENWAVE",
+      "model": "MSP Rev. ANY",
+      "protocol": "HTTP",
+      "username": "cac_admin",
+      "password": "cacadmin"
+    },
+    {
+      "brand": "ORACLE",
+      "model": "ORACLE RDBMS Rev. ANY",
+      "protocol": "MULTI",
+      "username": "system/manager",
+      "password": "sys/change_on_install"
+    },
+    {
+      "brand": "ORANGE",
+      "model": "LIVEBOX",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ORIGO",
+      "model": "(none)",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "kont2004"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETPRINT Rev. 500 1000 1500 AND 2000 SERIES",
+      "protocol": "TELNET",
+      "username": "Manager",
+      "password": "Manager"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETPRINT AND JETX PRINT Rev. 500 1000 1500 AND 2000 SERIES",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "sysadm"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "OSICOM PLUS T1/PLUS 56K",
+      "protocol": "TELNET",
+      "username": "write",
+      "password": "private"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETCOMMUTER REMOTE ACCESS SERVER",
+      "protocol": "TELNET",
+      "username": "debug",
+      "password": "d.e.b.u.g"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETCOMMUTER REMOTE ACCESS SERVER",
+      "protocol": "TELNET",
+      "username": "echo",
+      "password": "echo"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETCOMMUTER REMOTE ACCESS SERVER",
+      "protocol": "TELNET",
+      "username": "guest",
+      "password": "guest"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETCOMMUTER REMOTE ACCESS SERVER",
+      "protocol": "TELNET",
+      "username": "Manager",
+      "password": "Manager"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETCOMMUTER REMOTE ACCESS SERVER",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "sysadm"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "OSICOM PLUS T1/PLUS 56K",
+      "protocol": "(none)",
+      "username": "write",
+      "password": "private"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETCOMMUTER REMOTE ACCESS SERVER",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "sysadm"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "JETXPRINT Rev. 1000E/B",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "sysadm"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "JETXPRINT Rev. 1000E/N",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "sysadm"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "JETXPRINT Rev. 1000T/N",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "sysadm"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "JETXPRINT Rev. 500 E/B",
+      "protocol": "TELNET",
+      "username": "sysadm",
+      "password": "sysadm"
+    },
+    {
+      "brand": "OSICOM",
+      "model": "NETPRINT Rev. \"500",
+      "protocol": 1000,
+      "username": 1500,
+      "password": "and 2000 Series"
+    },
+    {
+      "brand": "OVISLINK",
+      "model": "WL-1120AP",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "PACIFIC MICRO DATA",
+      "model": "MAST 9500 UNIVERSAL DISK ARRAY Rev. ESM VER. 2.11 / 1",
+      "protocol": "CONSOLE",
+      "username": "pmd",
+      "password": "(none)"
+    },
+    {
+      "brand": "PANASONIC",
+      "model": "CF-28",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "PANASONIC",
+      "model": "CF-45",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "PANASONIC",
+      "model": "KXTD1232",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "PANASONIC",
+      "model": "CF 27 Rev. 4",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "PENRIL DATABILITY",
+      "model": "VCP300 TERMINAL SERVER",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "system"
+    },
+    {
+      "brand": "PENTAGRAM",
+      "model": "CERBERUS ADSL MODEM + ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "PENTAOFFICE",
+      "model": "SAT ROUTER",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": "pento"
+    },
+    {
+      "brand": "PENTASAFE",
+      "model": "VIGILENT SECURITY MANAGER Rev. 3",
+      "protocol": "VIGILENT SECURITY MANAGER CONSOLE",
+      "username": "PSEAdmin",
+      "password": "$secure$"
+    },
+    {
+      "brand": "PERLE",
+      "model": "CS9000 Rev. ANY",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "superuser"
+    },
+    {
+      "brand": "PHOENIX V1.14",
+      "model": "PHOENIX V1.14",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "admin"
+    },
+    {
+      "brand": "PIRELLI",
+      "model": "PIRELLI ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "mu"
+    },
+    {
+      "brand": "PIRELLI",
+      "model": "PIRELLI ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "microbusiness"
+    },
+    {
+      "brand": "PIRELLI",
+      "model": "PIRELLI ROUTER",
+      "protocol": "MULTI",
+      "username": "user",
+      "password": "password"
+    },
+    {
+      "brand": "PIRELLI",
+      "model": "PIRELLI AGE-SB",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "smallbusiness"
+    },
+    {
+      "brand": "PIRELLI",
+      "model": "AGE ADSL ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "microbusiness"
+    },
+    {
+      "brand": "PIRELLI",
+      "model": "AGE ADSL ROUTER",
+      "protocol": "MULTI",
+      "username": "user",
+      "password": "password"
+    },
+    {
+      "brand": "PLANET",
+      "model": "WAP-1900/1950/2000 Rev. 2.5.0",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "default"
+    },
+    {
+      "brand": "PLANET",
+      "model": "ADE-4110",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "PLANET",
+      "model": "XRT-401D",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "PLANET",
+      "model": "ADE-4000",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "PLANET",
+      "model": "AKCESS POINT",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "POLYCOM",
+      "model": "SOUNDPOINT VOIP PHONES",
+      "protocol": "HTTP",
+      "username": "Polycom",
+      "password": "SpIp"
+    },
+    {
+      "brand": "POLYCOM",
+      "model": "VIEWSTATION 4000 Rev. 3.5",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "POLYCOM",
+      "model": "IPOWER 9000",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "PRESTIGIO",
+      "model": "NOBILE Rev. 156",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "PROXIM",
+      "model": "ORINOCO 600/2000 Rev. ALL",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "PROXIM",
+      "model": "TSUNAMI MP.11 5054-R",
+      "protocol": "HTTP/TELNET",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "PROXIM",
+      "model": "AP-4000",
+      "protocol": "SSH",
+      "username": "(none)",
+      "password": "public"
+    },
+    {
+      "brand": "PSION TEKLOGIX",
+      "model": 9150,
+      "protocol": "HTTP",
+      "username": "support",
+      "password": "h179350"
+    },
+    {
+      "brand": "PYRAMID COMPUTER",
+      "model": "BENHUR Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "QUINTUM TECHNOLOGIES INC.",
+      "model": "TENOR SERIES Rev. ALL",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "RADWARE",
+      "model": "LINKPROOF",
+      "protocol": "SSH",
+      "username": "lp",
+      "password": "lp"
+    },
+    {
+      "brand": "RADWARE",
+      "model": "LINKPROOF Rev. 3.73.03",
+      "protocol": "MULTI",
+      "username": "radware",
+      "password": "radware"
+    },
+    {
+      "brand": "RAIDZONE",
+      "model": "RAID ARRAYS",
+      "protocol": "(none)",
+      "username": "n/a",
+      "password": "raidzone"
+    },
+    {
+      "brand": "RAMP NETWORKS",
+      "model": "WEBRAMP",
+      "protocol": "(none)",
+      "username": "wradmin",
+      "password": "trancell"
+    },
+    {
+      "brand": "RAMP NETWORKS",
+      "model": "WEBRAMP",
+      "protocol": "(none)",
+      "username": "wradmin",
+      "password": "trancell"
+    },
+    {
+      "brand": "REDHAT",
+      "model": "REDHAT 6.2",
+      "protocol": "HTTP",
+      "username": "piranha",
+      "password": "q"
+    },
+    {
+      "brand": "REDHAT",
+      "model": "REDHAT 6.2",
+      "protocol": "HTTP",
+      "username": "piranha",
+      "password": "piranha"
+    },
+    {
+      "brand": "RESEARCH",
+      "model": "PC BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "Col2ogro2"
+    },
+    {
+      "brand": "RESEARCH",
+      "model": "BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "Col2ogro2"
+    },
+    {
+      "brand": "RICOH",
+      "model": "AFICIO Rev. AP3800C",
+      "protocol": "HTTP",
+      "username": "sysadmin",
+      "password": "password"
+    },
+    {
+      "brand": "RICOH",
+      "model": "AFICIO 2228C",
+      "protocol": "MULTI",
+      "username": "sysadmin",
+      "password": "password"
+    },
+    {
+      "brand": "RICOH",
+      "model": "AFICIO AP3800C Rev. 2.17",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "password"
+    },
+    {
+      "brand": "RICOH",
+      "model": "AFICIO 2232C",
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "RICOH",
+      "model": "AP410N Rev. 1.13",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "RICOH",
+      "model": "AFICIO 2020D",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "setup",
+      "password": "changeme"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "teacher",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "temp1",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "rmnetlm"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "admin2",
+      "password": "changeme"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "adminstrator",
+      "password": "changeme"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "deskalt",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "deskman",
+      "password": "changeme"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "desknorm",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "deskres",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "guest",
+      "password": "(none)"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "replicator",
+      "password": "replicator"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "RMUser1",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "topicalt",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "topicnorm",
+      "password": "password"
+    },
+    {
+      "brand": "RM",
+      "model": "RM CONNECT",
+      "protocol": "MULTI",
+      "username": "topicres",
+      "password": "password"
+    },
+    {
+      "brand": "ROAMABOUT",
+      "model": "ROAMABOUT R2 WIRELESS ACCESS PLATFORM",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "SAGEM",
+      "model": "FAST 1400",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "epicrouter"
+    },
+    {
+      "brand": "SAGEM",
+      "model": "F@ST 1200 (FAST 1200)",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": 1234
+    },
+    {
+      "brand": "SAGEM",
+      "model": "FAST 1400W",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": 1234
+    },
+    {
+      "brand": "SAGEM",
+      "model": "LIVEBOX",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SAGEM",
+      "model": "F@ST 1201 V2 Rev.",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "SAMSUNG",
+      "model": "MAGICLAN SWL-3500RG Rev. 2.15",
+      "protocol": "HTTP",
+      "username": "public",
+      "password": "public"
+    },
+    {
+      "brand": "SAMSUNG",
+      "model": "N620",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "SAMSUNG",
+      "model": "MODEM/ROUTER Rev. AHT-E300",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "SCIENTIFIC ATLANTA",
+      "model": "DPX2100 Rev. COMCAST-SUPPLIED",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "w2402"
+    },
+    {
+      "brand": "SENAO",
+      "model": "2611CB3+D (802.11B WIRELESS AP)",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "SERVER TECHNOLOGY",
+      "model": "SENTRY REMOTE POWER MANAGER",
+      "protocol": "MULTI",
+      "username": "GEN1",
+      "password": "gen1"
+    },
+    {
+      "brand": "SERVER TECHNOLOGY",
+      "model": "SENTRY REMOTE POWER MANAGER",
+      "protocol": "MULTI",
+      "username": "GEN2",
+      "password": "gen2"
+    },
+    {
+      "brand": "SERVER TECHNOLOGY",
+      "model": "SENTRY REMOTE POWER MANAGER",
+      "protocol": "MULTI",
+      "username": "ADMN",
+      "password": "admn"
+    },
+    {
+      "brand": "SHARP",
+      "model": "AR-407/S402",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "SE515",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "n/a"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "eng",
+      "password": "engineer"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "op",
+      "password": "op"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "op",
+      "password": "operator"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "su",
+      "password": "super"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "PHONEMAIL",
+      "protocol": "(none)",
+      "username": "poll",
+      "password": "tech"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "PHONEMAIL",
+      "protocol": "(none)",
+      "username": "sysadmin",
+      "password": "sysadmin"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "pwp"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "PHONEMAIL",
+      "protocol": "(none)",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "5940 T1E1 ROUTER Rev. 5940-001 V6.0.180-2",
+      "protocol": "TELNET",
+      "username": "superuser",
+      "password": "admin"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "PHONEMAIL",
+      "protocol": "(none)",
+      "username": "poll",
+      "password": "tech"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "PHONEMAIL",
+      "protocol": "(none)",
+      "username": "sysadmin",
+      "password": "sysadmin"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "PHONEMAIL",
+      "protocol": "(none)",
+      "username": "tech",
+      "password": "tech"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "pwp"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "eng",
+      "password": "engineer"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "op",
+      "password": "op"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "op",
+      "password": "operator"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "ROLM PBX",
+      "protocol": "(none)",
+      "username": "su",
+      "password": "super"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "SPEEDSTREAM 4100",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "hagpolm1"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "PC BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "SKY_FOX"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "BIOS",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "SKY_FOX"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "SIEMENS",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "SIEMENS",
+      "model": "HIPATH",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "SIGMA",
+      "model": "SIGMACOMA IPSHARE Rev. SIGMACOM ROUTER V1.0",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SIIPS",
+      "model": "TROJAN Rev. 8974202",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "ganteng"
+    },
+    {
+      "brand": "SILEX TECHNOLOGY",
+      "model": "PRICOM (PRINTSERVER)",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "SITARA",
+      "model": "QOSWORKS",
+      "protocol": "CONSOLE",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "SITECOM",
+      "model": "ALL WIFI ROUTERS",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "sitecom"
+    },
+    {
+      "brand": "SITECOM",
+      "model": "DC-202",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SITECOM",
+      "model": "WL-613V1001 Rev.",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SMARTSWITCH",
+      "model": "ROUTER 250 SSR2500 Rev. V3.0.9",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "SMC",
+      "model": "BARRICADE 7004 AWBR",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "SMC",
+      "model": "ROUTER Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SMC",
+      "model": "SMC BROADBAND ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SMC",
+      "model": "SMC2804WBR Rev. V.1",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "WIFI ROUTER Rev. ALL",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "SMB2804WBR Rev. V2",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "7401BRA Rev. 1",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "barricade"
+    },
+    {
+      "brand": "SMC",
+      "model": "7401BRA Rev. 2",
+      "protocol": "HTTP",
+      "username": "smc",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "BARRICADE7204BRB",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "2804WR",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "ROUTER/MODEM Rev. BR7401",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "barricade"
+    },
+    {
+      "brand": "SMC",
+      "model": "SMCWBR14-G Rev. SMCWBR14-G",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "MODEM/ROUTER",
+      "protocol": "HTTP",
+      "username": "cusadmin",
+      "password": "highspeed"
+    },
+    {
+      "brand": "SMC",
+      "model": "7204BRA",
+      "protocol": "MULTI",
+      "username": "smc",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "SMCWBR14-G",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "SMC 7904BRA",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "smcadmin"
+    },
+    {
+      "brand": "SMC",
+      "model": "COMCAST BUSINESS GATEWAY Rev. 1.01",
+      "protocol": "HTTP",
+      "username": "cusadmin",
+      "password": "highspeed"
+    },
+    {
+      "brand": "SNAPGEAR",
+      "model": "PRO Rev. LITE",
+      "protocol": "AND SOHO",
+      "username": "1.79 +",
+      "password": "Multi"
+    },
+    {
+      "brand": "SOLUTION 6",
+      "model": "VIZTOPIA ACCOUNTS",
+      "protocol": "MULTI",
+      "username": "aaa",
+      "password": "often blank"
+    },
+    {
+      "brand": "SONIC-X",
+      "model": "SONICANIME Rev. ON",
+      "protocol": "TELNET",
+      "username": "root",
+      "password": "admin"
+    },
+    {
+      "brand": "SONICWALL",
+      "model": "ALL Rev. ALL",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "SOPHIA (SCHWEIZ) AG",
+      "model": "PROTECTOR",
+      "protocol": "HTTPS",
+      "username": "admin",
+      "password": "Protector"
+    },
+    {
+      "brand": "SOPHIA (SCHWEIZ) AG",
+      "model": "PROTECTOR",
+      "protocol": "SSH",
+      "username": "root",
+      "password": "root"
+    },
+    {
+      "brand": "SORENSON",
+      "model": "SR-200",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "SPEEDCOM",
+      "model": "(none)",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "conexant"
+    },
+    {
+      "brand": "SPEEDSTREAM",
+      "model": 5660,
+      "protocol": "TELNET",
+      "username": "n/a",
+      "password": "adminttd"
+    },
+    {
+      "brand": "SPEEDSTREAM",
+      "model": "5861 SMT ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SPEEDSTREAM",
+      "model": "5871 IDSL ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SPEEDSTREAM",
+      "model": "ROUTER 250 SSR250",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SPEEDSTREAM",
+      "model": "DSL",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SPEEDSTREAM",
+      "model": "5667 Rev. R4.0.1",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "admin"
+    },
+    {
+      "brand": "SPEEDXESS",
+      "model": "HASE-120",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "speedxess"
+    },
+    {
+      "brand": "SPHAIRON",
+      "model": "AR860",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "xad$l#12"
+    },
+    {
+      "brand": "SPIKE",
+      "model": "CPE",
+      "protocol": "CONSOLE",
+      "username": "enable",
+      "password": "(none)"
+    },
+    {
+      "brand": "SUN",
+      "model": "JAVAWEBSERVER Rev. 1.X 2.X",
+      "protocol": "ADMINSRV",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SUN",
+      "model": "COBALT",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "SUN MICROSYSTEMS",
+      "model": "ILOM OF X4100 Rev. 1.0",
+      "protocol": "HTTP",
+      "username": "root",
+      "password": "changeme"
+    },
+    {
+      "brand": "SWEEX",
+      "model": "WIRELESS ADSL 2/2+ MODEM/ROUTER 54MBPS",
+      "protocol": "(none)",
+      "username": "Sweex",
+      "password": "Mysweex"
+    },
+    {
+      "brand": "SWISSVOICE",
+      "model": "IP 10S",
+      "protocol": "TELNET",
+      "username": "target",
+      "password": "password"
+    },
+    {
+      "brand": "SYBASE",
+      "model": "EASERVER",
+      "protocol": "HTTP",
+      "username": "jagadmin",
+      "password": "(none)"
+    },
+    {
+      "brand": "SYMBOL",
+      "model": "SPECTRUM Rev. SERIES 4100-4121",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "Symbol"
+    },
+    {
+      "brand": "SYMBOL",
+      "model": "AP-2412",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "Symbol"
+    },
+    {
+      "brand": "SYMBOL",
+      "model": "AP-3020",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "Symbol"
+    },
+    {
+      "brand": "SYMBOL",
+      "model": "AP-4111",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "Symbol"
+    },
+    {
+      "brand": "SYMBOL",
+      "model": "AP-4121",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "Symbol"
+    },
+    {
+      "brand": "SYMBOL",
+      "model": "AP-4131",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "Symbol"
+    },
+    {
+      "brand": "T-COMFORT",
+      "model": "ROUTERS",
+      "protocol": "HTTP",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "TANDBERG",
+      "model": "TANDBERG Rev. 8000",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "TANDBERG"
+    },
+    {
+      "brand": "TANDBERG DATA",
+      "model": "DLT8000 AUTOLOADER 10X",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": 10023
+    },
+    {
+      "brand": "TANDEM",
+      "model": "TACL",
+      "protocol": "MULTI",
+      "username": "super.super",
+      "password": "(none)"
+    },
+    {
+      "brand": "TANDEM",
+      "model": "TACL",
+      "protocol": "MULTI",
+      "username": "super.super",
+      "password": "master"
+    },
+    {
+      "brand": "TEAM XODUS",
+      "model": "XENIUMOS Rev. 2.3",
+      "protocol": "FTP",
+      "username": "xbox",
+      "password": "xbox"
+    },
+    {
+      "brand": "TEKLOGIX",
+      "model": "ACCESSPOINT",
+      "protocol": "MULTI",
+      "username": "Administrator",
+      "password": "(none)"
+    },
+    {
+      "brand": "TELCO SYSTEMS",
+      "model": "EDGE LINK 100",
+      "protocol": "CONSOLE",
+      "username": "telco",
+      "password": "telco"
+    },
+    {
+      "brand": "TELEDAT",
+      "model": "ROUTERS",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "TELETRONICS",
+      "model": "WL-CPE-ROUTER Rev. 3.05.2",
+      "protocol": "HTTPS",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "TELEWELL",
+      "model": "TW-EA200",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "TELINDUS",
+      "model": 1124,
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "TELINDUS",
+      "model": "SHDSL1421 Rev. YES",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "TELINDUS",
+      "model": "TELINDUS Rev. 2002",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "TELLABS",
+      "model": "TITAN 5500 Rev. FP 6.X",
+      "protocol": "MULTI",
+      "username": "tellabs",
+      "password": "tellabs#1"
+    },
+    {
+      "brand": "TELLABS",
+      "model": 7120,
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "admin_1"
+    },
+    {
+      "brand": "TENDA",
+      "model": "W311R+ Rev. V1.0",
+      "protocol": "192.168.0.1",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "TERAYON",
+      "model": "UNKNOWN Rev. COMCAST-SUPPLIED",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "TERAYON",
+      "model": "UNKNOWN Rev. COMCAST-SUPPLIED",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "TIARA",
+      "model": "1400 Rev. 3.X",
+      "protocol": "CONSOLE",
+      "username": "tiara",
+      "password": "tiaranet"
+    },
+    {
+      "brand": "TOPSEC",
+      "model": "FIREWALL",
+      "protocol": "MULTI",
+      "username": "superman",
+      "password": "talent"
+    },
+    {
+      "brand": "TRENDNET",
+      "model": "TEW-435BRM",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "TRENDNET",
+      "model": "TEW-639GR Rev.",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "(blank)"
+    },
+    {
+      "brand": "TRENDNET",
+      "model": "TEW-671BR Rev.",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "TRICHEER",
+      "model": "WM81_2D7 Rev.",
+      "protocol": "(none)",
+      "username": "(none)",
+      "password": "password"
+    },
+    {
+      "brand": "TROY",
+      "model": "EXTENDNET 100ZX",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "extendnet"
+    },
+    {
+      "brand": "TVT SYSTEM",
+      "model": "EXPRESSE G5",
+      "protocol": "MULTI",
+      "username": "craft",
+      "password": "(none)"
+    },
+    {
+      "brand": "TVT SYSTEM",
+      "model": "EXPRESSE G5 DS1 MODULE",
+      "protocol": "MULTI",
+      "username": "(none)",
+      "password": "enter"
+    },
+    {
+      "brand": "U.S. ROBOTICS",
+      "model": "SURECONNECT 9003 ADSL ETHERNET/USB ROUTER",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": 12345
+    },
+    {
+      "brand": "U.S. ROBOTICS",
+      "model": "SURECONNECT 9105 ADSL 4-PORT ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "U.S. ROBOTICS",
+      "model": "6000 CABLE MODEM",
+      "protocol": "MULTI",
+      "username": "cablemodem",
+      "password": "robotics"
+    },
+    {
+      "brand": "U.S. ROBOTICS",
+      "model": "USR8054 Rev. ALL",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(blank) - Default IP is 192.168.123.254"
+    },
+    {
+      "brand": "UBEE",
+      "model": "DDW361 Rev.",
+      "protocol": "DOCSIS 3.0",
+      "username": "user",
+      "password": "user"
+    },
+    {
+      "brand": "UNEX",
+      "model": "ROUTERS",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "UNIDEN",
+      "model": "UIP1869V (VONAGE)",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "UNISYS",
+      "model": "CLEARPATH MCP",
+      "protocol": "MULTI",
+      "username": "NAU",
+      "password": "NAU"
+    },
+    {
+      "brand": "UNISYS",
+      "model": "CLEARPATH MCP",
+      "protocol": "MULTI",
+      "username": "ADMINISTRATOR",
+      "password": "ADMINISTRATOR"
+    },
+    {
+      "brand": "UNISYS",
+      "model": "CLEARPATH MCP",
+      "protocol": "MULTI",
+      "username": "HTTP",
+      "password": "HTTP"
+    },
+    {
+      "brand": "US ROBOTICS",
+      "model": "ADSL ETHERNET MODEM",
+      "protocol": "HTTP",
+      "username": "(none)",
+      "password": 12345
+    },
+    {
+      "brand": "US ROBOTICS",
+      "model": "USR8000 Rev. 1.23 / 1.25",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "admin"
+    },
+    {
+      "brand": "US ROBOTICS",
+      "model": "USR8550 Rev. 3.0.5",
+      "protocol": "MULTI",
+      "username": "Any",
+      "password": 12345
+    },
+    {
+      "brand": "US ROBOTICS",
+      "model": "SURECONNECT ADSL Rev. SURECONNECT ADSL",
+      "protocol": "TELNET",
+      "username": "support",
+      "password": "support"
+    },
+    {
+      "brand": "US ROBOTICS",
+      "model": "ADSL GATEWAY WIRELESS ROUTER",
+      "protocol": "WIRELESS ROUTER",
+      "username": "support",
+      "password": "support"
+    },
+    {
+      "brand": "US21100060",
+      "model": "HP OMIBOOK 6100",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "V-TECH",
+      "model": "IP8100",
+      "protocol": "HTTP",
+      "username": "VTech",
+      "password": "VTech"
+    },
+    {
+      "brand": "VASCO",
+      "model": "VACMAN MIDDLEWARE Rev. 2.X",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "VERIFONE",
+      "model": "VERIFONE JUNIOR Rev. 2.05",
+      "protocol": "(none)",
+      "username": "(none)",
+      "password": 166816
+    },
+    {
+      "brand": "VERILINK",
+      "model": "NE6100-4 NETENGINE Rev. IAD 3.4.8",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": "(none)"
+    },
+    {
+      "brand": "VIRGIN MEDIA",
+      "model": "NETGEAR SUPERHUB",
+      "protocol": "(none)",
+      "username": "admin",
+      "password": "changeme"
+    },
+    {
+      "brand": "VISUAL NETWORKS",
+      "model": "VISUAL UPTIME T1 CSU/DSU Rev. 1",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "visual"
+    },
+    {
+      "brand": "VODAFONE",
+      "model": "DSL-EASYBOX 802 Rev.",
+      "protocol": "(none)",
+      "username": "root",
+      "password": 123456
+    },
+    {
+      "brand": "VONAGE",
+      "model": "D-LINK VTA",
+      "protocol": "HTTP",
+      "username": "user",
+      "password": "user"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "D-LINK VWR",
+      "protocol": "HTTP",
+      "username": "user",
+      "password": "user"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "LINKSYS PAP2/PAP2V2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "LINKSYS RT31P2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "LINKSYS RTP300",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "LINKSYS WRT54GP2",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "LINKSYS WRTP54G",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "MOTOROLA VT1005",
+      "protocol": "HTTP",
+      "username": "(blank)",
+      "password": "(blank)"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "MOTOROLA VT2142",
+      "protocol": "HTTP",
+      "username": "router",
+      "password": "router"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "MOTOROLA VT2442",
+      "protocol": "HTTP",
+      "username": "router",
+      "password": "router"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "MOTOROLA VT2542",
+      "protocol": "HTTP",
+      "username": "router",
+      "password": "router"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "UNIDEN UIP1869V",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "V-TECH IP8100",
+      "protocol": "HTTP",
+      "username": "VTech",
+      "password": "VTech"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "CISCO ATA-186",
+      "protocol": "HTTP",
+      "username": "(blank)",
+      "password": "(blank)"
+    },
+    {
+      "brand": "VONAGE",
+      "model": "VDV21-VD",
+      "protocol": "HTTP",
+      "username": "router",
+      "password": "router"
+    },
+    {
+      "brand": "VXWORKS",
+      "model": "MISC",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "VXWORKS",
+      "model": "MISC",
+      "protocol": "MULTI",
+      "username": "guest",
+      "password": "guest"
+    },
+    {
+      "brand": "WANADOO",
+      "model": "LIVEBOX",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "WANG",
+      "model": "WANG",
+      "protocol": "MULTI",
+      "username": "CSG",
+      "password": "SESAME"
+    },
+    {
+      "brand": "WATCHGUARD",
+      "model": "FIREBOX 1000",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "WATCHGUARD",
+      "model": "SOHO AND SOHO6 Rev. ALL VERSIONS",
+      "protocol": "FTP",
+      "username": "user",
+      "password": "pass"
+    },
+    {
+      "brand": "WESTELL",
+      "model": "VERSALINK 327",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "WESTELL",
+      "model": "WIRESPEED",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "WESTELL",
+      "model": "WANG",
+      "protocol": "MULTI",
+      "username": "CSG",
+      "password": "SESAME"
+    },
+    {
+      "brand": "WESTELL",
+      "model": "WIRESPEED WIRELESS ROUTER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "sysAdmin"
+    },
+    {
+      "brand": "WESTELL",
+      "model": 2200,
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "brand": "WYSE",
+      "model": "WINTERM Rev. 5440XL",
+      "protocol": "CONSOLE",
+      "username": "root",
+      "password": "wyse"
+    },
+    {
+      "brand": "WYSE",
+      "model": "WINTERM Rev. 5440XL",
+      "protocol": "VNC",
+      "username": "VNC",
+      "password": "winterm"
+    },
+    {
+      "brand": "WYSE",
+      "model": "WINTERM Rev. 9455XL",
+      "protocol": "BIOS",
+      "username": "(none)",
+      "password": "Fireport"
+    },
+    {
+      "brand": "WYSE",
+      "model": "WINTERM",
+      "protocol": "MULTI",
+      "username": "root",
+      "password": "(none)"
+    },
+    {
+      "brand": "WYSE",
+      "model": "RAPPORT Rev. 4.4",
+      "protocol": "FTP",
+      "username": "rapport",
+      "password": "r@p8p0r+"
+    },
+    {
+      "brand": "WYSE",
+      "model": "WINTERM 3150",
+      "protocol": "VNC",
+      "username": "n/a",
+      "password": "password"
+    },
+    {
+      "brand": "X-MICRO",
+      "model": "X-MICRO WLAN 11B BROADBAND ROUTER Rev. 1.2.2 1.2.2.3 1.2.2.4 1.6.0.0",
+      "protocol": "MULTI",
+      "username": "super",
+      "password": "super"
+    },
+    {
+      "brand": "X-MICRO",
+      "model": "X-MICRO WLAN 11B BROADBAND ROUTER Rev. 1.6.0.1",
+      "protocol": "HTTP",
+      "username": 1502,
+      "password": 1502
+    },
+    {
+      "brand": "X-MICRO",
+      "model": "WLAN 11B ACCESS POINT Rev. 1.2.2",
+      "protocol": "MULTI",
+      "username": "super",
+      "password": "super"
+    },
+    {
+      "brand": "XAVI",
+      "model": "7000-ABA-ST1",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "XAVI",
+      "model": 7001,
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "XD",
+      "model": "XDD Rev. XDDD",
+      "protocol": "MULTI",
+      "username": "xd",
+      "password": "xd"
+    },
+    {
+      "brand": "XEROX",
+      "model": "MULTI FUNCTION EQUIPMENT",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 2222
+    },
+    {
+      "brand": "XEROX",
+      "model": "WORKCENTER PRO 428",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "XEROX",
+      "model": "DOCUMENT CENTRE 425",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "(none)"
+    },
+    {
+      "brand": "XEROX",
+      "model": "DOCUCENTRE 425",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 22222
+    },
+    {
+      "brand": "XEROX",
+      "model": "DOCUMENT CENTRE 405 Rev. -",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "XEROX",
+      "model": "XEROX",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "XEROX",
+      "model": "XEROX",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "XEROX",
+      "model": "WORK CENTRE PRO 35",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1111
+    },
+    {
+      "brand": "XYLAN",
+      "model": "OMNISWITCH",
+      "protocol": "TELNET",
+      "username": "admin",
+      "password": "switch"
+    },
+    {
+      "brand": "XYLAN",
+      "model": "OMNISWITCH",
+      "protocol": "TELNET",
+      "username": "diag",
+      "password": "switch"
+    },
+    {
+      "brand": "XYLAN",
+      "model": "OMNISWITCH",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "switch"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "ROUTERS",
+      "protocol": "PORT 7000",
+      "username": "n/a",
+      "password": "system"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "TERMINAL SERVER",
+      "protocol": "PORT 7000",
+      "username": "n/a",
+      "password": "access"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "TERMINAL SERVER",
+      "protocol": "PORT 7000",
+      "username": "n/a",
+      "password": "system"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "ROUTERS",
+      "protocol": "PORT 7000",
+      "username": "n/a",
+      "password": "access"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "ROUTERS",
+      "protocol": "PORT 7000",
+      "username": "n/a",
+      "password": "access"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "TERMINAL SERVER",
+      "protocol": "PORT 7000",
+      "username": "n/a",
+      "password": "access"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "TERMINAL SERVER",
+      "protocol": "PORT 7000",
+      "username": "n/a",
+      "password": "system"
+    },
+    {
+      "brand": "XYPLEX",
+      "model": "SWITCH Rev. 3.2",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "YAKUMO",
+      "model": "ROUTERS",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ZCOM",
+      "model": "WIRELESS",
+      "protocol": "SNMP",
+      "username": "root",
+      "password": "admin"
+    },
+    {
+      "brand": "ZEBRA",
+      "model": "10/100 PRINT SERVER",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "ZONET",
+      "model": "ZSR1134WE Rev.",
+      "protocol": "(none)",
+      "username": "guest",
+      "password": "guest"
+    },
+    {
+      "brand": "ZOOM",
+      "model": "ZOOM ADSL MODEM",
+      "protocol": "CONSOLE",
+      "username": "admin",
+      "password": "zoomadsl"
+    },
+    {
+      "brand": "ZTE",
+      "model": "ZXV10 W300 Rev.",
+      "protocol": "PPPOA/PPPOE",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ZXDSL",
+      "model": "ZXDSL 831",
+      "protocol": "(none)",
+      "username": "ZXDSL",
+      "password": "ZXDSL"
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE",
+      "protocol": "FTP",
+      "username": "root",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE",
+      "protocol": "TELNET",
+      "username": "(none)",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 643",
+      "protocol": "CONSOLE",
+      "username": "(none)",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 652HW-31 ADSL ROUTER",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 100IH",
+      "protocol": "CONSOLE",
+      "username": "n/a",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 650",
+      "protocol": "MULTI",
+      "username": 1234,
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 900",
+      "protocol": "HTTP",
+      "username": "webadmin",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 645",
+      "protocol": "HTTP",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 660R-61C",
+      "protocol": "MULTI",
+      "username": "n/a",
+      "password": "admin"
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE P660HW",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "ZYWALL 2",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": "(none)"
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "ADSL ROUTERS Rev. ALL ZYNOS FIRMWARES",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "PRESTIGE 660HW",
+      "protocol": "MULTI",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "P-660HW-61 Rev. PRESTIGE 660HW-61",
+      "protocol": "HTTP",
+      "username": "n/a",
+      "password": 1234
+    },
+    {
+      "brand": "ZYXEL",
+      "model": "ZYAIR 4000 Rev.",
+      "protocol": "(none)",
+      "username": "supervisor",
+      "password": "supervisor"
+    }
+  ]
+}
