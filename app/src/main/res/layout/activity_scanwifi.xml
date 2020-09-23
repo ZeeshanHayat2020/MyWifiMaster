@@ -23,8 +23,5 @@
 
     </LinearLayout>
 
-    <include
-        android:id="@+id/banner_ad"
-        layout="@layout/activity_android_banner" />
 
 </LinearLayout>

@@ -1,8 +1,10 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -29,6 +31,7 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
@@ -43,12 +46,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.VideoController;
@@ -56,7 +57,6 @@ import com.google.android.gms.ads.formats.MediaView;
 import com.google.android.gms.ads.formats.NativeAd;
 import com.google.android.gms.ads.formats.UnifiedNativeAd;
 import com.google.android.gms.ads.formats.UnifiedNativeAdView;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -67,18 +67,12 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.GenerateActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Helper.LocalHelper;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.ListDataActivity;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.PrefManager;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.Preferences;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.SelectCountry;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Speedtest;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.TermsandConditionActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.Custom_Dialog_Class;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.InAppPrefManager;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.WifiInfoActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.WifiScanActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.adapters.AdapterMain;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.allRouterPassword.AllRouterPasswords;
@@ -86,6 +80,7 @@ import com.internet.speed.test.analyzer.wifi.key.generator.app.appsNetBlocker.Ne
 import com.internet.speed.test.analyzer.wifi.key.generator.app.autoConnectWifi.AutoConnectWifi;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.interfaces.OnRecyclerItemClickeListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.models.ModelMain;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.wifiAvailable.AvailableWifiActivity;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -96,53 +91,30 @@ import me.drakeet.support.toast.ToastCompat;
 
 import static android.os.Build.VERSION.SDK_INT;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActivityBase {
 
-    private RelativeLayout recyclerRootView;
+
+    private RelativeLayout recyclerViewRoot;
     public RecyclerView recyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     private AdapterMain mAdapter;
     private List<ModelMain> bottomViewList = new ArrayList<>();
 
-
     private static final int PERMISSION_REQUEST_CODE = 1;
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     public static int flag, keyone;
-    WifiManager mainWifiObj;
-    String[] title;
-    ImageView btnshowpass;
-    ImageView btnhotspot;
-    ImageView btnspeedtest;
-    ImageView btnAutoStartWifi;
     TextView showpass, scanWifi, wifispeed, GenaratePWD, Hotspot, Setting, Info, Share;
     InterstitialAd interstitial;
-    AdView adView;
-    int countAd = 0;
-    AdView banner;
-    ImageView btngenerate;
-    ImageView btnscanwifi;
-    ImageView btnsetting;
-
-    ImageView imgSelectLanguage, imgNoAds;
-
     Activity activity;
     SharedPreferences preferences;
-
     Boolean ison = false;
     ImageView btnShowWifiState;
     ImageView btnShowWifiStrengthMeter;
     ImageView btnChangeLanguage;
     ImageView btnSettings;
     FrameLayout frameLayout;
-    RewardedVideoAd mAd;
-    LottieAnimationView rateUsLottie;
-    SelectCountry obj = new SelectCountry();
-
-    boolean isCompleteWatch = false;
     private Context context;
-
     protected static final String TAG = "LocationOnOff";
-
     private GoogleApiClient googleApiClient;
     final static int REQUEST_LOCATION = 199;
 
@@ -151,35 +123,27 @@ public class MainActivity extends AppCompatActivity {
     private boolean mShouldAnimateMenuItem = true;
     private UnifiedNativeAd nativeAd;
 
+    private CardView permissionRootView;
+    private TextView permissionMsgView;
+    private Button permissionAllowBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Preferences preferences1 = new Preferences(this);
-        Locale locale = new Locale(preferences1.GetValueStringlang(preferences1.LANG_VALUE));
-        setLocale(locale);
+
         setContentView(R.layout.activity_my_main);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
         initViews();
         iniRecyclerView();
         setUpRecyclerView();
-
-
         context = getApplicationContext();
         activity = this;
-
-
-        onrequestPermission();
-
+//        onrequestPermission();
         preferences = getSharedPreferences("PREFS", 0);
 
-
         InAppPrefManager.getInstance(this).setInAppStatus(false);
-
         requestNewInterstitial();
-
-//        refreshAd();
-
         WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         Boolean test = wifi.setWifiEnabled(true);
 
@@ -192,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
         }
 
+
     }
 
     private void initViews() {
@@ -199,18 +164,37 @@ public class MainActivity extends AppCompatActivity {
         btnShowWifiStrengthMeter = (ImageView) findViewById(R.id.acMainShowWifiStrengthMeter_imageView);
         btnChangeLanguage = (ImageView) findViewById(R.id.acMainChangeLanguage_imageView);
         btnSettings = (ImageView) findViewById(R.id.acMainSettings_imageView);
+        recyclerViewRoot = findViewById(R.id.acMain_RecyclerView_RootView);
+        permissionRootView = findViewById(R.id.acMain_PermissionRootView);
+        permissionMsgView = findViewById(R.id.acMain_PermissionMessage);
+        permissionAllowBtn = findViewById(R.id.acMain_PermissionButton);
 
         btnShowWifiState.setOnClickListener(onHeaderItemsClick);
         btnShowWifiStrengthMeter.setOnClickListener(onHeaderItemsClick);
         btnChangeLanguage.setOnClickListener(onHeaderItemsClick);
         btnSettings.setOnClickListener(onHeaderItemsClick);
+        permissionAllowBtn.setOnClickListener(onHeaderItemsClick);
+        setPermissionMessage();
+
+        if (hasLocationPermission() && hasStoragePermission()) {
+            recyclerViewRoot.setVisibility(View.VISIBLE);
+            permissionRootView.setVisibility(View.INVISIBLE);
+        } else {
+            recyclerViewRoot.setVisibility(View.INVISIBLE);
+            permissionRootView.setVisibility(View.VISIBLE);
+        }
 
     }
+
 
     View.OnClickListener onHeaderItemsClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
+                case R.id.acMain_PermissionButton: {
+                    onPermissionButtonClicked();
+                }
+                break;
                 case R.id.acMainShowWifiStrengthMeter_imageView: {
                 }
                 break;
@@ -251,14 +235,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
                 case R.id.acMainChangeLanguage_imageView: {
-                    SharedPreferences prefFirsTime = getSharedPreferences("PREFSs", 0);
-                    SharedPreferences.Editor editor = prefFirsTime.edit();
-                    editor.putString("firsttimedisp", "no");
-                    editor.apply();
-                    // String chk = prefFirsTime.getString("firsttimedisp", "0");
-                    PrefManager prefManager = new PrefManager(MainActivity.this);
-                    prefManager.setAcceptLanguage(false);
-                    startActivity(new Intent(MainActivity.this, SelectCountry.class));
+
                 }
                 break;
                 case R.id.acMainSettings_imageView: {
@@ -347,54 +324,73 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void setPermissionMessage() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            permissionMsgView.setText(Html.fromHtml(getString(R.string.permissionMessage), Html.FROM_HTML_MODE_LEGACY));
+
+        } else {
+            permissionMsgView.setText(Html.fromHtml(getString(R.string.permissionMessage)));
+
+        }
+
+
+    }
+
+    private void intentToLocationRelatedActivities(Activity activity) {
+        if (hasGPSDevice(this)) {
+            if (hasGpsEnable()) {
+                Intent intent = new Intent(this, activity.getClass());
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            } else {
+                enableLoc();
+
+            }
+        }
+    }
+
+    void onPermissionButtonClicked() {
+        if (!hasStoragePermission()) {
+            checkStoragePermission();
+        } else if (!hasLocationPermission()) {
+            checkLocationPermission();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(final int requestCode,
+                                           @NonNull final String[] permissions,
+                                           @NonNull final int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_STORAGE_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (!hasLocationPermission()) {
+                    /*recyclerViewRoot.setVisibility(View.VISIBLE);
+                    permissionRootView.setVisibility(View.INVISIBLE);*/
+                    checkLocationPermission();
+                } else {
+                    recyclerViewRoot.setVisibility(View.VISIBLE);
+                    permissionRootView.setVisibility(View.INVISIBLE);
+                }
+            }
+        } else if (requestCode == REQUEST_LOCATION_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (!hasStoragePermission()) {
+                    checkStoragePermission();
+                } else {
+                    recyclerViewRoot.setVisibility(View.VISIBLE);
+                    permissionRootView.setVisibility(View.INVISIBLE);
+                }
+            }
+        }
+
+    }
+
+
     private void onItemsClick(int position) {
         switch (position) {
             case 0: {
-                if (interstitial != null) {
-                    if (interstitial.isLoaded()) {
-                        interstitial.show();
-                    } else {
-
-                        if (checkPermission()) {
-                            requestNewInterstitial();
-                            startActivity(new Intent(MainActivity.this, WifiScanActivity.class));
-                        } else {
-
-                            requestPermission();
-
-                        }
-                    }
-                    interstitial.setAdListener(new AdListener() {
-                        @Override
-                        public void onAdClosed() {
-                            super.onAdClosed();
-                            requestNewInterstitial();
-
-
-                            if (checkPermission()) {
-                                startActivity(new Intent(MainActivity.this, WifiScanActivity.class));
-                            } else {
-
-                                requestPermission();
-                            }
-
-
-//
-                        }
-                    });
-                } else {
-
-
-                    if (checkPermission()) {
-
-                        startActivity(new Intent(MainActivity.this, WifiScanActivity.class));
-                    } else {
-
-                        requestPermission();
-
-                    }
-
-                }
+                intentToLocationRelatedActivities(new AvailableWifiActivity());
             }
             break;
             case 1: {
@@ -407,8 +403,7 @@ public class MainActivity extends AppCompatActivity {
                         interstitial.show();
                     } else {
                         requestNewInterstitial();
-                        Intent i = new Intent(MainActivity.this, PasswordGeneratorActivity.class);
-                        startActivity(i);
+
                     }
                     interstitial.setAdListener(new AdListener() {
                         @Override
@@ -491,7 +486,7 @@ public class MainActivity extends AppCompatActivity {
             }
             break;
             case 6: {
-                startActivity(new Intent(MainActivity.this, ActivityWifiInformation.class));
+                intentToLocationRelatedActivities(new ActivityWifiInformation());
             }
             break;
             case 7: {
@@ -501,12 +496,12 @@ public class MainActivity extends AppCompatActivity {
             break;
             case 8: {
 //                startActivity(new Intent(MainActivity.this, LocationActivity.class));
-                startActivity(new Intent(MainActivity.this, ActivityLiveLocation.class));
+                intentToLocationRelatedActivities(new ActivityLiveLocation());
             }
             break;
             case 9: {
-                Intent intent = new Intent(this, SignalGraphActivity.class);
-                startActivity(intent);
+
+                intentToLocationRelatedActivities(new SignalGraphActivity());
             }
             break;
             case 10: {
@@ -529,11 +524,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    protected void intentTo(final Context context, final Activity activity) {
-        Intent intent = new Intent(context, activity.getClass());
-        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        context.startActivity(intent);
-    }
 
     public static boolean isInternetIsConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -575,41 +565,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @SuppressLint("ObsoleteSdkInt")
-    @SuppressWarnings("deprecation")
-    private void setLocale(Locale locale) {
-        // optional - Helper method to save the selected language to SharedPreferences in case you might need to attach to activity context (you will need to code this)
-        Resources resources = getResources();
-        Configuration configuration = resources.getConfiguration();
-        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            configuration.setLocale(locale);
-        } else {
-            configuration.locale = locale;
-        }
-        if (SDK_INT > Build.VERSION_CODES.N) {
-            getApplicationContext().createConfigurationContext(configuration);
-        } else {
-            resources.updateConfiguration(configuration, displayMetrics);
-        }
-    }
-
-    private void updateView(String language) {
-        Context context = LocalHelper.setlocale(this, language);
-        Resources resources = context.getResources();
-        scanWifi.setText(resources.getString(R.string.scan_wifi));
-        wifispeed.setText(resources.getString(R.string.wifi_speed));
-        GenaratePWD.setText(resources.getString(R.string.generate_n_password));
-        showpass.setText(resources.getString(R.string.show_npassword));
-        Hotspot.setText(resources.getString(R.string.hotspot));
-        Setting.setText(resources.getString(R.string.setting));
-        Info.setText(resources.getString(R.string.wifi_n_information));
-        Share.setText(resources.getString(R.string.share));
-
-    }
-
-
-    private boolean hasGPSDevice(Context context) {
+    public boolean hasGPSDevice(Context context) {
         final LocationManager mgr = (LocationManager) context
                 .getSystemService(Context.LOCATION_SERVICE);
         if (mgr == null)
@@ -678,6 +634,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    boolean hasGpsEnable() {
+        final LocationManager manager = (LocationManager) MainActivity.this.getSystemService(Context.LOCATION_SERVICE);
+        if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void onrequestPermission() {
         this.setFinishOnTouchOutside(true);
 
@@ -685,10 +650,8 @@ public class MainActivity extends AppCompatActivity {
         final LocationManager manager = (LocationManager) MainActivity.this.getSystemService(Context.LOCATION_SERVICE);
         if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(MainActivity.this)) {
 
-            Toast.makeText(MainActivity.this, "Gps already enabled", Toast.LENGTH_SHORT).show();
-//            finish();
         }
-        // Todo Location Already on  ... end
+
 
         if (!hasGPSDevice(MainActivity.this)) {
             Toast.makeText(MainActivity.this, "Gps not Supported", Toast.LENGTH_SHORT).show();
@@ -736,9 +699,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //    @RequiresApi(api = Build.VERSION_CODES.M)
-    @Override
+  /*  @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
 
         if (requestCode == PERMISSION_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -753,11 +715,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-
-    public void wificonnection(View view) {
-    }
-
+*/
     public void share(View view) {
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
@@ -767,10 +725,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeLang(View view) {
-        Intent intent = new Intent(MainActivity.this, TermsandConditionActivity.class);
+
         clearApplicationData();
 
-        startActivity(intent);
     }
 
     private void requestNewInterstitial() {
@@ -809,169 +766,6 @@ public class MainActivity extends AppCompatActivity {
         return dir.delete();
     }
 
-    //TOdo: native ads
-    private void populateUnifiedNativeAdView(UnifiedNativeAd native_Ad, UnifiedNativeAdView adView) {
-// Get the video controller for the ad. One will always be provided, even if the ad doesn't
-// have a video asset.
-        this.nativeAd = native_Ad;
-        VideoController vc = nativeAd.getVideoController();
-
-// Create a new VideoLifecycleCallbacks object and pass it to the VideoController. The
-// VideoController will call methods on this object when events occur in the video
-// lifecycle.
-        vc.setVideoLifecycleCallbacks(new VideoController.VideoLifecycleCallbacks() {
-            public void onVideoEnd() {
-// Publishers should allow native ads to complete video playback before refreshing
-// or replacing them with another ad in the same UI location.
-// refresh.setEnabled(true);
-// videoStatus.setText("Video status: Video playback has ended.");
-                super.onVideoEnd();
-            }
-        });
-
-        MediaView mediaView = adView.findViewById(R.id.ad_media);
-        ImageView mainImageView = adView.findViewById(R.id.ad_image);
-
-// Apps can check the VideoController's hasVideoContent property to determine if the
-// NativeAppInstallAd has a video asset.
-        if (vc.hasVideoContent()) {
-            adView.setMediaView(mediaView);
-            mainImageView.setVisibility(View.GONE);
-// videoStatus.setText(String.format(Locale.getDefault(),
-// "Video status: Ad contains a %.2f:1 video asset.",
-// vc.getAspectRatio()));
-        } else {
-            adView.setImageView(mainImageView);
-            mediaView.setVisibility(View.GONE);
-
-// At least one image is guaranteed.
-            List<NativeAd.Image> images = nativeAd.getImages();
-            mainImageView.setImageDrawable(images.get(0).getDrawable());
-
-// refresh.setEnabled(true);
-// videoStatus.setText("Video status: Ad does not contain a video asset.");
-        }
-
-        adView.setHeadlineView(adView.findViewById(R.id.ad_headline));
-        adView.setBodyView(adView.findViewById(R.id.ad_body));
-        adView.setCallToActionView(adView.findViewById(R.id.ad_call_to_action));
-        adView.setIconView(adView.findViewById(R.id.ad_app_icon));
-        adView.setPriceView(adView.findViewById(R.id.ad_price));
-        adView.setStarRatingView(adView.findViewById(R.id.ad_stars));
-        adView.setStoreView(adView.findViewById(R.id.ad_store));
-        adView.setAdvertiserView(adView.findViewById(R.id.ad_advertiser));
-
-// Some assets are guaranteed to be in every UnifiedNativeAd.
-        ((TextView) adView.getHeadlineView()).setText(nativeAd.getHeadline());
-        ((TextView) adView.getBodyView()).setText(nativeAd.getBody());
-        ((Button) adView.getCallToActionView()).setText(nativeAd.getCallToAction());
-
-// These assets aren't guaranteed to be in every UnifiedNativeAd, so it's important to
-// check before trying to display them.
-        if (nativeAd.getIcon() == null) {
-            adView.getIconView().setVisibility(View.GONE);
-        } else {
-            ((ImageView) adView.getIconView()).setImageDrawable(
-                    nativeAd.getIcon().getDrawable());
-            adView.getIconView().setVisibility(View.VISIBLE);
-        }
-
-        if (nativeAd.getPrice() == null) {
-            adView.getPriceView().setVisibility(View.INVISIBLE);
-        } else {
-            adView.getPriceView().setVisibility(View.VISIBLE);
-            ((TextView) adView.getPriceView()).setText(nativeAd.getPrice());
-        }
-
-        if (nativeAd.getStore() == null) {
-            adView.getStoreView().setVisibility(View.INVISIBLE);
-        } else {
-            adView.getStoreView().setVisibility(View.VISIBLE);
-            ((TextView) adView.getStoreView()).setText(nativeAd.getStore());
-        }
-
-        if (nativeAd.getStarRating() == null) {
-            adView.getStarRatingView().setVisibility(View.INVISIBLE);
-        } else {
-            ((RatingBar) adView.getStarRatingView())
-                    .setRating(nativeAd.getStarRating().floatValue());
-            adView.getStarRatingView().setVisibility(View.VISIBLE);
-        }
-
-        if (nativeAd.getAdvertiser() == null) {
-            adView.getAdvertiserView().setVisibility(View.INVISIBLE);
-        } else {
-            ((TextView) adView.getAdvertiserView()).setText(nativeAd.getAdvertiser());
-            adView.getAdvertiserView().setVisibility(View.VISIBLE);
-        }
-
-        adView.setNativeAd(nativeAd);
-    }
-
-
-    //TOdo: refresh native ads
-    private void refreshAd() {
-
-        try {
-
-            //refresh.setEnabled(false);
-            AdLoader.Builder builder = new AdLoader.Builder(getApplicationContext(), getString(R.string.nativead));
-            builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
-                // OnUnifiedNativeAdLoadedListener implementation.
-                @Override
-                public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
-                    try {
-
-                        UnifiedNativeAdView adView = (UnifiedNativeAdView) getLayoutInflater()
-                                .inflate(R.layout.ad_unified, null);
-                        populateUnifiedNativeAdView(unifiedNativeAd, adView);
-
-                        frameLayout.removeAllViews();
-                        frameLayout.addView(adView);
-                    } catch (NullPointerException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-            });
-
-// VideoOptions videoOptions = new VideoOptions.Builder()
-// .setStartMuted(startVideoAdsMuted.isChecked())
-// .build();
-
-// NativeAdOptions adOptions = new NativeAdOptions.Builder()
-// .setVideoOptions(videoOptions)
-// .build();
-//
-// builder.withNativeAdOptions(adOptions);
-
-            AdLoader adLoader = builder.withAdListener(new AdListener() {
-                @Override
-                public void onAdFailedToLoad(int errorCode) {
-// refresh.setEnabled(true);
-// Toast.makeText(getContext(), "Failed to load native ad: "
-// + errorCode, Toast.LENGTH_SHORT).show();
-
-                    UnifiedNativeAdView adView = (UnifiedNativeAdView) getLayoutInflater()
-                            .inflate(R.layout.ad_unified, null);
-                    adView.setVisibility(View.GONE);
-                    frameLayout.setVisibility(View.GONE);
-                }
-            }).build();
-
-            adLoader.loadAd(new AdRequest.Builder().build());
-
-// videoStatus.setText("");
-
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void onClickWifiInfo(View view) {
-        startActivity(new Intent(MainActivity.this, WifiInfoActivity.class));
-    }
-
     public void exitt() {
         // Build an AlertDialog
         Custom_Dialog_Class cdd = new Custom_Dialog_Class(MainActivity.this);
@@ -981,7 +775,6 @@ public class MainActivity extends AppCompatActivity {
     public void rate_us(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.internet.speed.test.analyzer.wifi.key.generator.app")));
     }
-
 
     @Override
     public void onBackPressed() {
@@ -1017,7 +810,6 @@ public class MainActivity extends AppCompatActivity {
         alert.show();
     }
 
-
     Menu menu;
 
     @Override
@@ -1025,9 +817,7 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.user_menu, menu);
 
-
         this.menu = menu;
-
         menu.findItem(R.id.noads).setVisible(false);
 
         return true;
@@ -1038,11 +828,6 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.change_language: {
 
-                SharedPreferences prefFirsTime = getSharedPreferences("PREFSs", 0);
-                SharedPreferences.Editor editor = prefFirsTime.edit();
-                editor.putString("firsttimedisp", "no");
-                editor.apply();
-                startActivity(new Intent(MainActivity.this, SelectCountry.class));
 
                 return true;
             }

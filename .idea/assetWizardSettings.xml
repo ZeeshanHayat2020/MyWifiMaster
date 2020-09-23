@@ -146,8 +146,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_start_vpn" />
-                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\UIScan WIFI\SVG\wifi.svg" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_wifi_acmain_enable" />
+                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\menu\ic_wifi_acmain_enable.svg" />
                           </map>
                         </option>
                       </PersistentState>

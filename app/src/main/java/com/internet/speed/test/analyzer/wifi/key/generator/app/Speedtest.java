@@ -49,9 +49,7 @@ public class Speedtest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Preferences preferences = new Preferences(this);
-        Locale locale = new Locale(preferences.GetValueStringlang(preferences.LANG_VALUE));
-        setLocale(locale);
+
         setContentView(R.layout.activity_speedtest);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
 

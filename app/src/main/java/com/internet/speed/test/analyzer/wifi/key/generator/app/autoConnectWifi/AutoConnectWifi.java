@@ -12,7 +12,6 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 
-import com.internet.speed.test.analyzer.wifi.key.generator.app.Preferences;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
 
 import java.util.Locale;
@@ -44,9 +43,6 @@ public class AutoConnectWifi extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Preferences preferences1 = new Preferences(this);
-        Locale locale = new Locale(preferences1.GetValueStringlang(preferences1.LANG_VALUE));
-        setLocale(locale);
         setContentView(R.layout.activity_auto_connect_wifi);
         buttonOn = findViewById(R.id.turnServiceOn);
         buttonOFF = findViewById(R.id.turnServiceOff);

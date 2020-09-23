@@ -32,6 +32,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:src="@drawable/langblue" />
+
         <ImageView
             android:id="@+id/acMainSettings_imageView"
             android:layout_width="@dimen/_40sdp"
@@ -41,10 +42,57 @@
             android:src="@drawable/setting" />
     </RelativeLayout>
 
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/acMain_PermissionRootView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/acMain_PermissionHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="Storage Permission"
+                android:textColor="@color/colorBlack"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/acMain_PermissionMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="@string/permissionMessage"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/acMain_PermissionButton"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="Allow"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
     <RelativeLayout
+        android:id="@+id/acMain_RecyclerView_RootView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/acMainHeader">
+        android:layout_below="@+id/acMainHeader"
+        android:visibility="invisible">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/acMain_RecyclerView"

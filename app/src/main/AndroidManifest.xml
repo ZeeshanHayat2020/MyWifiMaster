@@ -32,21 +32,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.ActivityAppUsage" />
-        <activity android:name=".activities.ActivityWifiInformation" />
-        <activity android:name=".activities.ActivityLiveLocation" />
-        <activity android:name=".activities.BluetoothConnectivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.ActivityPrivacyPolicy">
+
+        </activity>
+        <activity
+            android:name=".activities.ActivityLanguage"
+            android:theme="@style/AppTheme.NotActionBar" />
+        <activity
+            android:name=".activities.ActivitySplash"
+            android:theme="@style/AppTheme.NotActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.BluetoothActivityN" />
+        <activity android:name=".activities.ActivityIntroSLides" />
+
+
+        <activity
+            android:name=".wifiAvailable.AvailableWifiActivity"
+            android:theme="@style/AppTheme.NotActionBar" />
+        <activity android:name=".activities.ActivityAppUsage" />
+        <activity android:name=".activities.ActivityWifiInformation" />
+        <activity android:name=".activities.ActivityLiveLocation" />
+        <activity android:name=".activities.BluetoothConnectivity" />
+        <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.PasswordGeneratorActivity" />
         <activity android:name=".activities.SignalGraphActivity" />
-        <activity android:name=".activities.ActivityWifiChannels" />
         <activity android:name=".activities.DetailActivity" />
         <activity android:name=".appsNetBlocker.NetBlockerMainActivity" />
         <activity
@@ -69,20 +82,11 @@
         <activity
             android:name=".autoConnectWifi.AutoConnectWifi"
             android:theme="@style/AppTheme2" />
-        <activity
-            android:name=".TermsandConditionActivity"
-            android:theme="@style/AppTheme2" />
-        <activity
-            android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
 
-        <activity
-            android:name=".SelectCountry"
-            android:theme="@style/AppTheme2" />
         <activity
             android:name=".ListDataActivity"
             android:screenOrientation="portrait"
@@ -94,11 +98,6 @@
             android:theme="@style/AppTheme2"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".GenerateActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
             android:name=".scanwifi"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"
@@ -106,11 +105,6 @@
         <activity
             android:name=".WifiScanActivity"
             android:theme="@style/AppTheme2" />
-        <activity
-            android:name=".WifiInfoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
-            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

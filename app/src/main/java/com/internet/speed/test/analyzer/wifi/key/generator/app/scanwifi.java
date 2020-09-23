@@ -114,9 +114,7 @@ public class scanwifi extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Preferences preferences1 = new Preferences(this);
-        Locale locale = new Locale(preferences1.GetValueStringlang(preferences1.LANG_VALUE));
-        setLocale(locale);
+
         setContentView(R.layout.activity_scanwifi);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
 

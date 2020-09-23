@@ -6,6 +6,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
@@ -35,6 +37,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.InAppPrefManager;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.activities.ActivityBase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +47,7 @@ import me.drakeet.support.toast.ToastCompat;
 
 import static android.os.Build.VERSION.SDK_INT;
 
-public class WifiScanActivity extends AppCompatActivity {
+public class WifiScanActivity extends ActivityBase {
 
     ListView listView;
     WifiManager wifiManager;
@@ -64,31 +67,56 @@ public class WifiScanActivity extends AppCompatActivity {
         }
         return r.toString();
     }
+
     @SuppressLint("ObsoleteSdkInt")
     @SuppressWarnings("deprecation")
-    private void setLocale(Locale locale){
+    private void setLocale(Locale locale) {
         // optional - Helper method to save the selected language to SharedPreferences in case you might need to attach to activity context (you will need to code this)
         Resources resources = getResources();
         Configuration configuration = resources.getConfiguration();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             configuration.setLocale(locale);
-        } else{
-            configuration.locale=locale;
+        } else {
+            configuration.locale = locale;
         }
-        if (SDK_INT > Build.VERSION_CODES.N){
+        if (SDK_INT > Build.VERSION_CODES.N) {
             getApplicationContext().createConfigurationContext(configuration);
         } else {
-            resources.updateConfiguration(configuration,displayMetrics);
+            resources.updateConfiguration(configuration, displayMetrics);
         }
     }
+
+    public boolean haveWifiConnection() {
+        boolean haveConnectedWifi = false;
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+        for (NetworkInfo ni : netInfo) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnectedOrConnecting())
+                    haveConnectedWifi = true;
+
+        }
+        return haveConnectedWifi;
+    }
+
+
+    private String TAG = "WifiScanActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Preferences preferences = new Preferences(this);
-        Locale locale = new Locale(preferences.GetValueStringlang(preferences.LANG_VALUE));
-        setLocale(locale);
+
         setContentView(R.layout.activity_wifi_scan);
+
+        if (haveWifiConnection()) {
+            Log.d(TAG, "onCreate: Connect to wifi");
+
+        } else {
+            Log.d(TAG, "onCreate: NotConnect to wifi");
+        }
+
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
         listView = findViewById(R.id.list_view);
         toolbar = findViewById(R.id.toolbar);
@@ -185,10 +213,10 @@ public class WifiScanActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.connectwifi);
         dialog.setTitle("Connect to Network");
-        TextView textSSID =  dialog.findViewById(R.id.textSSID1);
+        TextView textSSID = dialog.findViewById(R.id.textSSID1);
 
-        Button dialogButton =  dialog.findViewById(R.id.okButton);
-        pass =  dialog.findViewById(R.id.textPassword);
+        Button dialogButton = dialog.findViewById(R.id.okButton);
+        pass = dialog.findViewById(R.id.textPassword);
         textSSID.setText(wifiSSID);
         String jinn = databaseHelper.getpwd(wifiSSID);
 
@@ -428,7 +456,7 @@ public class WifiScanActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null)
                 convertView = LayoutInflater.from(context).inflate(R.layout.list2, null, false);
-            TextView phn =  convertView.findViewById(R.id.phn);
+            TextView phn = convertView.findViewById(R.id.phn);
             phn.setText(filtered[position]);
             return convertView;
         }

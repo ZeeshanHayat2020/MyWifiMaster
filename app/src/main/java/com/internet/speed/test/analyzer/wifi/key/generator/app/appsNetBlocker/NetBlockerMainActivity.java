@@ -17,22 +17,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.Preferences;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.TinyDB;
 
 import java.util.List;
 import java.util.Locale;
@@ -50,12 +45,7 @@ public class NetBlockerMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "Create");
-        // final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         super.onCreate(savedInstanceState);
-        Preferences preferences = new Preferences(this);
-        Locale locale = new Locale(preferences.GetValueStringlang(preferences.LANG_VALUE));
-
         setContentView(R.layout.activity_apps_net_blocker);
         startStopVpn = findViewById(R.id.btnStartStopVnp);
         if (isVpnServiceRunning()) {

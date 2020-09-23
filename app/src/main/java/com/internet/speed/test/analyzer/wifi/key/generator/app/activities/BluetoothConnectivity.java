@@ -270,7 +270,7 @@ public class BluetoothConnectivity extends AppCompatActivity implements AdapterV
         mBluetoothAdapter.startDiscovery();
         if (handler != null) {
             handler.removeCallbacks(runnable);
-            handler.postDelayed(runnable, 500);
+            handler.postDelayed(runnable, 5000);
         }
 
     }

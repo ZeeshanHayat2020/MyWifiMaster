@@ -39,29 +39,30 @@ public class ListDataActivity extends AppCompatActivity {
     AdView adView;
     //myDbAdapter obj;
     private ListView mListView;
+
     @SuppressLint("ObsoleteSdkInt")
     @SuppressWarnings("deprecation")
-    private void setLocale(Locale locale){
+    private void setLocale(Locale locale) {
         // optional - Helper method to save the selected language to SharedPreferences in case you might need to attach to activity context (you will need to code this)
         Resources resources = getResources();
         Configuration configuration = resources.getConfiguration();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             configuration.setLocale(locale);
-        } else{
-            configuration.locale=locale;
+        } else {
+            configuration.locale = locale;
         }
-        if (SDK_INT > Build.VERSION_CODES.N){
+        if (SDK_INT > Build.VERSION_CODES.N) {
             getApplicationContext().createConfigurationContext(configuration);
         } else {
-            resources.updateConfiguration(configuration,displayMetrics);
+            resources.updateConfiguration(configuration, displayMetrics);
         }
     }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);Preferences preferences1 = new Preferences(this);
-        Locale locale = new Locale(preferences1.GetValueStringlang(preferences1.LANG_VALUE));
-        setLocale(locale);
+        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.list_layout);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
 
@@ -70,7 +71,6 @@ public class ListDataActivity extends AppCompatActivity {
         EmptyText = findViewById(R.id.EmptyText);
         adView = findViewById(R.id.banner_ad);
 
-//obj=new myDbAdapter(this);
         populateListView();
         if (!InAppPrefManager.getInstance(ListDataActivity.this).getInAppStatus()) {
             adview();

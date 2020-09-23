@@ -5,4 +5,39 @@
     <color name="colorAccent">#7294ea</color>
     <color name="darkblue">#3300ff</color>
     <color name="main_text_color">#178CFF</color>
+
+    <color name="colorLanguageTxt">#9E40FF</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000</color>
+
+    <color name="colorPrimaryBlue">#942FFD</color>
+    <color name="colorGradient0">#05F3E8FF</color>
+    <color name="colorGradient1">#0DF3E8FF</color>
+    <color name="colorGradient2">#1AF3E8FF</color>
+    <color name="colorGradient3">#33F3E8FF</color>
+    <color name="colorGradient4">#80F3E8FF</color>
+
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#F9BDBD</color>
+    <color name="dot_dark_screen2">#F9BDBD</color>
+    <color name="dot_dark_screen3">#F9BDBD</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#F93434</color>
+    <color name="dot_light_screen2">#F93434</color>
+    <color name="dot_light_screen3">#F93434</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+    </array>
 </resources>

@@ -1,5 +1,6 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.BroadcastReceiver;
@@ -11,7 +12,10 @@ import android.location.LocationManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -37,7 +41,7 @@ import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ActivityWifiInformation extends AppCompatActivity {
+public class ActivityWifiInformation extends ActivityBase {
 
 
     public static final int REQUEST_CODE_LOCATION = 1212;
@@ -132,7 +136,12 @@ public class ActivityWifiInformation extends AppCompatActivity {
         wifiBroadCastReceiver = new WifiBroadCastReceiver();
 
         if (!wifiManager.isWifiEnabled()) {
-            wifiManager.setWifiEnabled(true);
+            if (Build.VERSION.SDK_INT >= 29) {
+                Intent panelIntent = new Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY);
+                startActivityForResult(panelIntent, REQUEST_CODE_FOR_ENABLE_WIFI);
+            } else {
+                wifiManager.setWifiEnabled(true);
+            }
             getWifiList();
         } else {
             getWifiList();
@@ -298,4 +307,22 @@ public class ActivityWifiInformation extends AppCompatActivity {
             });
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQUEST_CODE_FOR_ENABLE_WIFI: {
+                new Handler(getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getWifiList();
+                    }
+                }, 5000);
+            }
+            break;
+        }
+    }
+
+
 }
