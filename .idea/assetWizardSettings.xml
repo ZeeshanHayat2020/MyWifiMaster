@@ -147,8 +147,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_wifi_acmain_enable" />
-                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\menu\ic_wifi_acmain_enable.svg" />
+                            <entry key="outputName" value="ic_header_privacy_policy" />
+                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\PirvacyPolicy\privacy.svg" />
                           </map>
                         </option>
                       </PersistentState>

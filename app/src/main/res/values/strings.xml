@@ -30,16 +30,17 @@
     <string name="it_not_a_wifi_password_cracker_hacker_and_it_is_not_intended_to_crack_or_hack_wifi_passwords">It not a WiFi password cracker/hacker and it is not intended to crack or hack WiFi passwords\\</string>
     <string name="this_application_let_s_you_to_see_password_of_your_known_wifi_networks">This application let’s you to see password of your KNOWN WIFI networks.</string>
     <string name="permissionMessage" translatable="false"><![CDATA[
-<p>Allow below listed permission for better use</p>
-<ul>
-  <li><b>Read External Storage</b></li>
-  <li><b>Write External Storage</b></li>
-  <li><b>Access Device Location</b></li>
-</ul><br>
-]]></string>
+<p>Please Allow Following permissions</p>
+<ul><li><b>Access Phone Storage</b></li>
+  <li><b>Access Device Location</b></li></ul>]]></string>
+
     <string name="privacy_policy_linkText" translatable="false"><![CDATA[
-<a href="">Click here to visit privacy policy…</a>
+<a href="">https://wifimasterprivacypolicy.blogspot.com</a>
 ]]></string>
+    <string name="privacy_policy_URL" translatable="false">https://wifimasterprivacypolicy.blogspot.com/</string>
+
+
+    <!--https://wifimasterprivacypolicy.blogspot.com/-->
 
     <string name="english" translatable="false">English</string>
     <string name="arabic" translatable="false">عربى</string>
@@ -125,6 +126,10 @@
     <string name="Accept">Accept</string>
     <string name="please_enter_password">Please Entre Password</string>
     <string name="eg_wifi_password">e.g password</string>
+    <string name="privacy_policy_heading">Privacy Policy</string>
+    <string name="privacpolicy_reviewText">Please review the User Data Retention Policy.</string>
+    <string name="privacyPolicyDescription">This Application collects the following categories of information from your use of this Application,</string>
+    <string name="privacyPolicyLinkMessage">For Further details about how this app handles your information, please visit the privacy policy at below link.</string>
 
     <string-array name="array_palette">
         <item>#00acb0</item>

@@ -2,7 +2,9 @@ package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
@@ -26,6 +29,7 @@ import com.internet.speed.test.analyzer.wifi.key.generator.app.database.MyPrefer
 public class ActivityIntroSLides extends ActivityBase {
 
 
+    private Toolbar toolbar;
     private PreferenceManager preferenceManager;
     private LinearLayout dotsLayout;
     private TextView[] dots;
@@ -39,14 +43,30 @@ public class ActivityIntroSLides extends ActivityBase {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarGradient(this, R.color.colorPrimary, R.color.colorPrimaryDark);
+        setStatusBarGradient(this, android.R.color.transparent, R.color.colorWhite);
         setContentView(R.layout.activity_intro_s_lides);
         myPreferences = new MyPreferences(this);
+        setUpToolbar();
         initViews();
         setUpViewPager();
         addBottomDots(0);
     }
 
+    public static void setStatusBarGradient(Activity activity, int statusBarColorId, int navBarColorId) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = activity.getWindow();
+            Drawable background = activity.getResources().getDrawable(R.drawable.ic_intro_slide_toolbar);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(activity.getResources().getColor(statusBarColorId));
+            window.setNavigationBarColor(activity.getResources().getColor(navBarColorId));
+            window.setBackgroundDrawable(background);
+        }
+    }
+
+    private void setUpToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar_acIntroSlide);
+        toolbar.setBackground(getResources().getDrawable(R.drawable.ic_intro_slide_toolbar));
+    }
 
     private void initViews() {
         viewPager = (ViewPager) findViewById(R.id.acIntroSlide_viewPager);
@@ -96,7 +116,7 @@ public class ActivityIntroSLides extends ActivityBase {
         dotsLayout.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
-            dots[i].setText(Html.fromHtml("¯"));
+            dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(40);
             dots[i].setTextColor(colorsInactive[currentPage]);
             dotsLayout.addView(dots[i]);

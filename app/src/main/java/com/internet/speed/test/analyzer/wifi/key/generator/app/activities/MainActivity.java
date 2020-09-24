@@ -27,6 +27,7 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -47,6 +48,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
+import com.github.anastr.speedviewlib.PointerSpeedometer;
+import com.github.anastr.speedviewlib.SpeedView;
+import com.github.anastr.speedviewlib.Speedometer;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
@@ -108,10 +112,10 @@ public class MainActivity extends ActivityBase {
     Activity activity;
     SharedPreferences preferences;
     Boolean ison = false;
-    ImageView btnShowWifiState;
-    ImageView btnShowWifiStrengthMeter;
-    ImageView btnChangeLanguage;
-    ImageView btnSettings;
+    /* ImageView btnShowWifiState;
+     ImageView btnShowWifiStrengthMeter;
+     ImageView btnChangeLanguage;
+     ImageView btnSettings;*/
     FrameLayout frameLayout;
     private Context context;
     protected static final String TAG = "LocationOnOff";
@@ -128,28 +132,40 @@ public class MainActivity extends ActivityBase {
     private Button permissionAllowBtn;
 
 
+    private RelativeLayout layoutHeader;
+    private ImageView headerItemMenu;
+    private ImageView headerItemCenterLeft;
+    private ImageView headerItemCenterRight;
+    private ImageView headerItemBottomLeft;
+    private ImageView headerItemBottomRigth;
+    private TextView headerItemTextViewFirst;
+    private TextView headerItemTextViewSecond;
+    private PointerSpeedometer headerSpeedMeter;
+    private WifiManager wifiManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_my_main);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
+        context = getApplicationContext();
+        activity = this;
+        wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        setUpHeader();
         initViews();
         iniRecyclerView();
         setUpRecyclerView();
-        context = getApplicationContext();
-        activity = this;
-//        onrequestPermission();
         preferences = getSharedPreferences("PREFS", 0);
 
         InAppPrefManager.getInstance(this).setInAppStatus(false);
         requestNewInterstitial();
-        WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-        Boolean test = wifi.setWifiEnabled(true);
+        Boolean test = wifiManager.setWifiEnabled(true);
 
         if (isInternetIsConnected(getApplicationContext()) || test == true) {
             //if (flag == 1) {
-            btnShowWifiState.setImageResource(R.drawable.enable);
+            headerItemCenterRight.setImageResource(R.drawable.enable);
             keyone = 1;
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("enable", "yes");
@@ -160,19 +176,11 @@ public class MainActivity extends ActivityBase {
     }
 
     private void initViews() {
-        btnShowWifiState = (ImageView) findViewById(R.id.acMainShowWifiState_imageView);
-        btnShowWifiStrengthMeter = (ImageView) findViewById(R.id.acMainShowWifiStrengthMeter_imageView);
-        btnChangeLanguage = (ImageView) findViewById(R.id.acMainChangeLanguage_imageView);
-        btnSettings = (ImageView) findViewById(R.id.acMainSettings_imageView);
+
         recyclerViewRoot = findViewById(R.id.acMain_RecyclerView_RootView);
         permissionRootView = findViewById(R.id.acMain_PermissionRootView);
         permissionMsgView = findViewById(R.id.acMain_PermissionMessage);
         permissionAllowBtn = findViewById(R.id.acMain_PermissionButton);
-
-        btnShowWifiState.setOnClickListener(onHeaderItemsClick);
-        btnShowWifiStrengthMeter.setOnClickListener(onHeaderItemsClick);
-        btnChangeLanguage.setOnClickListener(onHeaderItemsClick);
-        btnSettings.setOnClickListener(onHeaderItemsClick);
         permissionAllowBtn.setOnClickListener(onHeaderItemsClick);
         setPermissionMessage();
 
@@ -186,6 +194,38 @@ public class MainActivity extends ActivityBase {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    void setUpHeader() {
+        layoutHeader = findViewById(R.id.header_acLanugage);
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+        headerSpeedMeter = findViewById(R.id.speedView);
+        headerItemTextViewFirst.setText("WIFI");
+        headerItemTextViewSecond.setText("Password Master");
+        headerItemCenterRight.setOnClickListener(onHeaderItemsClick);
+        headerItemBottomLeft.setOnClickListener(onHeaderItemsClick);
+        headerItemBottomRigth.setOnClickListener(onHeaderItemsClick);
+        setHeaderMeterProgress();
+
+
+    }
+
+    private void setHeaderMeterProgress() {
+        if (wifiManager.isWifiEnabled()) {
+            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+            int level = (int) (WifiManager.calculateSignalLevel(wifiInfo.getRssi(), 40) * 2.5);
+            headerSpeedMeter.speedPercentTo(level);
+
+        }
+    }
 
     View.OnClickListener onHeaderItemsClick = new View.OnClickListener() {
         @Override
@@ -195,10 +235,10 @@ public class MainActivity extends ActivityBase {
                     onPermissionButtonClicked();
                 }
                 break;
-                case R.id.acMainShowWifiStrengthMeter_imageView: {
+                case R.id.header_item_centerLeft_imageView: {
                 }
                 break;
-                case R.id.acMainShowWifiState_imageView: {
+                case R.id.header_item_centerRight_imageView: {
                     if (keyone == 0) {
                         keyone = 1;
                         if (android.os.Build.VERSION.SDK_INT == 25) {
@@ -210,7 +250,7 @@ public class MainActivity extends ActivityBase {
                         }
                         WifiManager wifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
                         wifi.setWifiEnabled(true);
-                        btnShowWifiState.setImageResource(R.drawable.enable);
+                        headerItemCenterRight.setImageResource(R.drawable.enable);
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putString("enable", "yes");
                         editor.apply();
@@ -226,7 +266,7 @@ public class MainActivity extends ActivityBase {
                         }
                         WifiManager wmgr = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
                         wmgr.setWifiEnabled(false);
-                        btnShowWifiState.setImageResource(R.drawable.disable);
+                        headerItemCenterRight.setImageResource(R.drawable.disable);
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putString("enable", "no");
                         editor.apply();
@@ -234,12 +274,12 @@ public class MainActivity extends ActivityBase {
                     ison = !ison;
                 }
                 break;
-                case R.id.acMainChangeLanguage_imageView: {
-
+                case R.id.header_item_bottomLeft_imageView: {
+                    startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
                 }
                 break;
-                case R.id.acMainSettings_imageView: {
-                    startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                case R.id.header_item_bottomRigth_imageView: {
+
                 }
                 break;
 
@@ -252,12 +292,12 @@ public class MainActivity extends ActivityBase {
 
         if (isInternetIsConnected(getApplicationContext())) {
             if (flag == 1) {
-                btnShowWifiState.setImageResource(R.drawable.enable);
+                headerItemCenterRight.setImageResource(R.drawable.enable);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("enable", "yes");
                 editor.apply();
             } else {
-                btnShowWifiState.setImageResource(R.drawable.disable);
+                headerItemCenterRight.setImageResource(R.drawable.disable);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("enable", "no");
                 editor.apply();

@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <include
+        android:id="@+id/toolbar_acIntroSlide"
+        layout="@layout/toolbar_custom" />
+
+    <RelativeLayout
+        android:id="@+id/intro_slide_headerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_below="@+id/toolbar_acIntroSlide"
+        android:layout_marginTop="-35dp"
+        android:background="@drawable/ic_asset" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/acIntroSlide_viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/acIntroSlides_barsRoot"
+        android:layout_below="@+id/acIntroSlides_btnSkip"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/_50sdp"
+        android:scrollbars="none" />
 
     <LinearLayout
         android:id="@+id/acIntroSlides_barsRoot"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="51dp"
+        android:layout_above="@+id/acIntroSlides_btnNext"
         android:gravity="center"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="horizontal">
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/acIntroSlides_btnNext"
@@ -23,22 +42,23 @@
         android:layout_height="@dimen/_30sdp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/_5sdp"
-        android:background="@drawable/bg_btn_introslide_next"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        android:background="@drawable/background_btns"
         android:text="@string/next"
+        android:textAllCaps="false"
         android:textColor="@color/colorWhite"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/acIntroSlides_btnSkip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/intro_slide_headerView"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="34dp"
         android:background="@android:color/transparent"
         android:text="@string/skip"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimaryBlue"
         android:textSize="20dp" />
 </RelativeLayout>

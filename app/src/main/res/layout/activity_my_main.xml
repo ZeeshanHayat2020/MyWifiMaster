@@ -4,64 +4,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activities.MainActivity">
 
+    <!--  <include
+          android:id="@+id/header_acMain"
+          layout="@layout/layout_header" />-->
+
     <RelativeLayout
-        android:id="@+id/acMainHeader"
+        android:id="@+id/header_acMain"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/acMainShowWifiStrengthMeter_imageView"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/disable" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:background="@color/colorWhite">
 
-        <ImageView
-            android:id="@+id/acMainShowWifiState_imageView"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_wifi_state_enable" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_115sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/ic_header_curve_view">
 
-        <ImageView
-            android:id="@+id/acMainChangeLanguage_imageView"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/langblue" />
+                <com.github.anastr.speedviewlib.PointerSpeedometer
+                    android:id="@+id/speedView"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/_27sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textAlignment="center"
+                    app:sv_backgroundCircleColor="@color/colorWhite"
+                    app:sv_centerCircleColor="@color/colorPrimary"
+                    app:sv_centerCircleRadius="0.4dp"
+                    app:sv_indicatorColor="@color/colorPrimary"
+                    app:sv_indicatorWidth="@dimen/_3sdp"
+                    app:sv_markColor="@color/colorPrimary"
+                    app:sv_markHeight="@dimen/_3sdp"
+                    app:sv_markStyle="BUTT"
+                    app:sv_markWidth="@dimen/_3sdp"
+                    app:sv_speedTextColor="@color/colorPrimary"
+                    app:sv_speedTextFormat="INTEGER"
+                    app:sv_speedTextPadding="@dimen/_10sdp"
+                    app:sv_speedTextPosition="BOTTOM_CENTER"
+                    app:sv_speedTextSize="10sp"
+                    app:sv_speedometerColor="@color/colorPrimary"
+                    app:sv_speedometerWidth="@dimen/_2sdp"
+                    app:sv_textColor="@color/colorPrimary"
+                    app:sv_textSize="8sp"
+                    app:sv_unit="%"
+                    app:sv_unitUnderSpeedText="true"
+                    app:sv_withPointer="false"
 
-        <ImageView
-            android:id="@+id/acMainSettings_imageView"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/setting" />
+
+                    />
+
+
+                <ImageView
+                    android:id="@+id/header_item_centerRight_imageView"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:src="@drawable/ic_wifi_acmain_enable" />
+
+
+                <TextView
+                    android:id="@+id/header_item_textView_First"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/header_item_textView_Second"
+                    android:layout_centerInParent="true"
+                    android:text="WIFI"
+                    android:textColor="@color/colorLanguageTxt"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/header_item_textView_Second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Password Master"
+                    android:textColor="@color/colorLanguageTxt"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/header_item_menu_imageView"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_menu" />
+
+
+            <ImageView
+                android:id="@+id/header_item_bottomLeft_imageView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_setting" />
+
+            <ImageView
+                android:id="@+id/header_item_bottomRigth_imageView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_language" />
+        </RelativeLayout>
     </RelativeLayout>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/acMain_PermissionRootView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
-        android:layout_centerInParent="true">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:elevation="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_10sdp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/acMain_PermissionHeading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:layout_margin="@dimen/_5sdp"
-                android:text="Storage Permission"
-                android:textColor="@color/colorBlack"
+                android:text="Allow Permissions"
+                android:textColor="@color/colorTextNormal"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -69,8 +162,8 @@
                 android:id="@+id/acMain_PermissionMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="@string/permissionMessage"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
@@ -78,26 +171,31 @@
             <Button
                 android:id="@+id/acMain_PermissionButton"
                 android:layout_width="@dimen/_100sdp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
                 android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/background_btns"
                 android:text="Allow"
-                android:textAllCaps="false" />
-        </RelativeLayout>
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <RelativeLayout
         android:id="@+id/acMain_RecyclerView_RootView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/acMainHeader"
-        android:visibility="invisible">
+        android:layout_below="@+id/header_acMain"
+        android:visibility="invisible"
+
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/acMain_RecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
 
     </RelativeLayout>
 
