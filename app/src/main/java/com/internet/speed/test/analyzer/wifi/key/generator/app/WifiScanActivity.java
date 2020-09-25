@@ -68,25 +68,6 @@ public class WifiScanActivity extends ActivityBase {
         return r.toString();
     }
 
-    @SuppressLint("ObsoleteSdkInt")
-    @SuppressWarnings("deprecation")
-    private void setLocale(Locale locale) {
-        // optional - Helper method to save the selected language to SharedPreferences in case you might need to attach to activity context (you will need to code this)
-        Resources resources = getResources();
-        Configuration configuration = resources.getConfiguration();
-        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        if (SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            configuration.setLocale(locale);
-        } else {
-            configuration.locale = locale;
-        }
-        if (SDK_INT > Build.VERSION_CODES.N) {
-            getApplicationContext().createConfigurationContext(configuration);
-        } else {
-            resources.updateConfiguration(configuration, displayMetrics);
-        }
-    }
-
     public boolean haveWifiConnection() {
         boolean haveConnectedWifi = false;
 

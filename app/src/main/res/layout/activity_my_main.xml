@@ -112,8 +112,8 @@
 
             <ImageView
                 android:id="@+id/header_item_bottomLeft_imageView"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -122,8 +122,8 @@
 
             <ImageView
                 android:id="@+id/header_item_bottomRigth_imageView"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginRight="@dimen/_10sdp"
@@ -183,17 +183,20 @@
 
     <RelativeLayout
         android:id="@+id/acMain_RecyclerView_RootView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/header_acMain"
-        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:visibility="visible"
 
         >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/acMain_RecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:overScrollMode="never"
             android:scrollbars="none" />
 

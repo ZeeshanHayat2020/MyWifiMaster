@@ -1,9 +1,7 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -12,17 +10,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
+import android.graphics.Color;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -31,9 +29,9 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.text.Html;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,25 +40,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.github.anastr.speedviewlib.PointerSpeedometer;
-import com.github.anastr.speedviewlib.SpeedView;
-import com.github.anastr.speedviewlib.Speedometer;
 import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.VideoController;
-import com.google.android.gms.ads.formats.MediaView;
-import com.google.android.gms.ads.formats.NativeAd;
 import com.google.android.gms.ads.formats.UnifiedNativeAd;
-import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -71,13 +61,11 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.Helper.LocalHelper;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.ListDataActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Speedtest;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.Custom_Dialog_Class;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Utils.InAppPrefManager;
-import com.internet.speed.test.analyzer.wifi.key.generator.app.WifiScanActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.adapters.AdapterMain;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.allRouterPassword.AllRouterPasswords;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.appsNetBlocker.NetBlockerMainActivity;
@@ -89,11 +77,6 @@ import com.internet.speed.test.analyzer.wifi.key.generator.app.wifiAvailable.Ava
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
-import me.drakeet.support.toast.ToastCompat;
-
-import static android.os.Build.VERSION.SDK_INT;
 
 public class MainActivity extends ActivityBase {
 
@@ -161,7 +144,7 @@ public class MainActivity extends ActivityBase {
 
         InAppPrefManager.getInstance(this).setInAppStatus(false);
         requestNewInterstitial();
-        Boolean test = wifiManager.setWifiEnabled(true);
+       /* Boolean test = wifiManager.setWifiEnabled(true);
 
         if (isInternetIsConnected(getApplicationContext()) || test == true) {
             //if (flag == 1) {
@@ -170,10 +153,10 @@ public class MainActivity extends ActivityBase {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("enable", "yes");
             editor.apply();
-        }
-
+        }*/
 
     }
+
 
     private void initViews() {
 
@@ -194,10 +177,6 @@ public class MainActivity extends ActivityBase {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
@@ -218,14 +197,45 @@ public class MainActivity extends ActivityBase {
 
     }
 
+
+    private void updateUiFromWifiState(boolean isConnected) {
+        if (isConnected) {
+            headerItemCenterRight.setImageResource(R.drawable.enable);
+        } else {
+            headerItemCenterRight.setImageResource(R.drawable.disable);
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setHeaderMeterProgress();
+            }
+        }, 2000);
+
+    }
+
+    private void onOffTheWifi() {
+        if (!wifiManager.isWifiEnabled()) {
+            if (Build.VERSION.SDK_INT >= 29) {
+                Intent panelIntent = new Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY);
+                startActivityForResult(panelIntent, REQUEST_CODE_FOR_ENABLE_WIFI);
+            } else {
+                wifiManager.setWifiEnabled(true);
+            }
+        } else {
+            wifiManager.setWifiEnabled(false);
+        }
+    }
+
     private void setHeaderMeterProgress() {
         if (wifiManager.isWifiEnabled()) {
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
             int level = (int) (WifiManager.calculateSignalLevel(wifiInfo.getRssi(), 40) * 2.5);
             headerSpeedMeter.speedPercentTo(level);
-
+        } else {
+            headerSpeedMeter.speedPercentTo(0);
         }
     }
+
 
     View.OnClickListener onHeaderItemsClick = new View.OnClickListener() {
         @Override
@@ -239,7 +249,8 @@ public class MainActivity extends ActivityBase {
                 }
                 break;
                 case R.id.header_item_centerRight_imageView: {
-                    if (keyone == 0) {
+                    onOffTheWifi();
+                  /*  if (keyone == 0) {
                         keyone = 1;
                         if (android.os.Build.VERSION.SDK_INT == 25) {
 
@@ -271,7 +282,7 @@ public class MainActivity extends ActivityBase {
                         editor.putString("enable", "no");
                         editor.apply();
                     }
-                    ison = !ison;
+                    ison = !ison;*/
                 }
                 break;
                 case R.id.header_item_bottomLeft_imageView: {
@@ -290,7 +301,8 @@ public class MainActivity extends ActivityBase {
     @Override
     protected void onPause() {
 
-        if (isInternetIsConnected(getApplicationContext())) {
+//        setWifiOnOffImage();
+       /* if (isInternetIsConnected(getApplicationContext())) {
             if (flag == 1) {
                 headerItemCenterRight.setImageResource(R.drawable.enable);
                 SharedPreferences.Editor editor = preferences.edit();
@@ -302,7 +314,7 @@ public class MainActivity extends ActivityBase {
                 editor.putString("enable", "no");
                 editor.apply();
             }
-        }
+        }*/
 
         super.onPause();
 
@@ -319,10 +331,19 @@ public class MainActivity extends ActivityBase {
 
     private void setUpRecyclerView() {
         int[] imgIds = {
-                R.drawable.ic_audiotrack_dark,
-                R.drawable.ic_audiotrack_dark,
-                R.drawable.ic_audiotrack_dark,
-                R.drawable.ic_audiotrack_dark
+                R.drawable.ic_item_main_scan_wifi,
+                R.drawable.ic_item_main_auto_wifi,
+                R.drawable.ic_item_main_generate_password,
+                R.drawable.ic_item_main_show_wifi_password,
+                R.drawable.ic_item_main_hotspot,
+                R.drawable.ic_item_main_wifi_speed_test,
+                R.drawable.ic_item_main_wifi_information,
+                R.drawable.ic_item_main_bluetooth,
+                R.drawable.ic_item_main_live_location,
+                R.drawable.ic_item_main_wifi_signal_strength,
+                R.drawable.ic_item_main_app_data_usage,
+                R.drawable.ic_item_main_net_block,
+                R.drawable.ic_item_main_all_router_password
 
         };
         String[] title = {
@@ -341,7 +362,7 @@ public class MainActivity extends ActivityBase {
                 "All Router Password"
         };
         for (int i = 0; i < title.length; i++) {
-            bottomViewList.add(new ModelMain(0, title[i]));
+            bottomViewList.add(new ModelMain(imgIds[i], title[i]));
         }
         mAdapter = new AdapterMain(this, bottomViewList);
         recyclerView.setAdapter(mAdapter);
@@ -876,4 +897,34 @@ public class MainActivity extends ActivityBase {
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        IntentFilter intentFilter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        registerReceiver(wifiStateReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(wifiStateReceiver);
+    }
+
+    private BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int wifiStateExtra = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE,
+                    WifiManager.WIFI_STATE_UNKNOWN);
+            switch (wifiStateExtra) {
+                case WifiManager.WIFI_STATE_ENABLED:
+                    updateUiFromWifiState(true);
+                    Log.d("WIfiStateChangeReceiver", "WiFi is ON");
+                    break;
+                case WifiManager.WIFI_STATE_DISABLED:
+                    Log.d("WIfiStateChangeReceiver", "WiFi is Off");
+                    updateUiFromWifiState(false);
+                    break;
+            }
+        }
+    };
 }

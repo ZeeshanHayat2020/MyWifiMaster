@@ -20,7 +20,9 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
 import com.example.flatdialoglibrary.dialog.FlatDialog;
@@ -65,17 +68,21 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     private final String URL = "http://emphirezone.com/wifimaster/SavePassword.php?";
     SwipeRefreshLayout swipeRefreshLayout;
     Location location;
+    private RelativeLayout recyclerViewRoot;
+    private LottieAnimationView animationView;
+    private RelativeLayout animRootView;
+    private Button btnScan;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setStatusBarGradient(this, R.color.colorWhite, R.color.white);
         setContentView(R.layout.activity_available_wifi);
 
-        Toolbar toolbar = findViewById(R.id.toolbarAvailableWifi);
+      /*  Toolbar toolbar = findViewById(R.id.toolbarAvailableWifi);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         LocationManager lm = (LocationManager) AvailableWifiActivity.this.getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(AvailableWifiActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -96,6 +103,12 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
         wifi_broadcast_receiver = new wifi_BroadCast_Receiver();
         final TextView txt = findViewById(R.id.list_empty_txt);
         swipeRefreshLayout = findViewById(R.id.swipe_Refresh_layout);
+
+        recyclerViewRoot = findViewById(R.id.acScanWifi_recyclerViewRoot);
+        animRootView = findViewById(R.id.acScanWifi_scanAnimRoot);
+        animationView = findViewById(R.id.acScanWifi_scanAnim);
+        btnScan = findViewById(R.id.acScanWifi_btnScan);
+        btnScan.setOnClickListener(MyOnClickListener);
 
 
         if (!wifi_Manager.isWifiEnabled()) {
@@ -132,6 +145,21 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
         });
 
     }
+
+
+    View.OnClickListener MyOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            animationView.playAnimation();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    animRootView.setVisibility(View.INVISIBLE);
+                    recyclerViewRoot.setVisibility(View.VISIBLE);
+                }
+            }, 3000);
+        }
+    };
 
     @Override
     public void OnWifiClickListener(final int position) {

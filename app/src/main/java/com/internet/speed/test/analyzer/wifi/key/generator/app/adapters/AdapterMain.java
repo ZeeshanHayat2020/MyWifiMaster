@@ -39,12 +39,14 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        public ImageView imageView;
         public TextView textView;
 
 
         public MyViewHolder(View view) {
             super(view);
             textView = view.findViewById(R.id.itemView_main_tv);
+            imageView = view.findViewById(R.id.itemView_main_iv);
 
 
         }
@@ -61,6 +63,7 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
+        holder.imageView.setImageResource(modelMainList.get(position).getImgId());
         holder.textView.setText(modelMainList.get(position).getTitle());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
