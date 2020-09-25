@@ -8,6 +8,7 @@ import android.net.wifi.WifiManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,7 +59,9 @@ public class Available_Wifi_ListAdapter extends RecyclerView.Adapter<Available_W
 
         holder.txtSS_ID.setText(scan_results.get(position).SSID);
         if (scan_results.get(position).SSID.equals(current)) {
-            holder.checkConnection.setText("Connected");
+//            holder.checkConnection.setText("Connected");
+            holder.btnConnect.setText("Connected");
+            holder.btnConnect.setEnabled(false);
         }
 
         if (level <= 0 && level >= -50) {
@@ -87,18 +90,20 @@ public class Available_Wifi_ListAdapter extends RecyclerView.Adapter<Available_W
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView txtSS_ID;
-        private final TextView checkConnection;
+        //        private final TextView checkConnection;
         private final ImageView imageView;
+        private final Button btnConnect;
         final OnWifiClickListener onWifiClickListener;
 
         MyViewHolder(@NonNull View view, OnWifiClickListener onWifiClickListener) {
             super(view);
             txtSS_ID = view.findViewById(R.id.txtSSID);
-            checkConnection = view.findViewById(R.id.checkConnected);
-            imageView = view.findViewById(R.id.wifiLevel);
+//            checkConnection = view.findViewById(R.id.checkConnected);
+            imageView = view.findViewById(R.id.itemView_scanWifi_iv);
+            btnConnect = view.findViewById(R.id.itemView_scanwifi_btnConnect);
             this.onWifiClickListener = onWifiClickListener;
 
-            itemView.setOnClickListener(this);
+            btnConnect.setOnClickListener(this);
         }
 
         @Override

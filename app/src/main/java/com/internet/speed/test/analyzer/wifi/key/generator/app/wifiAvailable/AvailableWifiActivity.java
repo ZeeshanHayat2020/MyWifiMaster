@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,12 +74,22 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     private RelativeLayout animRootView;
     private Button btnScan;
 
+    private RelativeLayout layoutHeader;
+    public ImageView headerItemMenu;
+    public ImageView headerItemCenterLeft;
+    public ImageView headerItemCenterRight;
+    public ImageView headerItemBottomLeft;
+    public ImageView headerItemBottomRigth;
+    public TextView headerItemTextViewFirst;
+    public TextView headerItemTextViewSecond;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.white);
         setContentView(R.layout.activity_available_wifi);
+        setUpHeader();
 
       /*  Toolbar toolbar = findViewById(R.id.toolbarAvailableWifi);
         setSupportActionBar(toolbar);
@@ -146,18 +157,43 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
 
     }
 
+    void setUpHeader() {
+        layoutHeader = findViewById(R.id.header_acLanugage);
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+
+
+        headerItemCenterLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomRigth.setVisibility(View.INVISIBLE);
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_scan_wifi);
+        headerItemTextViewFirst.setText("WIFI");
+        headerItemTextViewSecond.setText("SCANNER");
+
+
+    }
+
 
     View.OnClickListener MyOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             animationView.playAnimation();
+            animationView.setSpeed(2);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     animRootView.setVisibility(View.INVISIBLE);
                     recyclerViewRoot.setVisibility(View.VISIBLE);
+                    if (adapter != null) {
+                        adapter.notifyDataSetChanged();
+                    }
                 }
-            }, 3000);
+            }, 4000);
         }
     };
 

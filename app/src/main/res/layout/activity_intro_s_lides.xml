@@ -23,7 +23,6 @@
         android:layout_above="@+id/acIntroSlides_barsRoot"
         android:layout_below="@+id/acIntroSlides_btnSkip"
         android:overScrollMode="never"
-        android:paddingBottom="@dimen/_50sdp"
         android:scrollbars="none" />
 
     <LinearLayout

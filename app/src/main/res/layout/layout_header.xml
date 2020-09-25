@@ -7,12 +7,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_140sdp"
+        android:layout_height="@dimen/_135sdp"
         android:background="@color/colorWhite">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_115sdp"
+            android:layout_height="@dimen/_110sdp"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/_3sdp"
@@ -37,7 +37,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_20sdp"
-                android:src="@drawable/ic_wifi_acmain_enable" />
+                android:src="@drawable/disable" />
 
 
             <TextView

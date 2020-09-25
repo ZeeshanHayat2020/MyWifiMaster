@@ -132,54 +132,61 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/acMain_PermissionRootView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="@dimen/_15sdp"
-        android:elevation="@dimen/_5sdp"
-        app:cardCornerRadius="@dimen/_10sdp">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header_acMain">
 
-        <LinearLayout
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/acMain_PermissionRootView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            android:orientation="vertical">
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_15sdp"
+            android:elevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_10sdp">
 
-            <TextView
-                android:id="@+id/acMain_PermissionHeading"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/_5sdp"
-                android:text="Allow Permissions"
-                android:textColor="@color/colorTextNormal"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/acMain_PermissionMessage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="@string/permissionMessage"
-                android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/acMain_PermissionHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text="Allow Permissions"
+                    android:textColor="@color/colorTextNormal"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/acMain_PermissionButton"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/_5sdp"
-                android:background="@drawable/background_btns"
-                android:text="Allow"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/acMain_PermissionMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/permissionMessage"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/acMain_PermissionButton"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/background_btns"
+                    android:text="Allow"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/acMain_RecyclerView_RootView"

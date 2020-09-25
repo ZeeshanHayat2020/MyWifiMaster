@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/_10sdp"
-    android:layout_marginTop="@dimen/_5sdp"
-    android:layout_marginEnd="@dimen/_10sdp"
-    android:focusable="true"
-    app:cardCornerRadius="@dimen/_10sdp"
-    app:cardElevation="3dp">
+    android:layout_height="@dimen/_60sdp"
+    android:layout_marginLeft="@dimen/_2sdp"
+    android:layout_marginRight="@dimen/_2sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:focusable="true">
 
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -64,5 +62,56 @@
                 android:src="@drawable/wifi4"
                 tools:ignore="RtlHardcoded" />
         </LinearLayout>
+    </RelativeLayout>-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_ic_card"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+
+        >
+
+        <ImageView
+            android:id="@+id/itemView_scanWifi_iv"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/wifi4"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/txtSSID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toLeftOf="@+id/itemView_scanwifi_btnConnect"
+            android:layout_toRightOf="@+id/itemView_scanWifi_iv"
+            android:text="Hura Technologies"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/itemView_scanwifi_btnConnect"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:background="@drawable/background_btns"
+            android:paddingLeft="@dimen/_2sdp"
+            android:paddingRight="@dimen/_2sdp"
+            android:text="Connect"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp"
+            android:theme="@style/Theme.Buttons"
+
+            />
+
     </RelativeLayout>
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

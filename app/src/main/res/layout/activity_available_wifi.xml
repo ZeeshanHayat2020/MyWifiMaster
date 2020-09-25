@@ -5,7 +5,7 @@
     android:id="@+id/swipe_Refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F3F4"
+    android:background="@color/colorWhite"
     tools:context=".wifiAvailable.AvailableWifiActivity">
 
 
@@ -17,18 +17,27 @@
             android:id="@+id/acScanWifi_header"
             layout="@layout/layout_header" />
 
+
         <RelativeLayout
             android:id="@+id/acScanWifi_recyclerViewRoot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/acScanWifi_header"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:visibility="invisible">
+            android:layout_margin="@dimen/_10sdp"
+            android:visibility="invisible"
+
+
+            >
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/wifi_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layoutAnimation="@anim/layout_anim_down_to_up"
+                android:scrollbars="none"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+                />
 
             <TextView
                 android:id="@+id/list_empty_txt"
@@ -53,25 +62,34 @@
             android:layout_below="@+id/acScanWifi_header"
             android:layout_centerInParent="true">
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/acScanWifi_scanAnim"
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_200sdp"
-                android:layout_centerInParent="true"
-                app:lottie_autoPlay="false"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/anim_scan" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                android:layout_centerInParent="true">
 
-            <Button
-                android:id="@+id/acScanWifi_btnScan"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:background="@drawable/background_btns"
-                android:text="Scan"
-                android:textColor="@color/colorWhite" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/acScanWifi_scanAnim"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:src="@color/colorPrimary"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/scan_anim1" />
+
+                <Button
+                    android:id="@+id/acScanWifi_btnScan"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/background_btns"
+                    android:text="Scan"
+                    android:textColor="@color/colorWhite" />
+            </RelativeLayout>
         </RelativeLayout>
 
 

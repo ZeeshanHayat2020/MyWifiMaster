@@ -32,7 +32,7 @@
             <Button
                 android:id="@+id/acLanguage_btnEnglish"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:text="@string/english"
@@ -44,7 +44,7 @@
             <Button
                 android:id="@+id/acLanguage_btnArabic"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:text="@string/arabic"
@@ -54,7 +54,7 @@
             <Button
                 android:id="@+id/acLanguage_btnChina"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:text="@string/chinies"
@@ -64,7 +64,7 @@
             <Button
                 android:id="@+id/acLanguage_btnFrance"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:text="@string/france"
@@ -96,7 +96,7 @@
             <Button
                 android:id="@+id/acLanguage_btnItalian"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:text="@string/italian"
@@ -106,7 +106,7 @@
             <Button
                 android:id="@+id/acLanguage_btnPolish"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:text="@string/polish"
@@ -116,7 +116,7 @@
             <Button
                 android:id="@+id/acLanguage_btnPortuguese"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:text="@string/portuguese"
@@ -127,7 +127,7 @@
             <Button
                 android:id="@+id/acLanguage_btnRussian"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:elevation="@dimen/_2sdp"
@@ -138,7 +138,7 @@
             <Button
                 android:id="@+id/acLanguage_btnSpanish"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_7sdp"
                 android:background="@drawable/background_ic_card"
                 android:elevation="@dimen/_2sdp"

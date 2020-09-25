@@ -64,7 +64,10 @@
         <activity
             android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.NotActionBar" />
-        <activity android:name=".activities.PasswordGeneratorActivity" />
+        <activity android:name=".activities.PasswordGeneratorActivity"
+            android:theme="@style/AppTheme.NotActionBar"
+
+            />
         <activity android:name=".activities.SignalGraphActivity" />
         <activity android:name=".activities.DetailActivity" />
         <activity android:name=".appsNetBlocker.NetBlockerMainActivity" />
