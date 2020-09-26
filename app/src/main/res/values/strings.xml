@@ -16,7 +16,6 @@
     <string name="license_key" translatable="false" >MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnYnyohjpLClvq57xNZsAlGdcpN+cFI1/3bKMRdin3cKPU8jzNA7MPldDsxt3zeGhkPIpRkffBfkB2/E2apEmnbgEvc1AsFnzigUtKqi10rApDArV412pJAZRFED/eMMRURyg247nj1WUjri7014f8OclwNCHXRjRBDjkcSG731rBsKKCvthG0903VEcihxTAxHd4hV+Gpy5fNaokwGINjvId2Hb22u7+vgY+OHm5lyWIeTNCP8IIYPHfZiv0aDj8I7W8QtgYmkAndltA/loga6b7zP2bySQ+pHbGL3Uw9hIQsC4qhb8aQuzz1d2g/dwu/pHAgIshgaN/LL+s0CZ7TQIDAQAB</string>
 -->
 
-    <!--        <string name="nativead" translatable="false">ca-app-pub-7796659861450905/4006416168</string>-->
     <!--        <string name="app_id" translatable="false">ca-app-pub-7796659861450905~6965662202</string>-->
     <!--        <string name="Banner" translatable="false">ca-app-pub-7796659861450905/7480667527</string>-->
     <!--        <string name="Interstitial" translatable="false">ca-app-pub-7796659861450905/2228340847</string>-->
@@ -130,6 +129,11 @@
     <string name="privacpolicy_reviewText">Please review the User Data Retention Policy.</string>
     <string name="privacyPolicyDescription">This Application collects the following categories of information from your use of this Application,</string>
     <string name="privacyPolicyLinkMessage">For Further details about how this app handles your information, please visit the privacy policy at below link.</string>
+    <string name="wifi">WIFI</string>
+    <string name="speedTest">SPEED TEST</string>
+    <string name="deatail">DETAIL</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="connectivity">Connectivity</string>
 
     <string-array name="array_palette">
         <item>#00acb0</item>

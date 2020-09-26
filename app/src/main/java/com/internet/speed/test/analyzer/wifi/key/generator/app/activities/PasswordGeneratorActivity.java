@@ -12,12 +12,15 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -34,9 +37,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class PasswordGeneratorActivity extends AppCompatActivity implements View.OnClickListener {
+public class PasswordGeneratorActivity extends ActivityBase implements View.OnClickListener {
 
-    Switch chkUpperCase, chkLowerCase, chkNumber, chkSymbols;
+    CardView cardViewUpperCase, cardViewLowerCase, cardViewNumber, cardViewSymbols;
+    SwitchCompat chkUpperCase, chkLowerCase, chkNumber, chkSymbols;
     Button btnIncrement, btnDecrement, btnGenerate;
     ImageView btnCopy;
     EditText etLength;
@@ -49,11 +53,23 @@ public class PasswordGeneratorActivity extends AppCompatActivity implements View
     public InterstitialAd mInterstitialAd;
     AdView adView;
 
+
+    private RelativeLayout layoutHeader;
+    public ImageView headerItemMenu;
+    public ImageView headerItemCenterLeft;
+    public ImageView headerItemCenterRight;
+    public ImageView headerItemBottomLeft;
+    public ImageView headerItemBottomRigth;
+    public TextView headerItemTextViewFirst;
+    public TextView headerItemTextViewSecond;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.white);
         setContentView(R.layout.activity_password_generator);
 
+        setUpHeader();
         initialWork();
         Listeners();
         loadBanner();
@@ -61,9 +77,36 @@ public class PasswordGeneratorActivity extends AppCompatActivity implements View
 
     }
 
+    void setUpHeader() {
+        layoutHeader = findViewById(R.id.header_acLanugage);
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+
+        headerItemMenu.setVisibility(View.INVISIBLE);
+        headerItemCenterLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomRigth.setVisibility(View.INVISIBLE);
+
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_generate_password);
+        headerItemTextViewFirst.setText("WIFI");
+        headerItemTextViewSecond.setText("PASSWORD GENERATE");
+
+
+    }
+
+
     private void initialWork() {
 
 
+        cardViewUpperCase = findViewById(R.id.cardUpperCase);
+        cardViewLowerCase = findViewById(R.id.cardLowerCase);
+        cardViewNumber = findViewById(R.id.cardNumber);
+        cardViewSymbols = findViewById(R.id.cardSymbols);
         chkUpperCase = findViewById(R.id.chkUpperCase);
         chkLowerCase = findViewById(R.id.chkLowerCase);
         chkNumber = findViewById(R.id.chkNumber);
@@ -76,6 +119,8 @@ public class PasswordGeneratorActivity extends AppCompatActivity implements View
         tvPassword = findViewById(R.id.tvPassword);
 
         etLength.setText("8");
+
+
     }
 
     private void Listeners() {
@@ -83,6 +128,47 @@ public class PasswordGeneratorActivity extends AppCompatActivity implements View
         btnDecrement.setOnClickListener(this);
         btnGenerate.setOnClickListener(this);
         btnCopy.setOnClickListener(this);
+
+        cardViewUpperCase.setOnClickListener(this);
+        cardViewLowerCase.setOnClickListener(this);
+        cardViewNumber.setOnClickListener(this);
+        cardViewSymbols.setOnClickListener(this);
+    }
+
+    private void setChkBxUpperCase() {
+
+        if (!chkUpperCase.isChecked()) {
+            chkUpperCase.setChecked(true);
+        } else {
+            chkUpperCase.setChecked(false);
+        }
+    }
+
+    private void setChkBxLowerCase() {
+
+        if (!chkLowerCase.isChecked()) {
+            chkLowerCase.setChecked(true);
+        } else {
+            chkLowerCase.setChecked(false);
+        }
+    }
+
+    private void setChkBxNumbers() {
+
+        if (!chkNumber.isChecked()) {
+            chkNumber.setChecked(true);
+        } else {
+            chkNumber.setChecked(false);
+        }
+    }
+
+    private void setChkBxSymbols() {
+
+        if (!chkSymbols.isChecked()) {
+            chkSymbols.setChecked(true);
+        } else {
+            chkSymbols.setChecked(false);
+        }
     }
 
     @Override
@@ -100,12 +186,28 @@ public class PasswordGeneratorActivity extends AppCompatActivity implements View
             case R.id.btnCopy:
                 copyFunc();
                 break;
+            case R.id.cardUpperCase: {
+                setChkBxUpperCase();
+            }
+            break;
+            case R.id.cardLowerCase: {
+                setChkBxLowerCase();
+            }
+            break;
+            case R.id.cardNumber: {
+                setChkBxNumbers();
+            }
+            break;
+            case R.id.cardSymbols: {
+                setChkBxSymbols();
+            }
+            break;
         }
     }
 
     private void incrementFunc() {
         int current = Integer.parseInt(etLength.getText().toString()) + 1;
-        if (current < 31) {
+        if (current < 25) {
             etLength.setText("" + current);
         }
     }
@@ -154,6 +256,7 @@ public class PasswordGeneratorActivity extends AppCompatActivity implements View
 
 
     }
+
 
     private void copyFunc() {
         String pass = tvPassword.getText().toString();
@@ -204,7 +307,7 @@ public class PasswordGeneratorActivity extends AppCompatActivity implements View
         });
     }
 
-    private AdSize getAdSize() {
+    public AdSize getAdSize() {
         // Determine the screen width (less decorations) to use for the ad width.
         Display display = getWindowManager().getDefaultDisplay();
         DisplayMetrics outMetrics = new DisplayMetrics();

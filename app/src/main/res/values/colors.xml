@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#942FFD</color>
     <color name="colorPrimaryDark">#942FFD</color>
-    <color name="colorAccent">#942FFD</color>
+    <color name="colorAccent">#B718A1</color>
     <color name="darkblue">#3300ff</color>
     <color name="main_text_color">#178CFF</color>
 
@@ -13,7 +13,14 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000</color>
 
+
     <color name="colorTextNormal">#7E7C7C</color>
+
+
+    <color name="colorThumbChecked">#B718A1</color>
+    <color name="colorTrackChecked">#B3B718A1</color>
+    <color name="colorThumbUnChecked">#7E7C7C</color>
+    <color name="colorTrackUnChecked">#B37E7C7C</color>
 
     <color name="colorPrimaryBlue">#942FFD</color>
     <color name="colorGradient0">#05F3E8FF</color>

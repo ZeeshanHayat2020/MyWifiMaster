@@ -1,108 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorWhite"
     tools:context=".Speedtest">
 
     <include
-        android:id="@+id/toolbar"
-        layout="@layout/app_bar" />
+        android:id="@+id/acSpeedTest_header"
+        layout="@layout/layout_header" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@id/banner_ad"
-        android:layout_below="@id/toolbar"
-        android:layout_centerInParent="true"
+        android:layout_below="@id/acSpeedTest_header"
         android:gravity="center"
-        android:weightSum="2"
         android:orientation="vertical">
 
+        <com.github.anastr.speedviewlib.PointerSpeedometer
+            android:id="@+id/speedView_uploading"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:foregroundGravity="center"
+            android:textAlignment="center"
+            app:sv_backgroundCircleColor="@color/colorPrimaryDisable"
+            app:sv_centerCircleColor="@color/colorWhite"
+            app:sv_centerCircleRadius="@dimen/_4sdp"
+            app:sv_indicatorColor="@color/colorWhite"
+            app:sv_indicatorWidth="@dimen/_4sdp"
+            app:sv_markColor="@color/colorWhite"
+            app:sv_markHeight="@dimen/_4sdp"
+            app:sv_markStyle="BUTT"
+            app:sv_markWidth="@dimen/_4sdp"
+            app:sv_maxSpeed="1024"
+            app:sv_speedTextColor="@color/colorWhite"
+            app:sv_speedTextFormat="INTEGER"
+            app:sv_speedTextPadding="@dimen/_10sdp"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_speedTextSize="15sp"
+            app:sv_speedometerColor="@color/colorWhite"
+            app:sv_speedometerWidth="@dimen/_2sdp"
+            app:sv_textColor="@color/colorWhite"
+            app:sv_textSize="12sp"
+            app:sv_unit="KB/S"
+            app:sv_unitUnderSpeedText="true"
+            app:sv_withPointer="false"
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            >
+            />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_200sdp"
-                android:src="@mipmap/meter"
-                android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/ups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/uploading"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
-            <TextView
-                android:layout_marginBottom="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/ups"
-                android:layout_below="@+id/TX"
-                android:layout_centerHorizontal="true"
-                android:text="@string/uploading"
-                android:textColor="#00FF0A"
-                android:textSize="@dimen/_20sdp" />
+        <com.github.anastr.speedviewlib.PointerSpeedometer
+            android:id="@+id/speedView_downloading"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:foregroundGravity="center"
+            android:textAlignment="center"
+            app:sv_backgroundCircleColor="@color/colorPrimaryDisable"
+            app:sv_centerCircleColor="@color/colorWhite"
+            app:sv_centerCircleRadius="@dimen/_4sdp"
+            app:sv_indicatorColor="@color/colorWhite"
+            app:sv_indicatorWidth="@dimen/_4sdp"
+            app:sv_markColor="@color/colorWhite"
+            app:sv_markHeight="@dimen/_4sdp"
+            app:sv_markStyle="BUTT"
+            app:sv_markWidth="@dimen/_4sdp"
+            app:sv_maxSpeed="1024"
+            app:sv_speedTextColor="@color/colorWhite"
+            app:sv_speedTextFormat="INTEGER"
+            app:sv_speedTextPadding="@dimen/_10sdp"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_speedTextSize="15sp"
+            app:sv_speedometerColor="@color/colorWhite"
+            app:sv_speedometerWidth="@dimen/_2sdp"
+            app:sv_textColor="@color/colorWhite"
+            app:sv_textSize="12sp"
+            app:sv_unit="KB/S"
+            app:sv_unitUnderSpeedText="true"
+            app:sv_withPointer="false"
 
-            <TextView
-                android:id="@+id/TX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:text="0"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+            />
 
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            >
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_200sdp"
-                android:src="@mipmap/meter"
-                android:layout_centerInParent="true"/>
-
-            <TextView
-                android:layout_marginBottom="8dp"
-                android:id="@+id/txtdown"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/RX"
-                android:gravity="center"
-                android:text="@string/downloading"
-                android:textColor="#FF1100"
-                android:textSize="@dimen/_20sdp" />
-
-            <TextView
-                android:id="@+id/RX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_centerVertical="true"
-                android:text="0"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/_20sdp"
-                android:textStyle="bold"
-                tools:ignore="MissingConstraints" />
-
-
-        </RelativeLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/downloading"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
-
 
     <include
         android:id="@+id/banner_ad"

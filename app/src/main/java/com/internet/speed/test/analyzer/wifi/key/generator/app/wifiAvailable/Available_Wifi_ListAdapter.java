@@ -60,25 +60,26 @@ public class Available_Wifi_ListAdapter extends RecyclerView.Adapter<Available_W
         holder.txtSS_ID.setText(scan_results.get(position).SSID);
         if (scan_results.get(position).SSID.equals(current)) {
 //            holder.checkConnection.setText("Connected");
-            holder.btnConnect.setText("Connected");
-            holder.btnConnect.setEnabled(false);
+            holder.btnConnect.setText("Forget");
+//            holder.btnConnect.setEnabled(true);
+
         }
 
         if (level <= 0 && level >= -50) {
             //Best signal
-            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.wifi4));
+            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_item_scan_wifi_image3));
         } else if (level < -50 && level >= -70) {
             //Good signal
-            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.wifi3));
+            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_item_scan_wifi_image3));
         } else if (level < -70 && level >= -80) {
             //Low signal
-            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.wifi2));
+            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_item_scan_wifi_image2));
         } else if (level < -80 && level >= -100) {
             //Very weak signal
-            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.wifi2));
+            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_item_scan_wifi_image1));
         } else {
             // no signals
-            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.wifi0));
+            holder.imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_item_scan_wifi_image0));
         }
 
     }
@@ -108,11 +109,12 @@ public class Available_Wifi_ListAdapter extends RecyclerView.Adapter<Available_W
 
         @Override
         public void onClick(View v) {
-            onWifiClickListener.OnWifiClickListener(getAdapterPosition());
+            onWifiClickListener.OnWifiClickListener(v, getAdapterPosition());
         }
     }
 
+
     public interface OnWifiClickListener {
-        void OnWifiClickListener(int position);
+        void OnWifiClickListener(View view, int position);
     }
 }

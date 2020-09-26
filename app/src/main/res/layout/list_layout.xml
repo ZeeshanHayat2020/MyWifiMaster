@@ -2,12 +2,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/listView"
+    <include
+        android:id="@+id/acShowPass_Header"
+        layout="@layout/layout_header" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="399dp" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/acShowPass_Header"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/acShowPassword_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/EmptyText"

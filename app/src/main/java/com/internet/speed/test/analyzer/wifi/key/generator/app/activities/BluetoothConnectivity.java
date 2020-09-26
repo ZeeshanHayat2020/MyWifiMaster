@@ -1,6 +1,8 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
@@ -19,9 +21,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
@@ -30,10 +34,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class BluetoothConnectivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class BluetoothConnectivity extends ActivityBase implements AdapterView.OnItemClickListener {
 
     private String TAG = "BluetoothConnectivity";
-    private Switch btnOnOf;
+    private CardView switchCardView;
+    private SwitchCompat btnOnOf;
     private Button btnScanDevices;
     private Button btnMakeVisible;
     private ProgressBar scanningLoadingBar;
@@ -45,13 +50,44 @@ public class BluetoothConnectivity extends AppCompatActivity implements AdapterV
     public ArrayList<BluetoothDevice> mBTDevices;
     private ListView nearByListView;
 
+    public ImageView headerItemMenu;
+    public ImageView headerItemCenterLeft;
+    public ImageView headerItemCenterRight;
+    public ImageView headerItemBottomLeft;
+    public ImageView headerItemBottomRigth;
+    public TextView headerItemTextViewFirst;
+    public TextView headerItemTextViewSecond;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_bluetooth_connectivity);
+        setUpHeader();
         checkBTPermissions();
         initViews();
+
+
+    }
+
+    void setUpHeader() {
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+
+        headerItemMenu.setVisibility(View.INVISIBLE);
+        headerItemCenterLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomRigth.setVisibility(View.INVISIBLE);
+
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_bluetooth);
+        headerItemTextViewFirst.setText(R.string.bluetooth);
+        headerItemTextViewSecond.setText(R.string.connectivity);
 
 
     }
@@ -67,7 +103,7 @@ public class BluetoothConnectivity extends AppCompatActivity implements AdapterV
                 switch (state) {
                     case BluetoothAdapter.STATE_OFF:
                         stopScannig();
-                        Log.d(TAG, "onReceive: STATE OFF");
+                        Log.d(TAG, "receiverBluetoothOnOff: STATE OFF");
                         break;
                     case BluetoothAdapter.STATE_TURNING_OFF:
                         Log.d(TAG, "receiverBluetoothOnOff: STATE TURNING OFF");
@@ -166,13 +202,13 @@ public class BluetoothConnectivity extends AppCompatActivity implements AdapterV
             public void run() {
                 hideLoadingBar();
                 mBluetoothAdapter.cancelDiscovery();
-                Toast.makeText(BluetoothConnectivity.this, "No Device Found", Toast.LENGTH_SHORT).show();
             }
         };
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         mBTDevices = new ArrayList<>();
         scannedDeviceList = new ArrayList<>();
 
+        switchCardView = findViewById(R.id.acBluetooth_switchCarView);
         btnOnOf = findViewById(R.id.acBluetooth_OnOff);
         btnScanDevices = findViewById(R.id.acBluetooth_btnScan);
         btnMakeVisible = findViewById(R.id.acBluetooth_btnMakeDescoverable);
@@ -184,14 +220,26 @@ public class BluetoothConnectivity extends AppCompatActivity implements AdapterV
             btnOnOf.setChecked(false);
         }
 
+        switchCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (btnOnOf.isChecked()) {
+                    btnOnOf.setChecked(false);
+                } else {
+                    btnOnOf.setChecked(true);
+                }
+            }
+        });
         nearByListView.setOnItemClickListener(BluetoothConnectivity.this);
         btnOnOf.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    enableDisableBT();
+                    enableBluetooth();
+//                    enableDisableBT();
                 } else {
-                    enableDisableBT();
+//                    enableDisableBT();
+                    disableBluetooth();
                 }
             }
         });
@@ -229,7 +277,27 @@ public class BluetoothConnectivity extends AppCompatActivity implements AdapterV
     }
 
 
-    public void enableDisableBT() {
+    private void enableBluetooth() {
+        if (!mBluetoothAdapter.isEnabled()) {
+            Log.d(TAG, "enableDisableBT: enabling BT.");
+            Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivity(enableBTIntent);
+
+            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+            registerReceiver(receiverBluetoothOnOff, BTIntent);
+        }
+    }
+
+    private void disableBluetooth() {
+        if (mBluetoothAdapter.isEnabled()) {
+            Log.d(TAG, "enableDisableBT: disabling BT.");
+            mBluetoothAdapter.disable();
+            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+            registerReceiver(receiverBluetoothOnOff, BTIntent);
+        }
+    }
+
+ /*   public void enableDisableBT() {
         if (mBluetoothAdapter == null) {
             Log.d(TAG, "enableDisableBT: Does not have BT capabilities.");
         }
@@ -240,15 +308,16 @@ public class BluetoothConnectivity extends AppCompatActivity implements AdapterV
 
             IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
             registerReceiver(receiverBluetoothOnOff, BTIntent);
-        }
-        if (mBluetoothAdapter.isEnabled()) {
+        } else {
+
             Log.d(TAG, "enableDisableBT: disabling BT.");
             mBluetoothAdapter.disable();
             IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
             registerReceiver(receiverBluetoothOnOff, BTIntent);
+
         }
 
-    }
+    }*/
 
     public void EnableDisable_Discoverable() {
         Log.d(TAG, "btnEnableDisable_Discoverable: Making device discoverable for 300 seconds.");

@@ -4,59 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     tools:context=".activities.BluetoothConnectivity">
+
+    <include
+        android:id="@+id/header_acBluetooth"
+        layout="@layout/layout_header" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_5sdp"
+        android:layout_below="@+id/header_acBluetooth"
+        android:layout_marginTop="@dimen/_5sdp"
         android:gravity="center"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/acBluetooth_switchCarView"
+            android:layout_width="@dimen/_145sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:clickable="true"
+            android:elevation="@dimen/_3sdp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/_13sdp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:text="Bluetooth"
-                android:textSize="20sp" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <Switch
-                android:id="@+id/acBluetooth_OnOff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:text="Bluetooth"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/acBluetooth_OnOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:thumbTint="@color/background_switch_thumb"
+                    app:trackTint="@color/background_switch_track" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/acBluetooth_btnScan"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:text="Scan" />
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/background_ic_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="Scan"
+            android:textColor="@color/colorPrimary" />
 
         <Button
             android:id="@+id/acBluetooth_btnMakeDescoverable"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:text="DiscoverAble" />
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/background_ic_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="DiscoverAble"
+            android:textColor="@color/colorPrimary" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/acBluetooth_NearByDevice_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="All Nearby Devices" />
+                android:text="All Nearby Devices"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                />
 
             <ListView
                 android:id="@+id/acBluetooth_NearByDevice_listView"

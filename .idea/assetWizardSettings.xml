@@ -147,8 +147,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_enable" />
-                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\menu\enable.svg" />
+                            <entry key="outputName" value="ic_item_scan_wifi_image3" />
+                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\Remaining MainItems\SVG\item_scan_wifi_image3.svg" />
                           </map>
                         </option>
                       </PersistentState>
