@@ -15,6 +15,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,8 +42,8 @@ public class AppsNetBlockerAdapter extends RecyclerView.Adapter<AppsNetBlockerAd
         public TextView tvPackage;
         public TextView received;
         public TextView transfer;
-        public CheckBox cbWifi;
-        public CheckBox cbOther;
+        public ToggleButton cbWifi;
+        public ToggleButton cbOther;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -51,8 +52,8 @@ public class AppsNetBlockerAdapter extends RecyclerView.Adapter<AppsNetBlockerAd
             tvName = (TextView) itemView.findViewById(R.id.tvName2);
             tvPackage = (TextView) itemView.findViewById(R.id.tvPackage2);
             tvPackage.setSelected(true);
-            cbWifi = (CheckBox) itemView.findViewById(R.id.cbWifi2);
-            cbOther = (CheckBox) itemView.findViewById(R.id.cbOther2);
+            cbWifi = (ToggleButton) itemView.findViewById(R.id.cbWifi2);
+            cbOther = (ToggleButton) itemView.findViewById(R.id.cbOther2);
 
         }
     }

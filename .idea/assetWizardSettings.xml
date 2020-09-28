@@ -136,7 +136,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/add_circle_outline/baseline_add_circle_outline_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/more_vert/baseline_more_vert_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -147,8 +147,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_item_scan_wifi_image3" />
-                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\Remaining MainItems\SVG\item_scan_wifi_image3.svg" />
+                            <entry key="outputName" value="ic_item_main_all_router_password" />
+                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\SVG\ic_item_main_all_router_password.svg" />
                           </map>
                         </option>
                       </PersistentState>

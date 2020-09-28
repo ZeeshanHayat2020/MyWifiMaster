@@ -4,49 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F3F4"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/header_acNetBlocker"
+        layout="@layout/layout_header" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_appsNetBlocker"
+    <RelativeLayout
+        android:id="@+id/acNetBlock_searchViewRoot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Apps Net Blocker"
-        app:titleTextColor="@android:color/white" />
+        android:layout_below="@+id/header_acNetBlocker">
 
+        <SearchView
+            android:id="@+id/acNetBlock_searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/acNetBlock_btnMenu"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search" />
+
+        <ImageView
+            android:id="@+id/acNetBlock_btnMenu"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:scaleType="center"
+            android:src="@drawable/ic_more" />
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar_appsNetBlocker">
+        android:layout_below="@id/acNetBlock_searchViewRoot">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvApplication"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/_12sdp"
-            android:scrollbarStyle="outsideInset"
-            android:scrollbars="vertical" />
+            android:scrollbars="none" />
 
 
         <androidx.cardview.widget.CardView
             android:id="@+id/start_btn_rootLayout"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/_25sdp"
-            app:cardCornerRadius="@dimen/_25sdp">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/_25sdp"
+            app:cardElevation="@dimen/_5sdp">
 
             <ToggleButton
                 android:id="@+id/btnStartStopVnp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_5sdp"
                 android:background="@drawable/background_btn_start_stop_vpn_service"
                 android:textOff=""
                 android:textOn="" />

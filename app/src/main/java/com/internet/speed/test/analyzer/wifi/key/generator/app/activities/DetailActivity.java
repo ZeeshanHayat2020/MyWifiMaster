@@ -31,7 +31,7 @@ import bot.box.appusage.model.TimeLine;
 import bot.box.appusage.utils.Duration;
 import bot.box.appusage.utils.UsageUtils;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends ActivityBase {
     private static final String PACKAGE_NAME = "_packageName";
 
     public static void start(Activity activity, String packageName) {
@@ -43,6 +43,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_details);
 
         String packageName = getIntent().getStringExtra(PACKAGE_NAME);
@@ -80,7 +81,7 @@ public class DetailActivity extends AppCompatActivity {
          */
         AppTimeLineAdapter timeLineAdapter = new AppTimeLineAdapter(getApplicationContext());
         RecyclerView rv = findViewById(R.id.timelineRecyclerView);
-        rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+//        rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rv.setAdapter(timeLineAdapter);
         Monitor.scan().generateTimeline(new TimelineContracts.View() {
             @Override

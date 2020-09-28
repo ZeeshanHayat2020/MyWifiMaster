@@ -91,13 +91,7 @@ public class ActivityLiveLocation extends ActivityBase {
     @Override
     protected void onResume() {
         super.onResume();
-        new Handler(getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getLocation();
-            }
-        }, 2000);
-
+        getLocation();
     }
 
     void setUpHeader() {
@@ -172,6 +166,8 @@ public class ActivityLiveLocation extends ActivityBase {
     };
 
     private void getLocation() {
+        loadingBar.setVisibility(View.VISIBLE);
+        rootViewTableLayout.setVisibility(View.INVISIBLE);
         gpsTracker = new GpsTracker(this);
         if (gpsTracker.canGetLocation()) {
             double latitude = gpsTracker.getLatitude();
@@ -223,8 +219,14 @@ public class ActivityLiveLocation extends ActivityBase {
             } else {
                 tvPostalCode.setText("Failed to get Postal Code");
             }
-            loadingBar.setVisibility(View.INVISIBLE);
-            rootViewTableLayout.setVisibility(View.VISIBLE);
+            new Handler(getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loadingBar.setVisibility(View.INVISIBLE);
+                    rootViewTableLayout.setVisibility(View.VISIBLE);
+                }
+            }, 2000);
+
 
         }
 

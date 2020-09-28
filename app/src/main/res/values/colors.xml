@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#942FFD</color>
-    <color name="colorPrimaryDark">#942FFD</color>
+    <color name="colorPrimaryDark">#6921B3</color>
     <color name="colorAccent">#B718A1</color>
     <color name="darkblue">#3300ff</color>
     <color name="main_text_color">#178CFF</color>
@@ -32,6 +32,14 @@
     <color name="colorIntroToolBarGradient1">#D4579B</color>
     <color name="colorIntroToolBarGradient2">#B341AA</color>
     <color name="colorIntroToolBarGradient3">#8771E3</color>
+
+
+    <color name="colorBarChart1">#B718A1</color>
+    <color name="colorBarChart2">#942FFD</color>
+    <color name="colorBarChart3">#FF26E2</color>
+    <color name="colorBarChart4">#AF65FB</color>
+    <color name="colorBarChart5">#850073</color>
+    <color name="colorBarChart6">#4B1C7C</color>
 
 
     <!-- dots inactive colors -->

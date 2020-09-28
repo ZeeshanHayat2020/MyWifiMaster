@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.adapters.AppAdapter;
@@ -24,15 +26,25 @@ import bot.box.appusage.handler.Monitor;
 import bot.box.appusage.model.AppData;
 import bot.box.appusage.utils.Duration;
 
-public class ActivityAppUsage extends AppCompatActivity implements UsageContracts.View
+public class ActivityAppUsage extends ActivityBase implements UsageContracts.View
         , AdapterView.OnItemSelectedListener {
 
     private AppAdapter mAdapter;
 
+    public ImageView headerItemMenu;
+    public ImageView headerItemCenterLeft;
+    public ImageView headerItemCenterRight;
+    public ImageView headerItemBottomLeft;
+    public ImageView headerItemBottomRigth;
+    public TextView headerItemTextViewFirst;
+    public TextView headerItemTextViewSecond;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_app_usage);
+        setUpHeader();
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -52,6 +64,26 @@ public class ActivityAppUsage extends AppCompatActivity implements UsageContract
         }
     }
 
+    void setUpHeader() {
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+
+
+        headerItemCenterLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomRigth.setVisibility(View.INVISIBLE);
+
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_app_data_usage);
+        headerItemTextViewFirst.setText(R.string.application);
+        headerItemTextViewSecond.setText(R.string.data_usage);
+
+    }
+
     private void init() {
         RecyclerView mRecycler = findViewById(R.id.recycler);
         mAdapter = new AppAdapter(this);
@@ -66,6 +98,7 @@ public class ActivityAppUsage extends AppCompatActivity implements UsageContract
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecycler.setLayoutManager(mLayoutManager);
         mRecycler.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
     }
 
     @Override

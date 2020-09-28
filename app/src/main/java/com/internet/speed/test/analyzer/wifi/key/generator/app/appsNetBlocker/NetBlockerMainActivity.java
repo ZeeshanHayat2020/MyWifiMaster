@@ -17,23 +17,32 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.activities.ActivityBase;
 
 import java.util.List;
 import java.util.Locale;
 
-public class NetBlockerMainActivity extends AppCompatActivity {
+public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.OnMenuItemClickListener {
     private static final String TAG = "Firewall.Main";
+
+
+    SearchView searchView;
+    private ImageView btnMenu;
 
     private boolean running = false;
     private AppsNetBlockerAdapter adapter = null;
@@ -43,36 +52,55 @@ public class NetBlockerMainActivity extends AppCompatActivity {
 
     public ToggleButton startStopVpn;
 
+    public ImageView headerItemMenu;
+    public ImageView headerItemCenterLeft;
+    public ImageView headerItemCenterRight;
+    public ImageView headerItemBottomLeft;
+    public ImageView headerItemBottomRigth;
+    public TextView headerItemTextViewFirst;
+    public TextView headerItemTextViewSecond;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusBarGradient(this, R.color.colorPrimaryDark, R.color.colorWhite);
         setContentView(R.layout.activity_apps_net_blocker);
+        setUpHeader();
+        initViews();
+
+    }
+
+    private void initViews() {
+        searchView = (SearchView) findViewById(R.id.acNetBlock_searchView);
+        btnMenu = findViewById(R.id.acNetBlock_btnMenu);
         startStopVpn = findViewById(R.id.btnStartStopVnp);
         if (isVpnServiceRunning()) {
-            Log.d(TAG, "onCreate: Service Running: true");
             startStopVpn.setChecked(true);
         } else {
             startStopVpn.setChecked(false);
-            Log.d(TAG, "onCreate: Service Running: false");
         }
+        add_All_Application_RCV();
+        setUpSearchViewListeners();
         startStopVpn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    Log.d(TAG, "onCheckedChanged: True");
                     startVpnService();
 
                 } else {
-                    Log.d(TAG, "onCheckedChanged: False");
                     stopVpnService();
                 }
             }
         });
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                showPopUpMenu(view);
+            }
+        });
 
         running = true;
-
-        add_All_Application_RCV();
 
         // Listen for connectivity updates
         IntentFilter ifConnectivity = new IntentFilter();
@@ -85,6 +113,54 @@ public class NetBlockerMainActivity extends AppCompatActivity {
         intentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
         intentFilter.addDataScheme("package");
         registerReceiver(packageChangedReceiver, intentFilter);
+    }
+
+    private void setUpSearchViewListeners() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (adapter != null)
+                    adapter.getFilter().filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if (adapter != null)
+                    adapter.getFilter().filter(newText);
+                return true;
+            }
+        });
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                if (adapter != null)
+                    adapter.getFilter().filter(null);
+                return true;
+            }
+        });
+
+
+    }
+
+    void setUpHeader() {
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+
+
+        headerItemCenterLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomRigth.setVisibility(View.INVISIBLE);
+        headerItemTextViewSecond.setVisibility(View.INVISIBLE);
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_net_block);
+        headerItemTextViewFirst.setText(R.string.net_blocker);
+
+
     }
 
     public boolean isVpnServiceRunning() {
@@ -174,14 +250,14 @@ public class NetBlockerMainActivity extends AppCompatActivity {
         }.execute();
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.net_blocker_menu, menu);
 
         // Search
-        searchItem = menu.findItem(R.id.menu_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+       *//* searchItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);*//*
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -207,9 +283,28 @@ public class NetBlockerMainActivity extends AppCompatActivity {
         });
 
         return true;
+    }*/
+
+    private void showPopUpMenu(View v) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        PopupMenu popup = new PopupMenu(NetBlockerMainActivity.this, v);
+        popup.setOnMenuItemClickListener(NetBlockerMainActivity.this);
+
+        popup.inflate(R.menu.net_blocker_menu);
+        Menu menu = popup.getMenu();
+
+        MenuItem network = menu.findItem(R.id.menu_network);
+        network.setIcon(helperClass.isWifiActive(this) ? R.drawable.ic_net_block_wifi_on : R.drawable.ic_net_block_signal_on);
+        MenuItem wifi = menu.findItem(R.id.menu_whitelist_wifi);
+        wifi.setChecked(prefs.getBoolean("whitelist_wifi", false));
+
+        MenuItem other = menu.findItem(R.id.menu_whitelist_other);
+        other.setChecked(prefs.getBoolean("whitelist_other", false));
+
+        popup.show();
     }
 
-    @Override
+  /*  @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -271,7 +366,7 @@ public class NetBlockerMainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     private void reset(String network) {
         SharedPreferences other = getSharedPreferences(network, Context.MODE_PRIVATE);
@@ -295,5 +390,69 @@ public class NetBlockerMainActivity extends AppCompatActivity {
                 AppsNetBlockerService.startVpnService(this);
         } else
             super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        switch (item.getItemId()) {
+            case R.id.menu_network:
+                Intent settings;
+                if (helperClass.isWifiActive(this)) {
+                    settings = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                } else {
+                    settings = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
+                }
+                if (settings.resolveActivity(getPackageManager()) != null)
+                    startActivity(settings);
+                return true;
+
+//            case R.id.menu_refresh:
+//                add_All_Application_RCV();
+//                return true;
+
+            case R.id.menu_whitelist_wifi:
+                prefs.edit().putBoolean("whitelist_wifi", !prefs.getBoolean("whitelist_wifi", false)).apply();
+                add_All_Application_RCV();
+                AppsNetBlockerService.refreshVpnService("wifi", this);
+                return true;
+
+            case R.id.menu_whitelist_other:
+                prefs.edit().putBoolean("whitelist_other", !prefs.getBoolean("whitelist_other", false)).apply();
+                add_All_Application_RCV();
+                AppsNetBlockerService.refreshVpnService("other", this);
+                return true;
+
+            case R.id.menu_vpn_settings:
+                // Open VPN settings
+                Intent vpn = new Intent("android.net.vpn.SETTINGS");
+                if (vpn.resolveActivity(getPackageManager()) != null)
+                    startActivity(vpn);
+                else
+                    Log.w(TAG, vpn + " not available");
+                return true;
+
+            default:
+                return true;
+        }
+
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        MenuItem network = menu.findItem(R.id.menu_network);
+        network.setIcon(helperClass.isWifiActive(this) ? R.drawable.ic_net_block_wifi_on : R.drawable.ic_net_block_signal_on);
+
+        MenuItem wifi = menu.findItem(R.id.menu_whitelist_wifi);
+        wifi.setChecked(prefs.getBoolean("whitelist_wifi", false));
+
+        MenuItem other = menu.findItem(R.id.menu_whitelist_other);
+        other.setChecked(prefs.getBoolean("whitelist_other", false));
+
+
+        Log.d(TAG, "onPrepareOptionsMenu: Called");
+        return super.onPrepareOptionsMenu(menu);
     }
 }

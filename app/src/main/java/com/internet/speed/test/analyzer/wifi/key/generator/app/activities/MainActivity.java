@@ -130,7 +130,7 @@ public class MainActivity extends ActivityBase {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
+        setStatusBarGradient(this, R.color.colorPrimaryDark, R.color.colorWhite);
         setContentView(R.layout.activity_my_main);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
         context = getApplicationContext();

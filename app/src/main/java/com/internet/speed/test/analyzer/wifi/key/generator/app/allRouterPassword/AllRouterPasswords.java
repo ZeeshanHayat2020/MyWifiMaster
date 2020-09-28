@@ -5,6 +5,9 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -15,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.activities.ActivityBase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,22 +31,30 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Objects;
 
-public class AllRouterPasswords extends AppCompatActivity {
+public class AllRouterPasswords extends ActivityBase {
 
 
     ArrayList<All_Router_Model_Class> arrayList;
     RouterAdapterClass adapter;
     RecyclerView recyclerView;
+    android.widget.SearchView searchView;
+    private ImageView btnMenu;
+
+
+    public ImageView headerItemMenu;
+    public ImageView headerItemCenterLeft;
+    public ImageView headerItemCenterRight;
+    public ImageView headerItemBottomLeft;
+    public ImageView headerItemBottomRigth;
+    public TextView headerItemTextViewFirst;
+    public TextView headerItemTextViewSecond;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusBarGradient(this, R.color.colorPrimaryDark, R.color.colorWhite);
         setContentView(R.layout.activity_all_router_password);
-
-
-        Toolbar toolbar = findViewById(R.id.toolbarAllRouterPassword);
-        setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        setUpHeader();
         arrayList = new ArrayList<>();
         try {
 
@@ -71,10 +83,31 @@ public class AllRouterPasswords extends AppCompatActivity {
         }
 
 
+        searchView = (android.widget.SearchView) findViewById(R.id.acNetBlock_searchView);
         recyclerView = findViewById(R.id.allRouterRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RouterAdapterClass(arrayList, this);
         recyclerView.setAdapter(adapter);
+
+
+    }
+
+    void setUpHeader() {
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+
+
+        headerItemCenterLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomRigth.setVisibility(View.INVISIBLE);
+        headerItemTextViewSecond.setVisibility(View.INVISIBLE);
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_net_block);
+        headerItemTextViewFirst.setText(R.string.net_blocker);
 
 
     }

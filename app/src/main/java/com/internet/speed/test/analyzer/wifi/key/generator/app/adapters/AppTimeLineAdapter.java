@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
@@ -90,7 +91,7 @@ public class AppTimeLineAdapter extends RecyclerView.Adapter<AppTimeLineAdapter.
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView launchTime, exitTime, usageTime;
-        LinearLayout mLayout;
+        CardView mLayout;
         View dotted_line;
         LinearLayout palette;
 

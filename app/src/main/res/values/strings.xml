@@ -134,12 +134,16 @@
     <string name="deatail">DETAIL</string>
     <string name="bluetooth">Bluetooth</string>
     <string name="connectivity">Connectivity</string>
+    <string name="application">Application</string>
+    <string name="data_usage">Data Usage</string>
+    <string name="net_blocker">Net Blocker</string>
 
     <string-array name="array_palette">
+        <item>#B718A1</item>
+        <item>#942FFD</item>
         <item>#00acb0</item>
         <item>#92ac01</item>
         <item>#fc0d60</item>
-        <item>#cd10cc</item>
         <item>#fe8301</item>
     </string-array>
 

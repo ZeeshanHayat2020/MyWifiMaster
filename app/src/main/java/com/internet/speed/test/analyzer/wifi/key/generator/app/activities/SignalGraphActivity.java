@@ -11,12 +11,16 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -41,7 +45,7 @@ import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SignalGraphActivity extends AppCompatActivity {
+public class SignalGraphActivity extends ActivityBase {
 
 
     private Timer timer;
@@ -53,12 +57,44 @@ public class SignalGraphActivity extends AppCompatActivity {
     private GoogleApiClient googleApiClient;
     private int REQUEST_LOCATION = 7172;
 
+
+    public ImageView headerItemMenu;
+    public ImageView headerItemCenterLeft;
+    public ImageView headerItemCenterRight;
+    public ImageView headerItemBottomLeft;
+    public ImageView headerItemBottomRigth;
+    public TextView headerItemTextViewFirst;
+    public TextView headerItemTextViewSecond;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_signal_graph);
-
+        setUpHeader();
         initialWork();
+
+    }
+
+    void setUpHeader() {
+        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
+        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+        headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
+        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
+        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+        headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
+        headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
+
+
+        headerItemCenterLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomLeft.setVisibility(View.INVISIBLE);
+        headerItemBottomRigth.setVisibility(View.INVISIBLE);
+
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_signal_strength);
+        headerItemTextViewFirst.setText("WIFI");
+        headerItemTextViewSecond.setText("Signal Strength");
+
 
     }
 
@@ -78,22 +114,6 @@ public class SignalGraphActivity extends AppCompatActivity {
         } else {
             getWifiList();
         }
-    }
-
-    private void getWifiInformation() {
-        WifiManager wifiManager = (WifiManager) Objects.requireNonNull(getApplicationContext().getSystemService(Context.WIFI_SERVICE));
-        assert wifiManager != null;
-        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-
-        int ipAddress = wifiInfo.getIpAddress();
-        String macAddress = wifiInfo.getMacAddress();
-        String bss_id = wifiInfo.getBSSID();
-        String ss_id = wifiInfo.getSSID();
-        int link_speed = wifiInfo.getLinkSpeed();
-        int rss_id = wifiInfo.getRssi();
-        int network_id = wifiInfo.getNetworkId();
-
-        String ip = String.format("%d.%d.%d.%d", (ipAddress & 0xff), (ipAddress >> 8 & 0xff), (ipAddress >> 16 & 0xff), (ipAddress >> 24 & 0xff));
     }
 
     public class WifiBroadCastReceiver extends BroadcastReceiver {
@@ -177,17 +197,40 @@ public class SignalGraphActivity extends AppCompatActivity {
             barEntryLabels.add(name);
         }
 
+        int[] colors = {
+                R.color.colorBarChart1,
+                R.color.colorBarChart2,
+                R.color.colorBarChart3,
+                R.color.colorBarChart4,
+                R.color.colorBarChart5,
+                R.color.colorBarChart6,
+
+        };
+
         BarDataSet bardataset = new BarDataSet(values, "Available Wifi Signal Strengths");
         bardataset.setValueTextSize(6f);
         BarData BARDATA = new BarData(barEntryLabels, bardataset);
-        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        bardataset.setColors(ColorTemplate.createColors(getResources(), colors));
         mBarChart.setDrawValueAboveBar(true);
         mBarChart.setDescription("");
         mBarChart.setData(BARDATA);
-        mBarChart.getXAxis().mLabelWidth = 30;
+        mBarChart.getXAxis().mLabelWidth = 20;
         mBarChart.getXAxis().setLabelsToSkip(0);
         mBarChart.animateY(3000);
+
     }
+
+    private void configureChartAppearance() {
+        mBarChart.setDrawGridBackground(false);
+        mBarChart.setDrawValueAboveBar(false);
+
+        YAxis leftAxis = mBarChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+
+        YAxis rightAxis = mBarChart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+    }
+
 
     public boolean hasGPSDevice(Context context) {
         final LocationManager mgr = (LocationManager) context

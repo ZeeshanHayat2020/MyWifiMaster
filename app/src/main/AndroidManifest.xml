@@ -59,7 +59,9 @@
         <activity
             android:name=".wifiAvailable.AvailableWifiActivity"
             android:theme="@style/AppTheme.NotActionBar" />
-        <activity android:name=".activities.ActivityAppUsage" />
+        <activity
+            android:name=".activities.ActivityAppUsage"
+            android:theme="@style/AppTheme.NotActionBar" />
         <activity
             android:name=".activities.ActivityWifiInformation"
             android:theme="@style/AppTheme.NotActionBar" />
@@ -77,11 +79,17 @@
             android:theme="@style/AppTheme.NotActionBar"
 
             />
-        <activity android:name=".activities.SignalGraphActivity" />
+        <activity
+            android:name=".activities.SignalGraphActivity"
+            android:theme="@style/AppTheme.NotActionBar" />
         <activity
             android:name=".activities.DetailActivity"
             android:theme="@style/AppTheme.NotActionBar" />
-        <activity android:name=".appsNetBlocker.NetBlockerMainActivity" />
+        <activity
+            android:name=".appsNetBlocker.NetBlockerMainActivity"
+            android:configChanges="keyboard"
+            android:theme="@style/AppTheme.NotActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".allRouterPassword.AllRouterPasswords"
             android:theme="@style/AppTheme.NotActionBar" />
