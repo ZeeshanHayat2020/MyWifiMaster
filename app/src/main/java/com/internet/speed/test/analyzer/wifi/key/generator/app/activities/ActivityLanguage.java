@@ -92,8 +92,8 @@ public class ActivityLanguage extends ActivityBase implements View.OnClickListen
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_language);
-        headerItemTextViewFirst.setText("LANGUAGE");
-        headerItemTextViewSecond.setText("SETTING");
+        headerItemTextViewFirst.setText(R.string.language);
+        headerItemTextViewSecond.setText(R.string.SETTING);
 
 
     }

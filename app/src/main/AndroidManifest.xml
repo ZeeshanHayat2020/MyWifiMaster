@@ -109,7 +109,7 @@
 
         <activity
             android:name=".autoConnectWifi.AutoConnectWifi"
-            android:theme="@style/AppTheme2" />
+            android:theme="@style/AppTheme.NotActionBar" />
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
@@ -118,16 +118,16 @@
         <activity
             android:name=".ListDataActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/AppTheme.NotActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Speedtest"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/AppTheme.NotActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".WifiScanActivity"
-            android:theme="@style/AppTheme2" />
+            android:theme="@style/AppTheme.NotActionBar" />
 
 
     </application>

@@ -147,8 +147,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_item_main_all_router_password" />
-                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\SVG\ic_item_main_all_router_password.svg" />
+                            <entry key="outputName" value="ic_header_item_all_router_pass" />
+                            <entry key="sourceFile" value="C:\Users\Shahraze Office\Desktop\Wifi Master UI\UI\Remaining MainItems\SVG\ic_header_item_all_router_pass.svg" />
                           </map>
                         </option>
                       </PersistentState>

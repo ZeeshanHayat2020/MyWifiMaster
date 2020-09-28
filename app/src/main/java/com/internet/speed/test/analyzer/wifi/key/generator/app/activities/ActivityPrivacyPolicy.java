@@ -76,7 +76,7 @@ public class ActivityPrivacyPolicy extends ActivityBase {
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemTextViewSecond.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_privacy_policy);
-        headerItemTextViewFirst.setText("PRIVACY POLICY");
+        headerItemTextViewFirst.setText(R.string.pp_heading);
 
 
     }

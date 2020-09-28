@@ -92,8 +92,8 @@ public class SignalGraphActivity extends ActivityBase {
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_signal_strength);
-        headerItemTextViewFirst.setText("WIFI");
-        headerItemTextViewSecond.setText("Signal Strength");
+        headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
+        headerItemTextViewSecond.setText(R.string.signal_stregnth);
 
 
     }

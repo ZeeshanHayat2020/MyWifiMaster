@@ -39,7 +39,6 @@ public class AppsNetBlockerAdapter extends RecyclerView.Adapter<AppsNetBlockerAd
         public View view;
         public ImageView ivIcon;
         public TextView tvName;
-        public TextView tvPackage;
         public TextView received;
         public TextView transfer;
         public ToggleButton cbWifi;
@@ -50,8 +49,6 @@ public class AppsNetBlockerAdapter extends RecyclerView.Adapter<AppsNetBlockerAd
             view = itemView;
             ivIcon = (ImageView) itemView.findViewById(R.id.ivIcon2);
             tvName = (TextView) itemView.findViewById(R.id.tvName2);
-            tvPackage = (TextView) itemView.findViewById(R.id.tvPackage2);
-            tvPackage.setSelected(true);
             cbWifi = (ToggleButton) itemView.findViewById(R.id.cbWifi2);
             cbOther = (ToggleButton) itemView.findViewById(R.id.cbOther2);
 
@@ -109,9 +106,6 @@ public class AppsNetBlockerAdapter extends RecyclerView.Adapter<AppsNetBlockerAd
         holder.tvName.setText(rule.name);
 
         //setting package of app
-        holder.tvPackage.setText(rule.info.packageName);
-        holder.tvPackage.setTextColor(color);
-
 
         //setting wifi on or off for app
         holder.cbWifi.setOnCheckedChangeListener(null);

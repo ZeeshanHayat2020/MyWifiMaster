@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
         , AdapterView.OnItemSelectedListener {
 
     private AppAdapter mAdapter;
-
+    private ProgressBar loadingBar;
     public ImageView headerItemMenu;
     public ImageView headerItemCenterLeft;
     public ImageView headerItemCenterRight;
@@ -45,6 +46,7 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_app_usage);
         setUpHeader();
+        loadingBar = findViewById(R.id.acAppDataUsage_loadingBar);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -85,6 +87,7 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
     }
 
     private void init() {
+
         RecyclerView mRecycler = findViewById(R.id.recycler);
         mAdapter = new AppAdapter(this);
 
@@ -113,10 +116,12 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
 
     @Override
     public void showProgress() {
+        loadingBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgress() {
+        loadingBar.setVisibility(View.INVISIBLE);
     }
 
     /**

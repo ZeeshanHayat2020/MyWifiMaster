@@ -24,7 +24,7 @@
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/acNetBlock_btnMenu"
             android:iconifiedByDefault="false"
-            android:queryHint="Search" />
+            android:queryHint="@string/search" />
 
         <ImageView
             android:id="@+id/acNetBlock_btnMenu"
@@ -75,6 +75,13 @@
 
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/acNetBlock_loadingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
 
 
 </RelativeLayout>

@@ -74,7 +74,6 @@
                     android:layout_height="@dimen/_200sdp"
                     android:layout_alignParentTop="true"
                     android:layout_centerInParent="true"
-                    android:src="@color/colorPrimary"
                     app:lottie_autoPlay="false"
                     app:lottie_loop="true"
                     app:lottie_rawRes="@raw/scan_anim1" />
@@ -87,8 +86,9 @@
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="@dimen/_20sdp"
                     android:background="@drawable/background_btns"
-                    android:text="Scan"
-                    android:textColor="@color/colorWhite" />
+                    android:text="@string/scan"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp" />
             </RelativeLayout>
         </RelativeLayout>
 

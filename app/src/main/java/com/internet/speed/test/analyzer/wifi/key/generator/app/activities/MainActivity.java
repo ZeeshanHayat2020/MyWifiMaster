@@ -130,7 +130,7 @@ public class MainActivity extends ActivityBase {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarGradient(this, R.color.colorPrimaryDark, R.color.colorWhite);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_my_main);
         MobileAds.initialize(this, getResources().getString(R.string.app_id));
         context = getApplicationContext();
@@ -187,8 +187,8 @@ public class MainActivity extends ActivityBase {
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
         headerSpeedMeter = findViewById(R.id.speedView);
-        headerItemTextViewFirst.setText("WIFI");
-        headerItemTextViewSecond.setText("Password Master");
+        headerItemTextViewFirst.setText(R.string.WIFI);
+        headerItemTextViewSecond.setText(R.string.password_master);
         headerItemCenterRight.setOnClickListener(onHeaderItemsClick);
         headerItemBottomLeft.setOnClickListener(onHeaderItemsClick);
         headerItemBottomRigth.setOnClickListener(onHeaderItemsClick);
@@ -290,6 +290,10 @@ public class MainActivity extends ActivityBase {
                 }
                 break;
                 case R.id.header_item_bottomRigth_imageView: {
+                    Intent intent = new Intent(MainActivity.this, ActivityLanguage.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
 
                 }
                 break;
@@ -464,6 +468,8 @@ public class MainActivity extends ActivityBase {
                         interstitial.show();
                     } else {
                         requestNewInterstitial();
+                        Intent i = new Intent(MainActivity.this, PasswordGeneratorActivity.class);
+                        startActivity(i);
 
                     }
                     interstitial.setAdListener(new AdListener() {
@@ -472,12 +478,10 @@ public class MainActivity extends ActivityBase {
                             super.onAdClosed();
                             requestNewInterstitial();
 
-                            Intent i = new Intent(MainActivity.this, PasswordGeneratorActivity.class);
-                            startActivity(i);
+
                         }
                     });
                 } else {
-
                     Intent i = new Intent(MainActivity.this, PasswordGeneratorActivity.class);
                     startActivity(i);
 
@@ -551,12 +555,12 @@ public class MainActivity extends ActivityBase {
             }
             break;
             case 7: {
-//                startActivity(new Intent(MainActivity.this, BluetoothActivityN.class));
-                startActivity(new Intent(MainActivity.this, BluetoothConnectivity.class));
+                Intent intent = new Intent(MainActivity.this, BluetoothConnectivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
             break;
             case 8: {
-//                startActivity(new Intent(MainActivity.this, LocationActivity.class));
                 intentToLocationRelatedActivities(new ActivityLiveLocation());
             }
             break;
@@ -567,6 +571,7 @@ public class MainActivity extends ActivityBase {
             break;
             case 10: {
                 Intent intent = new Intent(this, ActivityAppUsage.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
             break;

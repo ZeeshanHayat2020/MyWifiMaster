@@ -177,8 +177,8 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
         headerItemBottomLeft.setVisibility(View.INVISIBLE);
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_scan_wifi);
-        headerItemTextViewFirst.setText("WIFI");
-        headerItemTextViewSecond.setText("SCANNER");
+        headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
+        headerItemTextViewSecond.setText(R.string.SCANNER);
 
 
     }

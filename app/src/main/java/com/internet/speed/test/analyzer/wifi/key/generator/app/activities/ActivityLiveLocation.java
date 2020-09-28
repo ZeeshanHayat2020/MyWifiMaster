@@ -109,7 +109,7 @@ public class ActivityLiveLocation extends ActivityBase {
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemTextViewSecond.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_livelocation);
-        headerItemTextViewFirst.setText("Live Location");
+        headerItemTextViewFirst.setText(R.string.libve_location);
 
 
     }

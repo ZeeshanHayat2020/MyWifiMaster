@@ -80,7 +80,7 @@ public class AutoConnectWifi extends ActivityBase {
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_auto_wifi);
-        headerItemTextViewFirst.setText("Auto Wifi");
+        headerItemTextViewFirst.setText(R.string.auto_wifi);
         headerItemTextViewSecond.setVisibility(View.INVISIBLE);
 
 

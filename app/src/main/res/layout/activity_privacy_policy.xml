@@ -76,7 +76,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_5sdp"
-                            android:text="Phone Storage"
+                            android:text="@string/phone_storage"
                             android:textColor="@color/colorBlack"
                             android:textSize="16sp"
                             android:textStyle="bold"
@@ -101,7 +101,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_5sdp"
-                            android:text="Access Location"
+                            android:text="@string/access_location"
                             android:textColor="@color/colorBlack"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -124,7 +124,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_5sdp"
-                            android:text="Access Wifi or Internet"
+                            android:text="@string/access_wifi_or_internet"
                             android:textColor="@color/colorBlack"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -147,7 +147,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/_5sdp"
-                            android:text="Bluetooth and bluetooth_admin"
+                            android:text="@string/bluetooth_and_bluetooth_admin"
                             android:textColor="@color/colorBlack"
                             android:textSize="16sp"
                             android:textStyle="bold" />

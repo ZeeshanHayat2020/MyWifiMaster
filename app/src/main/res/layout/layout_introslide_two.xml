@@ -27,7 +27,7 @@
         android:layout_below="@+id/intro_slide_two_cardView"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/_5sdp"
-        android:text="Scan Wifi"
+        android:text="@string/scan_wifi"
         android:textColor="@color/colorLanguageTxt"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -40,7 +40,7 @@
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_20sdp"
         android:gravity="center"
-        android:text="All nearby wifi list will be shown."
+        android:text="@string/intro_second_message"
         android:textColor="@color/colorLanguageTxt"
         android:textSize="16sp" />
 </RelativeLayout>

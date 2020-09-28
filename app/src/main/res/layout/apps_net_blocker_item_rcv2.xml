@@ -17,7 +17,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_height="@dimen/_60sdp"
         android:orientation="horizontal">
 
 
@@ -34,8 +34,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -43,32 +45,17 @@
                 android:id="@+id/tvName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:singleLine="true"
                 android:text="Wi-fi Master"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorBlack"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvPackage2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_4sdp"
-                android:layout_marginTop="@dimen/_2sdp"
-                android:layout_marginRight="@dimen/_4sdp"
-                android:ellipsize="marquee"
-                android:gravity="center"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:singleLine="true"
-                android:text="com.example.wifiMaster"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:gravity="right"
                 android:orientation="horizontal"
                 android:weightSum="2">
@@ -91,32 +78,13 @@
                     android:layout_height="@dimen/_20sdp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
                     android:background="@drawable/other"
                     android:textOff=""
                     android:textOn=""
 
                     />
 
-                <!--           <CheckBox
-                               android:id="@+id/cbWifiState"
-                               android:layout_width="@dimen/_30sdp"
-                               android:layout_height="@dimen/_30sdp"
-                               android:layout_gravity="center_vertical"
-                               android:layout_marginStart="@dimen/_30sdp"
-                               android:layout_marginEnd="@dimen/_30sdp"
-                               android:button="@drawable/backgorund_selector_wifi"
-
-                               />
-
-                           <CheckBox
-                               android:id="@+id/cbOther2"
-                               android:layout_width="@dimen/_30sdp"
-                               android:layout_height="@dimen/_30sdp"
-                               android:layout_gravity="center_vertical"
-                               android:layout_marginStart="@dimen/_30sdp"
-                               android:layout_marginEnd="@dimen/_30sdp"
-                               android:button="@drawable/other" />-->
 
             </LinearLayout>
 

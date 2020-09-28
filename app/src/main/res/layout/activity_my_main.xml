@@ -7,10 +7,6 @@
     android:background="@color/white"
     tools:context=".activities.MainActivity">
 
-    <!--  <include
-          android:id="@+id/header_acMain"
-          layout="@layout/layout_header" />-->
-
     <RelativeLayout
         android:id="@+id/header_acMain"
         android:layout_width="match_parent"
@@ -117,6 +113,9 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="@dimen/_10sdp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_setting" />
 
@@ -127,6 +126,9 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginRight="@dimen/_10sdp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_language" />
         </RelativeLayout>
@@ -144,8 +146,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_margin="@dimen/_15sdp"
-            android:elevation="@dimen/_5sdp"
-            app:cardCornerRadius="@dimen/_10sdp">
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -159,8 +161,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/_5sdp"
-                    android:text="Allow Permissions"
-                    android:textColor="@color/colorTextNormal"
+                    android:text="@string/allow_permissions"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
@@ -181,7 +183,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="@dimen/_5sdp"
                     android:background="@drawable/background_btns"
-                    android:text="Allow"
+                    android:text="@string/allow"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
             </LinearLayout>

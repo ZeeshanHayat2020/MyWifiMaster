@@ -112,8 +112,8 @@ public class ListDataActivity extends ActivityBase {
         headerItemBottomLeft.setVisibility(View.INVISIBLE);
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_generate_passworf);
-        headerItemTextViewFirst.setText("WIFI");
-        headerItemTextViewSecond.setText("PASSWORD");
+        headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
+        headerItemTextViewSecond.setText(R.string.PASSWORD);
 
 
     }

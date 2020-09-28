@@ -98,7 +98,7 @@ public class Speedtest extends ActivityBase {
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_speed_test);
-        headerItemTextViewFirst.setText(R.string.wifi);
+        headerItemTextViewFirst.setText(R.string.WIFI);
         headerItemTextViewSecond.setText(R.string.speedTest);
 
 

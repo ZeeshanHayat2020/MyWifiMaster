@@ -68,7 +68,6 @@ public class PasswordGeneratorActivity extends ActivityBase implements View.OnCl
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.white);
         setContentView(R.layout.activity_password_generator);
-
         setUpHeader();
         initialWork();
         Listeners();
@@ -91,10 +90,9 @@ public class PasswordGeneratorActivity extends ActivityBase implements View.OnCl
         headerItemCenterLeft.setVisibility(View.INVISIBLE);
         headerItemBottomLeft.setVisibility(View.INVISIBLE);
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
-
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_generate_password);
-        headerItemTextViewFirst.setText("WIFI");
-        headerItemTextViewSecond.setText("PASSWORD GENERATE");
+        headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
+        headerItemTextViewSecond.setText(R.string.PASS_GENERATE);
 
 
     }

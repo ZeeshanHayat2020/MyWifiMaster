@@ -141,7 +141,7 @@ public class ActivityWifiInformation extends ActivityBase {
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_wifi_info);
-        headerItemTextViewFirst.setText(getResources().getString(R.string.wifi));
+        headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
         headerItemTextViewSecond.setText(R.string.deatail);
 
 

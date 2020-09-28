@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.On
     private static final String TAG = "Firewall.Main";
 
 
+    private ProgressBar loadingBar;
     SearchView searchView;
     private ImageView btnMenu;
 
@@ -63,7 +65,7 @@ public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarGradient(this, R.color.colorPrimaryDark, R.color.colorWhite);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_apps_net_blocker);
         setUpHeader();
         initViews();
@@ -71,6 +73,7 @@ public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.On
     }
 
     private void initViews() {
+        loadingBar = findViewById(R.id.acNetBlock_loadingBar);
         searchView = (SearchView) findViewById(R.id.acNetBlock_searchView);
         btnMenu = findViewById(R.id.acNetBlock_btnMenu);
         startStopVpn = findViewById(R.id.btnStartStopVnp);
@@ -234,6 +237,13 @@ public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.On
         // Get/set application list
         new AsyncTask<Object, Object, List<Apps_Model_Class>>() {
             @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loadingBar.setVisibility(View.VISIBLE);
+                rvApplication.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
             protected List<Apps_Model_Class> doInBackground(Object... arg) {
                 return Apps_Model_Class.getListOfApps(NetBlockerMainActivity.this);
             }
@@ -245,6 +255,8 @@ public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.On
                         MenuItemCompat.collapseActionView(searchItem);
                     adapter = new AppsNetBlockerAdapter(result, NetBlockerMainActivity.this);
                     rvApplication.setAdapter(adapter);
+                    loadingBar.setVisibility(View.INVISIBLE);
+                    rvApplication.setVisibility(View.VISIBLE);
                 }
             }
         }.execute();

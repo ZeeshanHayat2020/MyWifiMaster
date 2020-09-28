@@ -48,4 +48,10 @@
             android:layoutAnimation="@anim/layout_anim_down_to_up" />
     </RelativeLayout>
 
+    <ProgressBar
+        android:id="@+id/acAppDataUsage_loadingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
 </RelativeLayout>

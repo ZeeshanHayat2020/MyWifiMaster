@@ -52,13 +52,21 @@
     <string name="portuguese" translatable="false">portuguesa</string>
     <string name="russian" translatable="false">русский</string>
     <string name="spanish" translatable="false">española</string>
+
+
+    <string name="trun_on_auto_wifi_service">If You turn On Auto wifi the service will Run On background that will turn on Your Wifi After Every 30 Minutes if Wifi Is Off</string>
+    <string name="privacyPolicyDescription">This Application collects the following categories of information from your use of this Application,</string>
+    <string name="privacyPolicyLinkMessage">For Further details about how this app handles your information, please visit the privacy policy at below link.</string>
+    <string name="intro_third_message">Block Wifi or/and Internet of any specific app or can all of app\'s.</string>
+    <string name="intro_one_message">This app saves wifi password when you connecting your device with wifi.</string>
+    <string name="intro_second_message">All nearby wifi list will be shown after scanning the wifi, you can connect with any one.</string>
+
     <string name="name">Terms and Conditions</string>
     <string name="no_wifi">Wifi not connected</string>
     <string name="permission_denied_location">Location</string>
     <string name="setting">Setting</string>
     <string name="show_npassword">Show  password</string>
     <string name="wifi_speed">Wifi Speed</string>
-    <string name="scan_wifi">Scan Wifi</string>
     <string name="generate_n_password">Generate  password</string>
     <string name="hotspot">Hotspot</string>
     <string name="wifi_n_information">Wifi  Information</string>
@@ -74,7 +82,6 @@
     <string name="accept">Accept</string>
     <string name="turn_on_auto_wifi">Turn On Auto Wifi</string>
     <string name="how_was_your_experience_with_us">How Was Your Experience With Us ?</string>
-    <string name="auto_wifi">Auto Wifi</string>
     <string name="press_the_button_to_show_generated_key">Press the button to show generated key</string>
     <string name="generate_key">Generate Key</string>
     <string name="downloading">Downloading</string>
@@ -83,13 +90,12 @@
     <string name="wifi_available">Wi-Fi Available</string>
     <string name="show_password">show password</string>
     <string name="connect">Connect</string>
-    <string name="cancel">cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="enter_password">Enter password</string>
     <string name="please_share_your_experience">Please Share Your experience</string>
     <string name="exit">Exit</string>
     <string name="turnoffs">Turn Off</string>
     <string name="turn_onss">Turn On</string>
-    <string name="if_you_turn_on_auto_wifi_the_service_will_run_on_background_that_will_turn_on_your_wifi_after_every_30_second_if_wifi_is_off">If You turn On Auto wifi the service will Run On background that will turn on Your Wifi After Every 30 Minutes if Wifi Is Off</string>
     <string name="SSID">SSID</string>
     <string name="ipAddress">IP Address</string>
     <string name="mac_address">Mac Address</string>
@@ -127,16 +133,50 @@
     <string name="eg_wifi_password">e.g password</string>
     <string name="privacy_policy_heading">Privacy Policy</string>
     <string name="privacpolicy_reviewText">Please review the User Data Retention Policy.</string>
-    <string name="privacyPolicyDescription">This Application collects the following categories of information from your use of this Application,</string>
-    <string name="privacyPolicyLinkMessage">For Further details about how this app handles your information, please visit the privacy policy at below link.</string>
-    <string name="wifi">WIFI</string>
     <string name="speedTest">SPEED TEST</string>
     <string name="deatail">DETAIL</string>
-    <string name="bluetooth">Bluetooth</string>
     <string name="connectivity">Connectivity</string>
     <string name="application">Application</string>
     <string name="data_usage">Data Usage</string>
     <string name="net_blocker">Net Blocker</string>
+    <string name="language">LANGUAGE</string>
+    <string name="SETTING">SETTING</string>
+    <string name="show_wifi_password">Show Wifi Password</string>
+    <string name="scan_wifi">Scan Wifi</string>
+    <string name="block_internet">Block Internet</string>
+    <string name="pp_heading">PRIVACY POLICY</string>
+    <string name="phone_storage">Phone Storage</string>
+    <string name="access_location">Access Location</string>
+    <string name="access_wifi_or_internet">Access Wifi or Internet</string>
+    <string name="bluetooth_and_bluetooth_admin">Bluetooth and bluetooth_admin</string>
+    <string name="allow_permissions">Allow Permissions</string>
+    <string name="allow">Allow</string>
+    <string name="WIFI">WIFI</string>
+    <string name="password_master">Password Master</string>
+    <string name="SCANNER">SCANNER</string>
+    <string name="scan">Scan</string>
+    <string name="auto_wifi">Auto Wifi</string>
+    <string name="turn_on">Turn on</string>
+    <string name="turn_off">Turn Off</string>
+    <string name="PASS_GENERATE">PASSWORD GENERATE</string>
+    <string name="upper_case">Upper Case</string>
+    <string name="lower_case">Lower Case</string>
+    <string name="symbols">Symbols</string>
+    <string name="numbers">Numbers</string>
+    <string name="length">Password Length</string>
+    <string name="generate">Generate</string>
+    <string name="password_will_be_show_here">Password will be show here</string>
+    <string name="PASSWORD">PASSWORD</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="discoverable">DiscoverAble</string>
+    <string name="all_nearby_devices">All Nearby Devices</string>
+    <string name="libve_location">Live Location</string>
+    <string name="search_location">Search Location</string>
+    <string name="signal_stregnth">Signal Strength</string>
+    <string name="search">Search</string>
+    <string name="enter_brand_name">Enter Brand Name</string>
+    <string name="password">Password</string>
+    <string name="user_name">User Name</string>
 
     <string-array name="array_palette">
         <item>#B718A1</item>

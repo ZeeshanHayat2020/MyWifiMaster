@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/_20sdp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/_20sdp">
 
     <TextView
         android:id="@+id/txt_dia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/how_was_your_experience_with_us"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_16sdp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <com.hsalf.smilerating.SmileRating
         android:id="@+id/ratingView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
         app:angryColor="#CD0F01"
         app:drawingColor="#353431"
-        app:normalColor="#FFE500"
-
         app:isIndicator="false"
-        app:showLine="false"
+        app:normalColor="#FFE500"
         app:placeHolderBackgroundColor="#C5C5C5"
         app:placeHolderSmileColor="#ffffff"
+        app:showLine="false"
         app:textNonSelectionColor="#BDBDBD"
-        app:textSelectionColor="#000000"/>
+        app:textSelectionColor="#000000" />
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_never"
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/background_btns"
             android:clickable="true"
-            android:background="#3300FF"
+            android:focusable="true"
             android:text="@string/exit"
-            android:textSize="@dimen/_15sdp"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:focusable="true" />
+            android:textSize="@dimen/_15sdp"
+
+            />
 
         <Button
             android:id="@+id/btn_may_be_later"
             android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="5dp"
+            android:background="@drawable/background_btns"
             android:clickable="true"
-            android:textAllCaps="false"
-            android:background="#3300FF"
+            android:focusable="true"
             android:text="@string/cancel"
-            android:textSize="@dimen/_15sdp"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:focusable="true" />
+            android:textSize="@dimen/_15sdp" />
     </LinearLayout>
 </LinearLayout>

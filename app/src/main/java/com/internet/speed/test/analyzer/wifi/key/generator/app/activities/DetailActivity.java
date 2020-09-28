@@ -3,7 +3,9 @@ package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +35,7 @@ import bot.box.appusage.utils.UsageUtils;
 
 public class DetailActivity extends ActivityBase {
     private static final String PACKAGE_NAME = "_packageName";
+    private ProgressBar loadingBar;
 
     public static void start(Activity activity, String packageName) {
         Intent intent = new Intent(activity, DetailActivity.class);
@@ -45,9 +48,21 @@ public class DetailActivity extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_details);
-
+        loadingBar = findViewById(R.id.acDetail_loadingBar);
         String packageName = getIntent().getStringExtra(PACKAGE_NAME);
         Monitor.scan().queryFor(new PackageContracts.View() {
+
+            @Override
+            public void showProgress() {
+                loadingBar.setVisibility(View.VISIBLE);
+                //optional
+            }
+
+            @Override
+            public void hideProgress() {
+                loadingBar.setVisibility(View.INVISIBLE);
+                //optional
+            }
 
             @Override
             public void getUsageForPackage(AppData appData, int duration) {
@@ -65,15 +80,7 @@ public class DetailActivity extends ActivityBase {
                         .into((ImageView) findViewById(R.id.icon));
             }
 
-            @Override
-            public void showProgress() {
-                //optional
-            }
 
-            @Override
-            public void hideProgress() {
-                //optional
-            }
         }).whichPackage(packageName).fetchFor(Duration.TODAY);
 
         /**

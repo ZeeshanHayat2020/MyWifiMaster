@@ -27,7 +27,7 @@
         android:layout_below="@+id/intro_slide_three_cardView"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/_5sdp"
-        android:text="Block Internet"
+        android:text="@string/block_internet"
         android:textColor="@color/colorLanguageTxt"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -40,7 +40,7 @@
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_20sdp"
         android:gravity="center"
-        android:text="Block Wifi or/and Internet off any app."
+        android:text="@string/intro_third_message"
         android:textColor="@color/colorLanguageTxt"
         android:textSize="16sp" />
 </RelativeLayout>

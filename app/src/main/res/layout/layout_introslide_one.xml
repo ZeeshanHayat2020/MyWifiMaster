@@ -28,7 +28,7 @@
         android:layout_below="@+id/intro_slide_one_cardView"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/_5sdp"
-        android:text="Show Wifi Password"
+        android:text="@string/show_wifi_password"
         android:textColor="@color/colorLanguageTxt"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -41,8 +41,7 @@
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_20sdp"
         android:gravity="center"
-        android:text="Show wifi passwor list
-"
+        android:text="@string/intro_one_message"
         android:textColor="@color/colorLanguageTxt"
         android:textSize="16sp" />
 </RelativeLayout>

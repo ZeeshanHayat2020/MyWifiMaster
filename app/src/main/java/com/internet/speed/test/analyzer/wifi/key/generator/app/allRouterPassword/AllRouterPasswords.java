@@ -2,15 +2,13 @@ package com.internet.speed.test.analyzer.wifi.key.generator.app.allRouterPasswor
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,9 +35,7 @@ public class AllRouterPasswords extends ActivityBase {
     ArrayList<All_Router_Model_Class> arrayList;
     RouterAdapterClass adapter;
     RecyclerView recyclerView;
-    android.widget.SearchView searchView;
-    private ImageView btnMenu;
-
+    SearchView searchView;
 
     public ImageView headerItemMenu;
     public ImageView headerItemCenterLeft;
@@ -52,9 +48,16 @@ public class AllRouterPasswords extends ActivityBase {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarGradient(this, R.color.colorPrimaryDark, R.color.colorWhite);
+        setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_all_router_password);
         setUpHeader();
+        initViews();
+        setUpSearchViewChangeListeners();
+
+
+    }
+
+    private void initViews() {
         arrayList = new ArrayList<>();
         try {
 
@@ -83,12 +86,11 @@ public class AllRouterPasswords extends ActivityBase {
         }
 
 
-        searchView = (android.widget.SearchView) findViewById(R.id.acNetBlock_searchView);
+        searchView = findViewById(R.id.acAllRouter_searchView);
         recyclerView = findViewById(R.id.allRouterRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RouterAdapterClass(arrayList, this);
         recyclerView.setAdapter(adapter);
-
 
     }
 
@@ -105,9 +107,10 @@ public class AllRouterPasswords extends ActivityBase {
         headerItemCenterLeft.setVisibility(View.INVISIBLE);
         headerItemBottomLeft.setVisibility(View.INVISIBLE);
         headerItemBottomRigth.setVisibility(View.INVISIBLE);
-        headerItemTextViewSecond.setVisibility(View.INVISIBLE);
-        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_net_block);
-        headerItemTextViewFirst.setText(R.string.net_blocker);
+
+        headerItemCenterRight.setImageResource(R.drawable.ic_header_item_all_router_pass);
+        headerItemTextViewFirst.setText("Default Router");
+        headerItemTextViewSecond.setText("Password");
 
 
     }
@@ -128,15 +131,8 @@ public class AllRouterPasswords extends ActivityBase {
         return json;
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.all_router_menu, menu);
-
-        // Search
-        MenuItem searchItem = menu.findItem(R.id.router_menu_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        searchView.setQueryHint("Enter Brand Name");
+    private void setUpSearchViewChangeListeners() {
+        searchView.setQueryHint(getString(R.string.enter_brand_name));
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -157,12 +153,10 @@ public class AllRouterPasswords extends ActivityBase {
 
             @Override
             public boolean onClose() {
-
                 adapter.updateData(arrayList);
                 return false;
             }
         };
         searchView.setOnCloseListener(closeListener);
-        return true;
     }
 }
