@@ -50,7 +50,7 @@ public class ActivitySplash extends ActivityBase {
             }
         };
         handler = new Handler();
-        handler.postDelayed(runnable, 1000);
+        handler.postDelayed(runnable, 3000);
     }
 
     private void launchLanguageActivity() {
@@ -86,7 +86,13 @@ public class ActivitySplash extends ActivityBase {
             @Override
             public void onAdLoaded() {
                 if (mInterstitialAd.isLoaded() && !myPreferences.isItemPurchased()) {
-                    mInterstitialAd.show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mInterstitialAd.show();
+                        }
+                    }, 1000);
+
                 } else {
                     launchWithDelay();
                     Log.d("TAG", "The interstitial wasn't loaded yet.");

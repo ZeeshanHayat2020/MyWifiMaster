@@ -91,7 +91,6 @@ public class MainActivity extends ActivityBase {
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     public static int flag, keyone;
     TextView showpass, scanWifi, wifispeed, GenaratePWD, Hotspot, Setting, Info, Share;
-    InterstitialAd interstitial;
     Activity activity;
     SharedPreferences preferences;
     Boolean ison = false;
@@ -125,6 +124,7 @@ public class MainActivity extends ActivityBase {
     private TextView headerItemTextViewSecond;
     private PointerSpeedometer headerSpeedMeter;
     private WifiManager wifiManager;
+    private boolean isLeftApp = false;
 
 
     @Override
@@ -141,22 +141,14 @@ public class MainActivity extends ActivityBase {
         iniRecyclerView();
         setUpRecyclerView();
         preferences = getSharedPreferences("PREFS", 0);
-
         InAppPrefManager.getInstance(this).setInAppStatus(false);
-        requestNewInterstitial();
-       /* Boolean test = wifiManager.setWifiEnabled(true);
-
-        if (isInternetIsConnected(getApplicationContext()) || test == true) {
-            //if (flag == 1) {
-            headerItemCenterRight.setImageResource(R.drawable.enable);
-            keyone = 1;
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("enable", "yes");
-            editor.apply();
-        }*/
-
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reqNewInterstitial(this);
+    }
 
     private void initViews() {
 
@@ -351,19 +343,19 @@ public class MainActivity extends ActivityBase {
 
         };
         String[] title = {
-                "Scan Wifi",
-                "Auto Wifi",
-                "Generate Password",
-                "Show Password",
-                "Hotspot",
-                "Wifi Speed",
-                "Wifi information",
-                "Bluetooth connect",
-                "Live location",
-                "Wifi Signal Strength",
-                "App Data Usage",
-                "Net Block",
-                "All Router Password"
+                getString(R.string.scac_wifi),
+                getString(R.string.auto_wifi),
+                getString(R.string.gen_pass),
+                getString(R.string.show_pass),
+                getString(R.string.hotspto),
+                getString(R.string.wifi_speed),
+                getString(R.string.wifi_info),
+                getString(R.string.bluetooth),
+                getString(R.string.libve_location),
+                getString(R.string.wifi_strength),
+                getString(R.string.app_usage),
+                getString(R.string.net_block),
+                getString(R.string.defaul_router_pass)
         };
         for (int i = 0; i < title.length; i++) {
             bottomViewList.add(new ModelMain(imgIds[i], title[i]));
@@ -402,16 +394,41 @@ public class MainActivity extends ActivityBase {
     }
 
     private void intentToLocationRelatedActivities(Activity activity) {
-        if (hasGPSDevice(this)) {
-            if (hasGpsEnable()) {
-                Intent intent = new Intent(this, activity.getClass());
-                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-            } else {
-                enableLoc();
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+            mInterstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    if (hasGPSDevice(MainActivity.this)) {
+                        if (hasGpsEnable()) {
+                            Intent intent = new Intent(MainActivity.this, activity.getClass());
+                            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                            startActivity(intent);
+                        } else {
+                            enableLoc();
 
+                        }
+                    }
+                }
+
+            });
+
+
+        } else {
+            reqNewInterstitial(this);
+            if (hasGPSDevice(MainActivity.this)) {
+                if (hasGpsEnable()) {
+                    Intent intent = new Intent(MainActivity.this, activity.getClass());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                } else {
+                    enableLoc();
+
+                }
             }
         }
+
     }
 
     void onPermissionButtonClicked() {
@@ -459,30 +476,32 @@ public class MainActivity extends ActivityBase {
             }
             break;
             case 1: {
-                startActivity(new Intent(MainActivity.this, AutoConnectWifi.class));
+                Intent intent = new Intent(MainActivity.this, AutoConnectWifi.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
             break;
             case 2: {
-                if (interstitial != null) {
-                    if (interstitial.isLoaded()) {
-                        interstitial.show();
+                if (mInterstitialAd != null) {
+                    if (mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
                     } else {
-                        requestNewInterstitial();
                         Intent i = new Intent(MainActivity.this, PasswordGeneratorActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(i);
-
                     }
-                    interstitial.setAdListener(new AdListener() {
+                    mInterstitialAd.setAdListener(new AdListener() {
                         @Override
                         public void onAdClosed() {
                             super.onAdClosed();
-                            requestNewInterstitial();
-
-
+                            Intent i = new Intent(MainActivity.this, PasswordGeneratorActivity.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
                         }
                     });
                 } else {
                     Intent i = new Intent(MainActivity.this, PasswordGeneratorActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
 
                 }
@@ -490,26 +509,27 @@ public class MainActivity extends ActivityBase {
             }
             break;
             case 3: {
-                if (interstitial != null) {
-                    if (interstitial.isLoaded()) {
-                        interstitial.show();
+                if (mInterstitialAd != null) {
+                    if (mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
                     } else {
-                        requestNewInterstitial();
-                        startActivity(new Intent(MainActivity.this, ListDataActivity.class));
+                        Intent intent = new Intent(MainActivity.this, ListDataActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     }
-                    interstitial.setAdListener(new AdListener() {
+                    mInterstitialAd.setAdListener(new AdListener() {
                         @Override
                         public void onAdClosed() {
                             super.onAdClosed();
-                            requestNewInterstitial();
-                            startActivity(new Intent(MainActivity.this, ListDataActivity.class));
+                            Intent intent = new Intent(MainActivity.this, ListDataActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
                         }
                     });
                 } else {
-
-                    startActivity(new Intent(MainActivity.this, ListDataActivity.class));
-
-
+                    Intent intent = new Intent(MainActivity.this, ListDataActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                 }
             }
             break;
@@ -523,30 +543,29 @@ public class MainActivity extends ActivityBase {
             }
             break;
             case 5: {
-                if (interstitial != null) {
-                    if (interstitial.isLoaded()) {
-                        interstitial.show();
+                if (mInterstitialAd != null) {
+                    if (mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
                     } else {
-                        requestNewInterstitial();
                         Intent i = new Intent(MainActivity.this, Speedtest.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(i);
                     }
 
-                    interstitial.setAdListener(new AdListener() {
+                    mInterstitialAd.setAdListener(new AdListener() {
                         @Override
                         public void onAdClosed() {
                             super.onAdClosed();
-                            requestNewInterstitial();
                             Intent i = new Intent(MainActivity.this, Speedtest.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(i);
                         }
                     });
 
                 } else {
-
                     Intent i = new Intent(MainActivity.this, Speedtest.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
-
                 }
             }
             break;
@@ -576,12 +595,37 @@ public class MainActivity extends ActivityBase {
             }
             break;
             case 11: {
-                Intent intent = new Intent(this, NetBlockerMainActivity.class);
-                startActivity(intent);
+
+
+                if (mInterstitialAd != null) {
+                    if (mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
+                    } else {
+                        Intent intent = new Intent(this, NetBlockerMainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+
+                    mInterstitialAd.setAdListener(new AdListener() {
+                        @Override
+                        public void onAdClosed() {
+                            super.onAdClosed();
+                            Intent intent = new Intent(MainActivity.this, NetBlockerMainActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    });
+
+                } else {
+                    Intent intent = new Intent(this, NetBlockerMainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
             }
             break;
             case 12: {
                 Intent intent = new Intent(this, AllRouterPasswords.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
             break;
@@ -796,15 +840,6 @@ public class MainActivity extends ActivityBase {
 
     }
 
-    private void requestNewInterstitial() {
-        interstitial = new InterstitialAd(this);
-        interstitial.setAdUnitId(this.getResources().getString(R.string.Interstitial));
-
-        AdRequest adRequest = new AdRequest.Builder()
-                .build();
-        interstitial.loadAd(adRequest);
-    }
-
     public void clearApplicationData() {
         File cache = getCacheDir();
         File appDir = new File(cache.getParent());
@@ -932,4 +967,10 @@ public class MainActivity extends ActivityBase {
             }
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        isLeftApp = true;
+    }
 }

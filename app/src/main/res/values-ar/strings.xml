@@ -120,4 +120,24 @@
     <string name="password">كلمه المرور</string>
     <string name="user_name">اسم المستخدم</string>
 
+    <string name="scac_wifi">مسح واي فاي</string>
+    <string name="gen_pass">إنشاء كلمة مرور</string>
+    <string name="show_pass">إظهار كلمة المرور</string>
+    <string name="hotspto">هوتسبوت</string>
+    <string name="wifi_info">معلومات واي فاي</string>
+    <string name="bluetooth_con">اتصال بلوتوث</string>
+    <string name="wifi_strength">قوة إشارة Wifi</string>
+    <string name="app_usage">استخدام بيانات التطبيق</string>
+    <string name="net_block">كتلة صافي</string>
+    <string name="defaul_router_pass">كلمة مرور جهاز التوجيه الافتراضي</string>
+
+
+
+    <string name="trun_on_auto_wifi_service">إذا قمت بتشغيل على واي فاي السيارات الخدمة سوف تعمل على الخلفية التي من شأنها أن تتحول على واي فاي الخاص بك بعد كل 30 دقيقة إذا واي فاي هو خارج</string>
+    <string name="privacyPolicyDescription">هذا التطبيق يجمع الفئات التالية من المعلومات من استخدامك لهذا التطبيق،</string>
+    <string name="privacyPolicyLinkMessage">لمزيد من التفاصيل حول كيفية تعامل هذا التطبيق مع معلوماتك، يرجى زيارة سياسة الخصوصية على الرابط أدناه.</string>
+    <string name="intro_third_message">كتلة واي فاي أو  والإنترنت من أي تطبيق معين أو يمكن كل من التطبيق  ق.</string>
+    <string name="intro_one_message">هذا التطبيق يحفظ كلمة المرور واي فاي عند ربط الجهاز مع واي فاي.</string>
+    <string name="intro_second_message">سيتم عرض جميع قائمة Wifi القريبة بعد مسح خدمة الاتصال اللاسلكي بالإنترنت عبر تقنية واي فاي ، يمكنك الاتصال بأي واحد.</string>
+
 </resources>

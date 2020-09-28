@@ -12,11 +12,13 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.google.android.gms.ads.AdListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.activities.ActivityBase;
 
@@ -43,14 +45,22 @@ public class AutoConnectWifi extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_auto_connect_wifi);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
 
         btnOnOff = findViewById(R.id.acAutoWifi_btnOnOff);
         btnOnOff.setOnClickListener(onClickListener);
-
         Boolean check = ConnectToWifi_Service.isServiceRunning(AutoConnectWifi.this.getApplicationContext(), ConnectToWifi_Service.class);
         btnOnOff.setChecked(check);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reqNewInterstitial(this);
     }
 
     void turnOnOffWifi(boolean isChecked) {
@@ -89,13 +99,26 @@ public class AutoConnectWifi extends ActivityBase {
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
-            if (((ToggleButton) view).isChecked()) {
-                turnOnOffWifi(true);
-            } else {
-                turnOnOffWifi(false);
+            if (mInterstitialAd.isLoaded()){
+                mInterstitialAd.show();
+                mInterstitialAd.setAdListener(new AdListener(){
+                    @Override
+                    public void onAdClosed() {
+                        super.onAdClosed();
+                        if (((ToggleButton) view).isChecked()) {
+                            turnOnOffWifi(true);
+                        } else {
+                            turnOnOffWifi(false);
+                        }
+                    }
+                });
+            }else {
+                if (((ToggleButton) view).isChecked()) {
+                    turnOnOffWifi(true);
+                } else {
+                    turnOnOffWifi(false);
+                }
             }
-
 
         }
     };

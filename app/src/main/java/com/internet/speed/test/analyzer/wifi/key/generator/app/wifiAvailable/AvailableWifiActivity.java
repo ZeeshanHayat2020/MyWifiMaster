@@ -22,6 +22,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -93,12 +94,11 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.white);
         setContentView(R.layout.activity_available_wifi);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
         databaseHelper = new DatabaseHelper(this);
-
-      /*  Toolbar toolbar = findViewById(R.id.toolbarAvailableWifi);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         LocationManager lm = (LocationManager) AvailableWifiActivity.this.getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(AvailableWifiActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED

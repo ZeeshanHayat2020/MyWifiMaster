@@ -50,13 +50,11 @@ public class ActivityBase extends AppCompatActivity {
     private AdView adView;
 
 
-
     /* public ImageView headerItemMenu;*/
     @Override
     protected void onStart() {
         super.onStart();
         myPreferences = new MyPreferences(this);
-
 
     }
 

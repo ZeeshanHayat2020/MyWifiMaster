@@ -76,6 +76,12 @@ public class PasswordGeneratorActivity extends ActivityBase implements View.OnCl
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reqNewInterstitial();
+    }
+
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
         headerItemMenu = findViewById(R.id.header_item_menu_imageView);

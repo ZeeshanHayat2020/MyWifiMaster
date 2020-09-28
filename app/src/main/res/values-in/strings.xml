@@ -119,4 +119,23 @@
     <string name="password">Password</string>
     <string name="user_name">Nama Pengguna</string>
 
+
+    <string name="scac_wifi">Pindai Wifi</string>
+    <string name="gen_pass">Hasilkan Kata Sandi</string>
+    <string name="show_pass">Tampilkan Kata Sandi</string>
+    <string name="hotspto">Hotspot</string>
+    <string name="wifi_info">Informasi Wifi</string>
+    <string name="bluetooth_con">Koneksi Bluetooth</string>
+    <string name="wifi_strength">Kekuatan Sinyal Wifi</string>
+    <string name="app_usage">Penggunaan Data Aplikasi</string>
+    <string name="net_block">Blok Bersih</string>
+    <string name="defaul_router_pass">Kata Sandi Perute Default</string>
+
+    <string name="trun_on_auto_wifi_service">Jika Anda mengaktifkan Wifi otomatis, layanan akan berjalan di latar belakang yang akan menyalakan Wifi Anda Setelah Setiap 30 Menit jika Wifi Mati</string>
+    <string name="privacyPolicyDescription">Aplikasi ini mengumpulkan kategori informasi berikut dari penggunaan Anda atas Aplikasi ini,</string>
+    <string name="privacyPolicyLinkMessage">Untuk detail lebih lanjut tentang bagaimana aplikasi ini menangani informasi Anda, silakan kunjungi kebijakan privasi di tautan di bawah ini.</string>
+    <string name="intro_third_message">Blok Wifi atau / dan Internet dari aplikasi tertentu atau dapat semua app \'s.</string>
+    <string name="intro_one_message">Aplikasi ini menghemat password wifi ketika Anda menghubungkan perangkat Anda dengan wifi.</string>
+    <string name="intro_second_message">Semua daftar wifi terdekat akan ditampilkan setelah memindai wifi, Anda dapat terhubung dengan salah satu.</string>
+
 </resources>

@@ -120,4 +120,22 @@
     <string name="password">Senha</string>
     <string name="user_name">Nome do usuário</string>
 
+    <string name="scac_wifi">Digitalizar Wifi</string>
+    <string name="gen_pass">Gerar senha</string>
+    <string name="show_pass">Mostrar senha</string>
+    <string name="hotspto">Hotspot</string>
+    <string name="wifi_info">Informações de Wi-Fi</string>
+    <string name="bluetooth_con">Conexão Bluetooth</string>
+    <string name="wifi_strength">Força do sinal wifi</string>
+    <string name="app_usage">Uso de dados de aplicativos</string>
+    <string name="net_block">Bloco Líquido</string>
+    <string name="defaul_router_pass">Senha do roteador padrão</string>
+
+    <string name="trun_on_auto_wifi_service">Se você ativar o wifi automático, o serviço será executado em segundo plano que ativará seu Wi-Fi após cada 30 minutos se o Wifi estiver desligado</string>
+    <string name="privacyPolicyDescription">Este Aplicativo coleta as seguintes categorias de informações a partir do seu uso deste Aplicativo,</string>
+    <string name="privacyPolicyLinkMessage">Para obter mais detalhes sobre como este aplicativo lida com suas informações, visite a política de privacidade no link abaixo.</string>
+    <string name="intro_third_message">Bloqueie o Wi-Fi ou/e a Internet de qualquer aplicativo específico ou pode ser todo o aplicativo.</string>
+    <string name="intro_one_message">Este aplicativo salva a senha wi-fi ao conectar seu dispositivo com wi-fi.</string>
+    <string name="intro_second_message">Toda lista de wi-fi próxima será mostrada após a varredura do wi-fi, você pode se conectar com qualquer um.</string>
+
 </resources>

@@ -119,4 +119,22 @@
     <string name="enter_brand_name">Markenname eingeben</string>
     <string name="password">Passwort</string>
     <string name="user_name">Benutzername</string>
+
+    <string name="scac_wifi">Scan Wifi</string>
+    <string name="gen_pass">Passwort generieren</string>
+    <string name="show_pass">Passwort anzeigen</string>
+    <string name="hotspto">Hotspot</string>
+    <string name="wifi_info">Wifi-Informationen</string>
+    <string name="bluetooth_con">Bluetooth-Verbindung</string>
+    <string name="wifi_strength">Wifi SignalStärke</string>
+    <string name="app_usage">App-Datennutzung</string>
+    <string name="net_block">Nettoblock</string>
+    <string name="defaul_router_pass">Standard-Router-Kennwort</string>
+
+    <string name="trun_on_auto_wifi_service">Wenn Sie auf Auto Wifi drehen der Dienst läuft auf Hintergrund, der auf Ihr Wifi nach jeder 30 Minuten drehen wird, wenn Wifi ist aus</string>
+    <string name="privacyPolicyDescription">Diese Anwendung sammelt die folgenden Kategorien von Informationen aus Ihrer Nutzung dieser Anwendung,</string>
+    <string name="privacyPolicyLinkMessage">Weitere Informationen darüber, wie diese App mit Ihren Informationen umgeht, finden Sie in der Datenschutzerklärung unter dem folgenden Link.</string>
+    <string name="intro_third_message">Blockieren Sie Wifi oder/und Internet einer bestimmten App oder können alle Apps.</string>
+    <string name="intro_one_message">Diese App speichert WiFi-Passwort, wenn Sie Ihr Gerät mit WiFi verbinden.</string>
+    <string name="intro_second_message">Alle in der Nähe WiFi-Liste wird nach dem Scannen des WiFi angezeigt werden, können Sie mit jedem verbinden.</string>
 </resources>

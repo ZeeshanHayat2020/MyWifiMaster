@@ -119,4 +119,23 @@
     <string name="password">mot de passe</string>
     <string name="user_name">Nom d’utilisateur</string>
 
+    <string name="scac_wifi">Scan Wifi</string>
+    <string name="gen_pass">Générer un mot de passe</string>
+    <string name="show_pass">Afficher le mot de passe</string>
+    <string name="hotspto">Hotspot</string>
+    <string name="wifi_info">Informations Wifi</string>
+    <string name="bluetooth_con">Connexion Bluetooth</string>
+    <string name="wifi_strength">Force du signal Wifi</string>
+    <string name="app_usage">Utilisation des données de l’application</string>
+    <string name="net_block">Bloc net</string>
+    <string name="defaul_router_pass">Mot de passe du routeur par défaut</string>
+
+
+    <string name="trun_on_auto_wifi_service">Si vous activez le wifi automatique, le service s’exécutera en arrière-plan qui s’allumera sur votre Wifi après toutes les 30 minutes si le Wifi est éteint</string>
+    <string name="privacyPolicyDescription">Cette application recueille les catégories d’informations suivantes à partir de votre utilisation de la présente application,</string>
+    <string name="privacyPolicyLinkMessage">Pour plus de détails sur la façon dont cette application gère vos informations, veuillez consulter la politique de confidentialité au lien ci-dessous.</string>
+    <string name="intro_third_message">Bloquez le Wifi ou/et Internet de n’importe quelle application spécifique ou peut tous des app\'s.</string>
+    <string name="intro_one_message">Cette application enregistre mot de passe wifi lorsque vous connectez votre appareil avec le wifi.</string>
+    <string name="intro_second_message">Toute la liste wifi à proximité sera affichée après la numérisation du wifi, vous pouvez vous connecter avec n’importe lequel.</string>
+
 </resources>

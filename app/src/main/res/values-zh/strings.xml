@@ -119,4 +119,24 @@
     <string name="password">密码</string>
     <string name="user_name">用户名</string>
 
+    <string name="scac_wifi">扫描 Wifi</string>
+    <string name="gen_pass">生成密码</string>
+    <string name="show_pass">显示密码</string>
+    <string name="hotspto">热点</string>
+    <string name="wifi_info">无线上网信息</string>
+    <string name="bluetooth_con">蓝牙连接</string>
+    <string name="wifi_strength">Wifi 信号强度</string>
+    <string name="app_usage">应用数据使用情况</string>
+    <string name="net_block">净块</string>
+    <string name="defaul_router_pass">默认路由器密码</string>
+
+
+    <string name="trun_on_auto_wifi_service">如果您打开自动 wifi， 服务将在后台运行， 如果 Wifi 关闭， 每 30 分钟后将打开您的 Wifi</string>
+    <string name="privacyPolicyDescription">本应用程序从您使用此应用程序收集以下类别的信息，</string>
+    <string name="privacyPolicyLinkMessage">有关此应用如何处理您的信息的详细信息，请访问以下链接的隐私政策。</string>
+    <string name="intro_third_message">阻止 Wifi 或/和互联网的任何特定的应用程序或可以所有的应用程序</string>
+    <string name="intro_one_message">当您使用 wifi 连接设备时，此应用程序会保存 wifi 密码。</string>
+    <string name="intro_second_message">扫描 wifi 后将显示所有附近的 wifi 列表， 您可以与任何一个连接。</string>
+
+
 </resources>

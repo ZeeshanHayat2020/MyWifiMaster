@@ -118,4 +118,22 @@
     <string name="enter_brand_name">Введите название бренда</string>
     <string name="password">Пароль</string>
     <string name="user_name">Имя пользователя</string>
+
+    <string name="scac_wifi">Сканирование Wi-Fi</string>
+    <string name="gen_pass">Создание пароля</string>
+    <string name="show_pass">Показать пароль</string>
+    <string name="hotspto">Hotspot</string>
+    <string name="wifi_info">Информация о Wi-Fi</string>
+    <string name="bluetooth_con">Подключение Bluetooth</string>
+    <string name="wifi_strength">Сила сигнала Wi-Fi</string>
+    <string name="app_usage">Использование данных приложения</string>
+    <string name="net_block">Чистый блок</string>
+    <string name="defaul_router_pass">Пароль маршрутизатора по умолчанию</string>
+
+    <string name="trun_on_auto_wifi_service">Если вы включите Auto Wi-Fi услуга будет работать на фоне, который будет включить Wi-Fi после каждые 30 минут, если Wi-Fi выключен</string>
+    <string name="privacyPolicyDescription">Это приложение собирает следующие категории информации из вашего использования этого приложения,</string>
+    <string name="privacyPolicyLinkMessage">Для получения более подробной информации о том, как это приложение обрабатывает вашу информацию, пожалуйста, посетите политику конфиденциальности по ссылке ниже.</string>
+    <string name="intro_third_message">Блокируйте Wi-Fi или/и Интернет любого конкретного приложения или все приложения.</string>
+    <string name="intro_one_message">Это приложение сохраняет пароль Wi-Fi при подключении устройства с Wi-Fi.</string>
+    <string name="intro_second_message">Все близлежащие Wi-Fi список будет показан после сканирования Wi-Fi, вы можете связаться с любым.</string>
 </resources>

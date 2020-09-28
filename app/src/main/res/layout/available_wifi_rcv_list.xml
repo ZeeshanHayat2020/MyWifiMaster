@@ -80,15 +80,19 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/_5sdp"
             android:src="@drawable/wifi4"
-            tools:ignore="RtlHardcoded" />
+            tools:ignore="RtlHardcoded"
+
+            />
 
         <TextView
             android:id="@+id/txtSSID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
             android:layout_toLeftOf="@+id/itemView_scanwifi_btnConnect"
             android:layout_toRightOf="@+id/itemView_scanWifi_iv"
             android:text="Hura Technologies"

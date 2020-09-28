@@ -177,6 +177,16 @@
     <string name="enter_brand_name">Enter Brand Name</string>
     <string name="password">Password</string>
     <string name="user_name">User Name</string>
+    <string name="scac_wifi">Scan Wifi</string>
+    <string name="gen_pass">Generate Password</string>
+    <string name="show_pass">Show Password</string>
+    <string name="hotspto">Hotspot</string>
+    <string name="wifi_info">Wifi information</string>
+    <string name="bluetooth_con">Bluetoot h connect</string>
+    <string name="wifi_strength">Wifi Signal Strength</string>
+    <string name="app_usage">App Data Usage</string>
+    <string name="net_block">Net Block</string>
+    <string name="defaul_router_pass">Default Router Password</string>
 
     <string-array name="array_palette">
         <item>#B718A1</item>

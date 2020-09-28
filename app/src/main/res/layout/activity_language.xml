@@ -135,16 +135,6 @@
                 android:textColor="@color/colorLanguageTxt"
                 android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/acLanguage_btnSpanish"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                android:layout_marginBottom="@dimen/_7sdp"
-                android:background="@drawable/background_ic_card"
-                android:elevation="@dimen/_2sdp"
-                android:text="@string/spanish"
-                android:textColor="@color/colorLanguageTxt"
-                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>

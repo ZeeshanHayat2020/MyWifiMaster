@@ -3,7 +3,6 @@
     <string name="app_name">Naveed wifi</string>
 
 
-
     <string name="name">Regulamin</string>
     <string name="no_wifi">Wifi nie jest podłączone</string>
     <string name="permission_denied_location">Lokalizacji</string>
@@ -120,4 +119,23 @@
     <string name="enter_brand_name">Wprowadź nazwę marki</string>
     <string name="password">Hasło</string>
     <string name="user_name">Nazwa użytkownika</string>
+
+    <string name="scac_wifi">Skanowanie Wi-Fi</string>
+    <string name="gen_pass">Generowanie hasła</string>
+    <string name="show_pass">Pokaż hasło</string>
+    <string name="hotspto">Hotspot</string>
+    <string name="wifi_info">Informacje o Wi-Fi</string>
+    <string name="bluetooth_con">Połączenie Bluetooth</string>
+    <string name="wifi_strength">Siła sygnału Wi-Fi</string>
+    <string name="app_usage">Użycie danych aplikacji</string>
+    <string name="net_block">Blok netto</string>
+    <string name="defaul_router_pass">Domyślne hasło routera</string>
+
+
+    <string name="trun_on_auto_wifi_service">Jeśli włączysz auto wifi usługa będzie działać na tle, które włączy Twoje Wifi po co 30 minut, jeśli Wifi jest wyłączone</string>
+    <string name="privacyPolicyDescription">Niniejsza Aplikacja gromadzi następujące kategorie informacji z korzystania z niniejszej Aplikacji,</string>
+    <string name="privacyPolicyLinkMessage">Aby uzyskać więcej informacji o tym, jak ta aplikacja obsługuje twoje informacje, odwiedź politykę prywatności pod poniższym linkiem.</string>
+    <string name="intro_third_message">Blokuj Wi-Fi lub/i Internet dowolnej konkretnej aplikacji lub może wszystkie aplikacje.</string>
+    <string name="intro_one_message">Ta aplikacja zapisuje hasło wifi podczas podłączania urządzenia z wi-fi.</string>
+    <string name="intro_second_message">Cała pobliska lista wi-fi zostanie wyświetlona po zeskanowaniu wifi, możesz połączyć się z dowolnym.</string>
 </resources>
