@@ -1,8 +1,5 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -18,10 +15,12 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.BarChart;
+import androidx.annotation.Nullable;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -75,11 +74,7 @@ public class ActivityWifiInformation extends ActivityBase {
     int frequencyListSize = loverFrequency.size();
 
 
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -88,6 +83,9 @@ public class ActivityWifiInformation extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_wifi_information);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
         initViews();
         initialWork();
@@ -127,18 +125,10 @@ public class ActivityWifiInformation extends ActivityBase {
     }
 
     void setUpHeader() {
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_wifi_info);
         headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
@@ -256,15 +246,15 @@ public class ActivityWifiInformation extends ActivityBase {
 
         String ip = String.format("%d.%d.%d.%d", (ipAddress & 0xff), (ipAddress >> 8 & 0xff), (ipAddress >> 16 & 0xff), (ipAddress >> 24 & 0xff));
 
-        txt_ssId.setText("   " + ss_id);
-        txt_ip_address.setText("   " + ip);
-        txt_mac_address.setText("   " + macAddress);
-        txt_linkSpeed.setText("   " + link_speed);
-        txt_rssId.setText("   " + rss_id);
-        txt_networkId.setText("   " + network_id);
-        txt_bssId.setText("   " + bss_id);
-        txt_channel_level.setText("   " + freqlevel);
-        txt_channel_num.setText("   " + channelNum);
+        txt_ssId.setText(":" + ss_id);
+        txt_ip_address.setText(":" + ip);
+        txt_mac_address.setText(":" + macAddress);
+        txt_linkSpeed.setText(":" + link_speed);
+        txt_rssId.setText(":" + rss_id);
+        txt_networkId.setText(":" + network_id);
+        txt_bssId.setText(":" + bss_id);
+        txt_channel_level.setText(":" + freqlevel);
+        txt_channel_num.setText(":" + channelNum);
     }
 
 

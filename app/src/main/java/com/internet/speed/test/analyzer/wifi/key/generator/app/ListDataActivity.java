@@ -13,6 +13,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -69,11 +70,8 @@ public class ListDataActivity extends ActivityBase {
     private AdapterShowPassword mAdapter;
 
     private RelativeLayout layoutHeader;
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
+
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -83,34 +81,25 @@ public class ListDataActivity extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.list_layout);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
-        MobileAds.initialize(this, getResources().getString(R.string.app_id));
         mDatabaseHelper = new DatabaseHelper(this);
         EmptyText = findViewById(R.id.EmptyText);
         adView = findViewById(R.id.banner_ad);
         iniRecyclerView();
         setUpRecyclerView();
 
-        if (!InAppPrefManager.getInstance(ListDataActivity.this).getInAppStatus()) {
-            adview();
-        }
-
     }
 
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_generate_passworf);
         headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
         headerItemTextViewSecond.setText(R.string.PASSWORD);
@@ -146,22 +135,6 @@ public class ListDataActivity extends ActivityBase {
     }
 
 
-    public void adview() {
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("C6D2162C49AA13B1C9432BB82D1868A5").build();
-        adView.loadAd(adRequest);
-        adView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                adView.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onAdFailedToLoad(int error) {
-                adView.setVisibility(View.GONE);
-            }
-
-        });
-    }
 
 
 }

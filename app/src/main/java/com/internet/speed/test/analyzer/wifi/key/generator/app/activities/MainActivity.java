@@ -115,8 +115,6 @@ public class MainActivity extends ActivityBase {
 
 
     private RelativeLayout layoutHeader;
-    private ImageView headerItemMenu;
-    private ImageView headerItemCenterLeft;
     private ImageView headerItemCenterRight;
     private ImageView headerItemBottomLeft;
     private ImageView headerItemBottomRigth;
@@ -172,7 +170,6 @@ public class MainActivity extends ActivityBase {
 
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
         headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
         headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
@@ -214,7 +211,12 @@ public class MainActivity extends ActivityBase {
                 wifiManager.setWifiEnabled(true);
             }
         } else {
-            wifiManager.setWifiEnabled(false);
+            if (Build.VERSION.SDK_INT >= 29) {
+                Intent panelIntent = new Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY);
+                startActivityForResult(panelIntent, REQUEST_CODE_FOR_ENABLE_WIFI);
+            } else {
+                wifiManager.setWifiEnabled(false);
+            }
         }
     }
 
@@ -228,6 +230,14 @@ public class MainActivity extends ActivityBase {
         }
     }
 
+    private void setNotification() {
+        if (wifiManager.isWifiEnabled()) {
+
+        } else {
+
+        }
+    }
+
 
     View.OnClickListener onHeaderItemsClick = new View.OnClickListener() {
         @Override
@@ -235,9 +245,6 @@ public class MainActivity extends ActivityBase {
             switch (view.getId()) {
                 case R.id.acMain_PermissionButton: {
                     onPermissionButtonClicked();
-                }
-                break;
-                case R.id.header_item_centerLeft_imageView: {
                 }
                 break;
                 case R.id.header_item_centerRight_imageView: {
@@ -634,47 +641,6 @@ public class MainActivity extends ActivityBase {
         }
     }
 
-
-    public static boolean isInternetIsConnected(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        if (activeNetwork != null) {
-            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
-                flag = 1;
-                return true;
-
-            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-                flag = 0;
-                return true;
-            }
-        } else {
-            flag = 0;
-            return false;
-        }
-        return false;
-    }
-
-    private boolean checkAndRequestPermissions() {
-        int coarseLocation = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
-        int fineLocation = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-//        int loc2 = ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION);
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if (coarseLocation != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION);
-        }
-        if (fineLocation != PackageManager.PERMISSION_GRANTED) {
-            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
-        }
-
-        if (!listPermissionsNeeded.isEmpty()) {
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray
-                    (new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
-            return false;
-        }
-        return true;
-    }
-
     public boolean hasGPSDevice(Context context) {
         final LocationManager mgr = (LocationManager) context
                 .getSystemService(Context.LOCATION_SERVICE);
@@ -753,104 +719,12 @@ public class MainActivity extends ActivityBase {
         }
     }
 
-    public void onrequestPermission() {
-        this.setFinishOnTouchOutside(true);
-
-        // Todo Location Already on  ... start
-        final LocationManager manager = (LocationManager) MainActivity.this.getSystemService(Context.LOCATION_SERVICE);
-        if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(MainActivity.this)) {
-
-        }
-
-
-        if (!hasGPSDevice(MainActivity.this)) {
-            Toast.makeText(MainActivity.this, "Gps not Supported", Toast.LENGTH_SHORT).show();
-        }
-
-        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER) && hasGPSDevice(MainActivity.this)) {
-            Toast.makeText(MainActivity.this, "Gps not enabled", Toast.LENGTH_SHORT).show();
-            enableLoc();
-        } else {
-            Toast.makeText(MainActivity.this, "Gps already enabled", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void requestPermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.ACCESS_FINE_LOCATION)) {
-            new AlertDialog.Builder(this)
-                    .setTitle("permission needed")
-                    .setMessage("This permission is needed")
-                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
-                        }
-                    })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-            // Toast.makeText(context, "GPS permission allows us to access location data. Please allow in App Settings for additional functionality.", Toast.LENGTH_LONG).show();
-        } else {
-            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
-        }
-    }
-
-    private boolean checkPermission() {
-        int result = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
-        if (result == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    //    @RequiresApi(api = Build.VERSION_CODES.M)
-  /*  @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode == PERMISSION_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Toast.makeText(this,"Permission Granted",Toast.LENGTH_SHORT).show();
-            } else {
-                if (android.os.Build.VERSION.SDK_INT == 25) {
-
-                    Toast.makeText(activity, "Need Location Permission to show available wifi", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(activity, "Need Location Permission to show available wifi", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
-*/
     public void share(View view) {
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
         String shareBodyText = "https://play.google.com/store/apps/details?id=com.internet.speed.test.analyzer.wifi.key.generator.app";
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBodyText);
         startActivity(Intent.createChooser(sharingIntent, "Sharing Option"));
-    }
-
-    public void changeLang(View view) {
-
-        clearApplicationData();
-
-    }
-
-    public void clearApplicationData() {
-        File cache = getCacheDir();
-        File appDir = new File(cache.getParent());
-        if (appDir.exists()) {
-            String[] children = appDir.list();
-            for (String s : children) {
-                if (!s.equals("lib")) {
-                    deleteDir(new File(appDir, s));
-                }
-            }
-        }
     }
 
     public static boolean deleteDir(File dir) {
@@ -882,60 +756,6 @@ public class MainActivity extends ActivityBase {
         exitt();
     }
 
-    private void inAppAlertDiaolBox() {
-        builder = new AlertDialog.Builder(this, R.style.AlertDialog_AppCompat_);
-
-        //Uncomment the below code to Set the message and title from the strings.xml file
-        builder.setMessage("Alert").setTitle("Alert!");
-
-        //Setting message manually and performing action on button click
-        builder.setMessage("You have to restart this Application.")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        finishAffinity();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //  Action for 'NO' Button
-                        dialog.cancel();
-
-                        inAppAlertDiaolBox();
-                    }
-                });
-        //Creating dialog box
-        AlertDialog alert = builder.create();
-        //Setting the title manually
-        alert.setTitle("Alert!");
-        alert.show();
-    }
-
-    Menu menu;
-
-    @Override
-    public boolean onCreateOptionsMenu(final Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.user_menu, menu);
-
-        this.menu = menu;
-        menu.findItem(R.id.noads).setVisible(false);
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.change_language: {
-
-
-                return true;
-            }
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     @Override
     protected void onStart() {

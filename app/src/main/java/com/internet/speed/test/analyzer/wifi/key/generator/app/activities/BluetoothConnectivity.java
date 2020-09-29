@@ -21,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -28,6 +29,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
 
 import java.lang.reflect.Method;
@@ -50,11 +52,8 @@ public class BluetoothConnectivity extends ActivityBase implements AdapterView.O
     public ArrayList<BluetoothDevice> mBTDevices;
     private ListView nearByListView;
 
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
+
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -64,6 +63,9 @@ public class BluetoothConnectivity extends ActivityBase implements AdapterView.O
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_bluetooth_connectivity);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
         checkBTPermissions();
         initViews();
@@ -71,20 +73,18 @@ public class BluetoothConnectivity extends ActivityBase implements AdapterView.O
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reqNewInterstitial(this);
+    }
+
     void setUpHeader() {
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-        headerItemMenu.setVisibility(View.INVISIBLE);
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
-
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_bluetooth);
         headerItemTextViewFirst.setText(R.string.bluetooth);
         headerItemTextViewSecond.setText(R.string.connectivity);
@@ -160,14 +160,16 @@ public class BluetoothConnectivity extends ActivityBase implements AdapterView.O
             unregisterReceiver(receiverScannedDevices);
             final String action = intent.getAction();
             Log.d(TAG, "onReceive: ACTION FOUND.");
-            scanningLoadingBar.setVisibility(View.INVISIBLE);
-            nearByListView.setVisibility(View.VISIBLE);
+
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                scanningLoadingBar.setVisibility(View.INVISIBLE);
+                nearByListView.setVisibility(View.VISIBLE);
                 BluetoothDevice device = intent
                         .getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 Log.d(TAG, "New Incomming device" + device.getName() + "\n" + device.getAddress());
 
-                if (device.getName() != null && device.getAddress() != null) {
+                if (device.getAddress() != null) {
+
                    /* if (!mBTDevices.isEmpty() && !scannedDeviceList.isEmpty()) {
                         mBTDevices.clear();
                         scannedDeviceList.clear();
@@ -185,7 +187,11 @@ public class BluetoothConnectivity extends ActivityBase implements AdapterView.O
                     if (!isItemMatch) {
                         Log.d(TAG, "Address NOT Match");
                         mBTDevices.add(device);
-                        scannedDeviceList.add(device.getName() + "\n" + device.getAddress());
+                        if (device.getName() == null) {
+                            scannedDeviceList.add("No Name Set" + "\n" + device.getAddress());
+                        } else {
+                            scannedDeviceList.add(device.getName() + "\n" + device.getAddress());
+                        }
                     }
                     nearByListView.setAdapter(new ArrayAdapter<String>(context,
                             android.R.layout.simple_list_item_1, scannedDeviceList));
@@ -253,7 +259,19 @@ public class BluetoothConnectivity extends ActivityBase implements AdapterView.O
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.acBluetooth_btnMakeDescoverable: {
-                    EnableDisable_Discoverable();
+                    if (mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
+                        mInterstitialAd.setAdListener(new AdListener() {
+                            @Override
+                            public void onAdClosed() {
+                                super.onAdClosed();
+                                EnableDisable_Discoverable();
+                            }
+                        });
+                    } else {
+                        EnableDisable_Discoverable();
+                    }
+
                 }
                 break;
                 case R.id.acBluetooth_btnScan: {
@@ -297,27 +315,6 @@ public class BluetoothConnectivity extends ActivityBase implements AdapterView.O
         }
     }
 
- /*   public void enableDisableBT() {
-        if (mBluetoothAdapter == null) {
-            Log.d(TAG, "enableDisableBT: Does not have BT capabilities.");
-        }
-        if (!mBluetoothAdapter.isEnabled()) {
-            Log.d(TAG, "enableDisableBT: enabling BT.");
-            Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivity(enableBTIntent);
-
-            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-            registerReceiver(receiverBluetoothOnOff, BTIntent);
-        } else {
-
-            Log.d(TAG, "enableDisableBT: disabling BT.");
-            mBluetoothAdapter.disable();
-            IntentFilter BTIntent = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-            registerReceiver(receiverBluetoothOnOff, BTIntent);
-
-        }
-
-    }*/
 
     public void EnableDisable_Discoverable() {
         Log.d(TAG, "btnEnableDisable_Discoverable: Making device discoverable for 300 seconds.");

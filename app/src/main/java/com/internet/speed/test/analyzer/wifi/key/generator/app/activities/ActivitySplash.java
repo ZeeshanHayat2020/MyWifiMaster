@@ -21,6 +21,7 @@ public class ActivitySplash extends ActivityBase {
     private Runnable runnable;
     private int loadAttempts;
     private MyPreferences myPreferences;
+    private boolean isAppLeft = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,16 +86,16 @@ public class ActivitySplash extends ActivityBase {
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
-                if (mInterstitialAd.isLoaded() && !myPreferences.isItemPurchased()) {
+                if (mInterstitialAd.isLoaded() && !isAppLeft) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             mInterstitialAd.show();
                         }
-                    }, 1000);
+                    }, 2000);
 
                 } else {
-                    launchWithDelay();
+                    launchLanguageActivity();
                     Log.d("TAG", "The interstitial wasn't loaded yet.");
                 }
                 super.onAdLoaded();
@@ -123,8 +124,15 @@ public class ActivitySplash extends ActivityBase {
             @Override
             public void onAdLeftApplication() {
                 super.onAdLeftApplication();
+                isAppLeft = true;
+
             }
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        isAppLeft = true;
+    }
 }

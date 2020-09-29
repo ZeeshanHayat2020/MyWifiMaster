@@ -12,11 +12,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.adapters.AppAdapter;
 
@@ -32,13 +34,11 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
 
     private AppAdapter mAdapter;
     private ProgressBar loadingBar;
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
+
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
+    private int adCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,9 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
         setContentView(R.layout.activity_app_usage);
         setUpHeader();
         loadingBar = findViewById(R.id.acAppDataUsage_loadingBar);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -58,6 +61,7 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
     @Override
     protected void onResume() {
         super.onResume();
+        reqNewInterstitial(this);
         if (Monitor.hasUsagePermission()) {
             Monitor.scan().getAppLists(this).fetchFor(Duration.TODAY);
             init();
@@ -67,18 +71,12 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
     }
 
     void setUpHeader() {
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
 
-
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_app_data_usage);
         headerItemTextViewFirst.setText(R.string.application);
@@ -106,7 +104,7 @@ public class ActivityAppUsage extends ActivityBase implements UsageContracts.Vie
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Monitor.scan().getAppLists(this).fetchFor(i);
+        Monitor.scan().getAppLists(ActivityAppUsage.this).fetchFor(i);
     }
 
     @Override

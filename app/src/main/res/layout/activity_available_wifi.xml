@@ -23,9 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/acScanWifi_header"
-            android:layout_margin="@dimen/_10sdp"
             android:visibility="invisible"
-
 
             >
 
@@ -33,6 +31,8 @@
                 android:id="@+id/wifi_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_above="@+id/bannerContainer"
+                android:layout_margin="@dimen/_10sdp"
                 android:layoutAnimation="@anim/layout_anim_down_to_up"
                 android:scrollbars="none"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -51,6 +51,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/bannerContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/_2sdp" />
 
 
         </RelativeLayout>
@@ -93,12 +100,6 @@
             </RelativeLayout>
         </RelativeLayout>
 
-        <FrameLayout
-            android:id="@+id/bannerContainer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="@dimen/_2sdp" />
 
     </RelativeLayout>
 

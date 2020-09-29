@@ -11,282 +11,297 @@
         android:id="@+id/header_acWifiInfo"
         layout="@layout/layout_header" />
 
-
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bannerContainer"
         android:layout_below="@+id/header_acWifiInfo">
 
-
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_25sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:foregroundGravity="center"
-            app:cardCornerRadius="@dimen/_15sdp"
-            app:cardElevation="@dimen/_5sdp"
+            android:orientation="vertical"
+
             >
 
+
             <RelativeLayout
-                android:id="@+id/table_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:padding="@dimen/_10sdp"
+                android:layout_height="match_parent">
 
 
-                >
-
-                <TableLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:foregroundGravity="center"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="@dimen/_5sdp"
 
                     >
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:padding="@dimen/_5sdp">
+                    <RelativeLayout
+                        android:id="@+id/table_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:padding="@dimen/_8sdp">
 
-                        <TextView
+                        <TableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/SSID"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/ssid"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/SSID"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                            >
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                        android:padding="@dimen/_5sdp">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/SSID"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/ipAddress"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
+                                <TextView
+                                    android:id="@+id/ssid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/SSID"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                        <TextView
-                            android:id="@+id/ipaddress"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/ipAddress"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/ipAddress"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                        android:padding="@dimen/_5sdp">
+                                <TextView
+                                    android:id="@+id/ipaddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/ipAddress"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/mac_address"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                        <TextView
-                            android:id="@+id/macaddress"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/ipAddress"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/mac_address"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:padding="@dimen/_5sdp">
+                                <TextView
+                                    android:id="@+id/macaddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/mac_address"
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/bssid"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                        <TextView
-                            android:id="@+id/bssidbn"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/bssid"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/bssid"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                        android:padding="@dimen/_5sdp">
+                                <TextView
+                                    android:id="@+id/bssidbn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/bssid"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/link_speed"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                        <TextView
-                            android:id="@+id/linkspeed"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/link_speed"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/link_speed"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:padding="@dimen/_5sdp">
+                                <TextView
+                                    android:id="@+id/linkspeed"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/link_speed"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/network_id"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                        <TextView
-                            android:id="@+id/networkid"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/network_id"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/network_id"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:padding="@dimen/_5sdp">
+                                <TextView
+                                    android:id="@+id/networkid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/network_id"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/rssid"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                        <TextView
-                            android:id="@+id/rssid"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/rssid"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/rssid"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                                <TextView
+                                    android:id="@+id/rssid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/rssid"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                        android:padding="@dimen/_5sdp">
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/chanel_level"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/chanel_level"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                        <TextView
-                            android:id="@+id/freq_level"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/chanel_level"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                                <TextView
+                                    android:id="@+id/freq_level"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/chanel_level"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                            <TableRow
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/_4sdp">
 
-                        android:padding="@dimen/_5sdp">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_weight="1"
+                                    android:text="@string/chanle_number"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_weight="1"
-                            android:text="@string/chanle_number"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/freq_num"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="2"
-                            android:layout_weight="1"
-                            android:text="@string/chanle_number"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="18sp" />
-                    </TableRow>
+                                <TextView
+                                    android:id="@+id/freq_num"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="2"
+                                    android:layout_weight="1"
+                                    android:text="@string/chanle_number"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="17sp" />
+                            </TableRow>
 
 
-                </TableLayout>
+                        </TableLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
-        </androidx.cardview.widget.CardView>
 
-    </RelativeLayout>
-
+    <FrameLayout
+        android:id="@+id/bannerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_2sdp" />
 
 </RelativeLayout>

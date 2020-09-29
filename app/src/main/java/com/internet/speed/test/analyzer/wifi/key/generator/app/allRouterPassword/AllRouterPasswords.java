@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -37,11 +38,8 @@ public class AllRouterPasswords extends ActivityBase {
     RecyclerView recyclerView;
     SearchView searchView;
 
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
+
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -50,6 +48,9 @@ public class AllRouterPasswords extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_all_router_password);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
         initViews();
         setUpSearchViewChangeListeners();
@@ -95,18 +96,10 @@ public class AllRouterPasswords extends ActivityBase {
     }
 
     void setUpHeader() {
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
 
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_all_router_pass);
         headerItemTextViewFirst.setText("Default Router");

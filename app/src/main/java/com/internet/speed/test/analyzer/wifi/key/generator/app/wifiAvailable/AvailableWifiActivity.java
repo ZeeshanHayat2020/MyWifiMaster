@@ -21,6 +21,8 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -78,11 +80,8 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     private Button btnScan;
 
     private RelativeLayout layoutHeader;
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
+
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -125,6 +124,8 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
         animationView = findViewById(R.id.acScanWifi_scanAnim);
         btnScan = findViewById(R.id.acScanWifi_btnScan);
         btnScan.setOnClickListener(MyOnClickListener);
+        Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_blink);
+        btnScan.startAnimation(startAnimation);
 
 
         if (!wifi_Manager.isWifiEnabled()) {
@@ -164,18 +165,12 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
 
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
 
 
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_scan_wifi);
         headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
         headerItemTextViewSecond.setText(R.string.SCANNER);
@@ -187,6 +182,7 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     View.OnClickListener MyOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            view.clearAnimation();
             animationView.playAnimation();
             animationView.setSpeed(2);
             new Handler().postDelayed(new Runnable() {

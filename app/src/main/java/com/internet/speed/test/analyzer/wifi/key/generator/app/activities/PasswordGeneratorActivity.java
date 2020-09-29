@@ -49,17 +49,9 @@ public class PasswordGeneratorActivity extends ActivityBase implements View.OnCl
     private static final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String DIGITS = "0123456789";
     private static final String PUNCTUATION = "!@#$%&*()_+-=[]|,./?><";
-    FrameLayout adContainerView;
-    public InterstitialAd mInterstitialAd;
-    AdView adView;
-
 
     private RelativeLayout layoutHeader;
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -68,34 +60,27 @@ public class PasswordGeneratorActivity extends ActivityBase implements View.OnCl
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.white);
         setContentView(R.layout.activity_password_generator);
+        reqNewInterstitial(this);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
         initialWork();
         Listeners();
-        loadBanner();
-        reqNewInterstitial();
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        reqNewInterstitial();
+        reqNewInterstitial(this);
     }
 
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-        headerItemMenu.setVisibility(View.INVISIBLE);
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_generate_password);
         headerItemTextViewFirst.setText(getResources().getString(R.string.WIFI));
         headerItemTextViewSecond.setText(R.string.PASS_GENERATE);
@@ -275,61 +260,17 @@ public class PasswordGeneratorActivity extends ActivityBase implements View.OnCl
             mInterstitialAd.show();
 
         } else {
-            reqNewInterstitial();
+
+            reqNewInterstitial(this);
 
         }
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
-                reqNewInterstitial();
+                reqNewInterstitial(PasswordGeneratorActivity.this);
             }
         });
     }
 
-    public void loadBanner() {
-        // Create an ad request.
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        //MobileAds.setRequestConfiguration(new RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("139DE8BC25455F67E5571129931C56ED")).build());
-        adContainerView = findViewById(R.id.acPassGenerator_bannerContainer);
-        adContainerView.post(new Runnable() {
-            @Override
-            public void run() {
-                adView = new AdView(PasswordGeneratorActivity.this);
-                adView.setAdUnitId(getString(R.string.Banner));
-                adContainerView.removeAllViews();
-                adContainerView.addView(adView);
-                AdSize adSize = getAdSize();
-                adView.setAdSize(adSize);
-                AdRequest adRequest = new AdRequest.Builder().build();
-                // Start loading the ad in the background.
-                adView.loadAd(adRequest);
-            }
-        });
-    }
-
-    public AdSize getAdSize() {
-        // Determine the screen width (less decorations) to use for the ad width.
-        Display display = getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        display.getMetrics(outMetrics);
-        float density = outMetrics.density;
-        float adWidthPixels = adContainerView.getWidth();
-        // If the ad hasn't been laid out, default to the full screen width.
-        if (adWidthPixels == 0) {
-            adWidthPixels = outMetrics.widthPixels;
-        }
-        int adWidth = (int) (adWidthPixels / density);
-        return AdSize.getCurrentOrientationBannerAdSizeWithWidth(this, adWidth);
-    }
-
-    public void reqNewInterstitial() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getResources().getString(R.string.Interstitial));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-    }
 
 }

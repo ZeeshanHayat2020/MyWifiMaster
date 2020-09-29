@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -45,11 +46,8 @@ public class Speedtest extends ActivityBase {
     private Speedometer speedometerUpLoading;
     private Speedometer speedometerDownLoading;
     private RelativeLayout layoutHeader;
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
+
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
     private Handler myHandler;
@@ -60,7 +58,9 @@ public class Speedtest extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_speedtest);
-        MobileAds.initialize(this, getResources().getString(R.string.app_id));
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         setUpHeader();
         initViews();
 
@@ -75,28 +75,14 @@ public class Speedtest extends ActivityBase {
         banner = findViewById(R.id.banner_ad);
 
 
-        if (!InAppPrefManager.getInstance(getApplicationContext()).getInAppStatus()) {
-
-            adview();
-        }
-
     }
 
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
-
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_speed_test);
         headerItemTextViewFirst.setText(R.string.WIFI);
         headerItemTextViewSecond.setText(R.string.speedTest);
@@ -156,13 +142,7 @@ public class Speedtest extends ActivityBase {
         return modifiedFileSize;
     }
 
-    public void adview() {
 
-        AdRequest adRequest = new AdRequest.Builder().build();
-        banner.setVisibility(View.VISIBLE);
-        banner.loadAd(adRequest);
-
-    }
 
 
     @Override

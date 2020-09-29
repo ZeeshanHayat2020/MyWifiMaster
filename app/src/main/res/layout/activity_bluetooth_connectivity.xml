@@ -15,6 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/bannerContainer"
         android:layout_below="@+id/header_acBluetooth"
         android:layout_marginTop="@dimen/_5sdp"
         android:gravity="center"
@@ -120,4 +121,10 @@
 
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/bannerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_2sdp" />
 </RelativeLayout>

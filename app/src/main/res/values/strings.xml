@@ -1,7 +1,7 @@
 <resources>
 
-    <string name="app_name">Naveed wifi</string>
-    <string name="title_activity_speedtest">Speedtest</string>
+    <string name="app_name">Wifi Master</string>
+    <string name="title_activity_speedtest" translatable="false">Speedtest</string>
 
     <!--    TEST ADS -->
 
@@ -106,12 +106,12 @@
     <string name="chanel_level">Channel Frequency Level</string>
     <string name="chanle_number">Channel Number</string>
     <string name="address">Address</string>
-    <string name="city">City</string>
-    <string name="state">State</string>
-    <string name="country">Country</string>
-    <string name="postalCode">Postal Code</string>
-    <string name="latitude">Latitude</string>
-    <string name="longitude">Longitude</string>
+    <string name="city">City:</string>
+    <string name="state">State:</string>
+    <string name="country">Country:</string>
+    <string name="postalCode">Postal Code:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
     <string name="menu_search">Search application</string>
     <string name="menu_network">Internet settings</string>
     <string name="menu_whitelist_wifi">Block Wifi For All</string>

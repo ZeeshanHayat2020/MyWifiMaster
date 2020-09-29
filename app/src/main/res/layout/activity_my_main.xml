@@ -27,12 +27,12 @@
 
                 <com.github.anastr.speedviewlib.PointerSpeedometer
                     android:id="@+id/speedView"
-                    android:layout_width="@dimen/_65sdp"
-                    android:layout_height="@dimen/_65sdp"
+                    android:layout_width="@dimen/_66sdp"
+                    android:layout_height="@dimen/_66sdp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_27sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
                     android:textAlignment="center"
                     app:sv_backgroundCircleColor="@color/colorWhite"
                     app:sv_centerCircleColor="@color/colorPrimary"
@@ -47,7 +47,7 @@
                     app:sv_speedTextFormat="INTEGER"
                     app:sv_speedTextPadding="@dimen/_10sdp"
                     app:sv_speedTextPosition="BOTTOM_CENTER"
-                    app:sv_speedTextSize="10sp"
+                    app:sv_speedTextSize="11sp"
                     app:sv_speedometerColor="@color/colorPrimary"
                     app:sv_speedometerWidth="@dimen/_2sdp"
                     app:sv_textColor="@color/colorPrimary"
@@ -68,6 +68,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginRight="@dimen/_20sdp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/ic_wifi_acmain_enable" />
 
 
@@ -93,17 +96,6 @@
                     android:textStyle="bold" />
 
             </RelativeLayout>
-
-
-            <ImageView
-                android:id="@+id/header_item_menu_imageView"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/ic_menu" />
 
 
             <ImageView
@@ -206,6 +198,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layoutAnimation="@anim/layout_anim_up_to_down"
             android:overScrollMode="never"
             android:scrollbars="none" />
 

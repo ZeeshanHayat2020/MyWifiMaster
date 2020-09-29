@@ -23,6 +23,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -51,6 +52,7 @@ public class ActivityLiveLocation extends ActivityBase {
 
 
     public static final int REQUEST_CODE_FOR_LOCATION_PERMISSIO = 121;
+    private static final String TAG = "ActivityLiveLocation";
     private Button btnSearchLocation;
     private GpsTracker gpsTracker;
 
@@ -66,13 +68,7 @@ public class ActivityLiveLocation extends ActivityBase {
     private GoogleApiClient googleApiClient;
 
     private WifiManager wifiManager;
-
-
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -81,6 +77,9 @@ public class ActivityLiveLocation extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_live_location);
+        if (haveNetworkConnection()) {
+            requestBanner((FrameLayout) findViewById(R.id.bannerContainer));
+        }
         checkLocationPermission();
         setUpHeader();
         iniViews();
@@ -95,18 +94,10 @@ public class ActivityLiveLocation extends ActivityBase {
     }
 
     void setUpHeader() {
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemTextViewSecond.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_livelocation);
         headerItemTextViewFirst.setText(R.string.libve_location);
@@ -197,7 +188,7 @@ public class ActivityLiveLocation extends ActivityBase {
                 postal = address.getPostalCode();
             }
         } catch (IOException e) {
-            Log.e("Location Address Loader", "Unable connect to Geocoder", e);
+            Log.e(TAG, "Unable connect to Geocoder", e);
         } finally {
             if (city != null) {
                 tvCity.setText(city);

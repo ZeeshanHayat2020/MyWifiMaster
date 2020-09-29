@@ -54,11 +54,9 @@ public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.On
 
     public ToggleButton startStopVpn;
 
-    public ImageView headerItemMenu;
-    public ImageView headerItemCenterLeft;
+
+
     public ImageView headerItemCenterRight;
-    public ImageView headerItemBottomLeft;
-    public ImageView headerItemBottomRigth;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;
 
@@ -147,18 +145,11 @@ public class NetBlockerMainActivity extends ActivityBase implements PopupMenu.On
     }
 
     void setUpHeader() {
-        headerItemMenu = findViewById(R.id.header_item_menu_imageView);
-        headerItemCenterLeft = findViewById(R.id.header_item_centerLeft_imageView);
+
         headerItemCenterRight = findViewById(R.id.header_item_centerRight_imageView);
-        headerItemBottomLeft = findViewById(R.id.header_item_bottomLeft_imageView);
-        headerItemBottomRigth = findViewById(R.id.header_item_bottomRigth_imageView);
+
         headerItemTextViewFirst = findViewById(R.id.header_item_textView_First);
         headerItemTextViewSecond = findViewById(R.id.header_item_textView_Second);
-
-
-        headerItemCenterLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomLeft.setVisibility(View.INVISIBLE);
-        headerItemBottomRigth.setVisibility(View.INVISIBLE);
         headerItemTextViewSecond.setVisibility(View.INVISIBLE);
         headerItemCenterRight.setImageResource(R.drawable.ic_header_item_net_block);
         headerItemTextViewFirst.setText(R.string.net_blocker);
