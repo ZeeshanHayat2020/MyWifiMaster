@@ -25,6 +25,7 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
@@ -46,6 +47,7 @@ import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.github.anastr.speedviewlib.PointerSpeedometer;
+import com.github.mikephil.charting.data.BarEntry;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -72,15 +74,24 @@ import com.internet.speed.test.analyzer.wifi.key.generator.app.appsNetBlocker.Ne
 import com.internet.speed.test.analyzer.wifi.key.generator.app.autoConnectWifi.AutoConnectWifi;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.interfaces.OnRecyclerItemClickeListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.models.ModelMain;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.services.NotificationService;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.wifiAvailable.AvailableWifiActivity;
 
 import java.io.File;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends ActivityBase {
 
 
+    public static final String KEY_INTENT_NOTIFICATION_SERVICE = "KEY_START";
+    public static final String KEY_INTENT_CURRENT_WIFI_NAME = "KEY_INTENT_CURRENT_WIFI_NAME";
+    public static final String KEY_INTENT_CURRENT_WIFI_STRENGTH = "KEY_INTENT_CURRENT_WIFI_STRENGTH";
+    public static final String ACTION_INTENT_FILTER_UI_UPDATE_RECEIVER = "ACTION_INTENT_FILTER_UI_UPDATE_RECEIVER";
     private RelativeLayout recyclerViewRoot;
     public RecyclerView recyclerView;
     RecyclerView.LayoutManager mLayoutManager;
@@ -124,6 +135,11 @@ public class MainActivity extends ActivityBase {
     private WifiManager wifiManager;
     private boolean isLeftApp = false;
 
+    private String currentWifiName = "";
+    private String currentWifiStrength = "";
+
+    private UIUpdationReceiver uiUpdationReceiver;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,16 +156,17 @@ public class MainActivity extends ActivityBase {
         setUpRecyclerView();
         preferences = getSharedPreferences("PREFS", 0);
         InAppPrefManager.getInstance(this).setInAppStatus(false);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         reqNewInterstitial(this);
+
     }
 
     private void initViews() {
-
         recyclerViewRoot = findViewById(R.id.acMain_RecyclerView_RootView);
         permissionRootView = findViewById(R.id.acMain_PermissionRootView);
         permissionMsgView = findViewById(R.id.acMain_PermissionMessage);
@@ -181,8 +198,6 @@ public class MainActivity extends ActivityBase {
         headerItemCenterRight.setOnClickListener(onHeaderItemsClick);
         headerItemBottomLeft.setOnClickListener(onHeaderItemsClick);
         headerItemBottomRigth.setOnClickListener(onHeaderItemsClick);
-        setHeaderMeterProgress();
-
 
     }
 
@@ -190,15 +205,13 @@ public class MainActivity extends ActivityBase {
     private void updateUiFromWifiState(boolean isConnected) {
         if (isConnected) {
             headerItemCenterRight.setImageResource(R.drawable.enable);
+            startService();
         } else {
             headerItemCenterRight.setImageResource(R.drawable.disable);
+            headerSpeedMeter.speedPercentTo(0);
+            stopService();
         }
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                setHeaderMeterProgress();
-            }
-        }, 2000);
+
 
     }
 
@@ -220,22 +233,19 @@ public class MainActivity extends ActivityBase {
         }
     }
 
-    private void setHeaderMeterProgress() {
-        if (wifiManager.isWifiEnabled()) {
-            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-            int level = (int) (WifiManager.calculateSignalLevel(wifiInfo.getRssi(), 40) * 2.5);
-            headerSpeedMeter.speedPercentTo(level);
-        } else {
-            headerSpeedMeter.speedPercentTo(0);
-        }
+
+    void startService() {
+        Intent intent = new Intent(MainActivity.this, NotificationService.class);
+        intent.putExtra(KEY_INTENT_NOTIFICATION_SERVICE, "START");
+        intent.putExtra(KEY_INTENT_CURRENT_WIFI_NAME, currentWifiName);
+        intent.putExtra(KEY_INTENT_CURRENT_WIFI_STRENGTH, currentWifiStrength);
+        startService(intent);
     }
 
-    private void setNotification() {
-        if (wifiManager.isWifiEnabled()) {
-
-        } else {
-
-        }
+    void stopService() {
+        Intent intent = new Intent(MainActivity.this, NotificationService.class);
+        intent.putExtra(KEY_INTENT_NOTIFICATION_SERVICE, "STOP");
+        startService(intent);
     }
 
 
@@ -300,28 +310,6 @@ public class MainActivity extends ActivityBase {
             }
         }
     };
-
-    @Override
-    protected void onPause() {
-
-//        setWifiOnOffImage();
-       /* if (isInternetIsConnected(getApplicationContext())) {
-            if (flag == 1) {
-                headerItemCenterRight.setImageResource(R.drawable.enable);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("enable", "yes");
-                editor.apply();
-            } else {
-                headerItemCenterRight.setImageResource(R.drawable.disable);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("enable", "no");
-                editor.apply();
-            }
-        }*/
-
-        super.onPause();
-
-    }
 
 
     private void iniRecyclerView() {
@@ -762,12 +750,14 @@ public class MainActivity extends ActivityBase {
         super.onStart();
         IntentFilter intentFilter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
         registerReceiver(wifiStateReceiver, intentFilter);
+        registerReceiver();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         unregisterReceiver(wifiStateReceiver);
+        unRegisterReceiver();
     }
 
     private BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
@@ -778,6 +768,7 @@ public class MainActivity extends ActivityBase {
             switch (wifiStateExtra) {
                 case WifiManager.WIFI_STATE_ENABLED:
                     updateUiFromWifiState(true);
+
                     Log.d("WIfiStateChangeReceiver", "WiFi is ON");
                     break;
                 case WifiManager.WIFI_STATE_DISABLED:
@@ -788,9 +779,34 @@ public class MainActivity extends ActivityBase {
         }
     };
 
+
+    private void registerReceiver() {
+        uiUpdationReceiver = new UIUpdationReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ACTION_INTENT_FILTER_UI_UPDATE_RECEIVER);
+        registerReceiver(uiUpdationReceiver, intentFilter);
+    }
+
+    void unRegisterReceiver() {
+        unregisterReceiver(uiUpdationReceiver);
+    }
+
+    private class UIUpdationReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int level = intent.getIntExtra(KEY_INTENT_CURRENT_WIFI_STRENGTH, 0);
+            Log.d(TAG, "UI Updating Called: current level is=" + level);
+
+            headerSpeedMeter.speedPercentTo(level);
+        }
+    }
+
+    ;
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         isLeftApp = true;
     }
+
 }

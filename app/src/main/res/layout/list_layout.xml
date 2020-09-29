@@ -35,6 +35,21 @@
         android:textSize="22dp"
         android:visibility="gone" />
 
+    <Button
+        android:id="@+id/btnGo_to_ScanWIFI"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EmptyText"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/background_btns"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:text="Go to Available Wifi"
+        android:textColor="@color/colorWhite"
+
+        />
+
     <FrameLayout
         android:id="@+id/bannerContainer"
         android:layout_width="wrap_content"

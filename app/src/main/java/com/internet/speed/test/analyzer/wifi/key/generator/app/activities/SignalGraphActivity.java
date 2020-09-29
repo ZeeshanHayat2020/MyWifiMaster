@@ -59,7 +59,6 @@ public class SignalGraphActivity extends ActivityBase {
     private int REQUEST_LOCATION = 7172;
 
 
-
     public ImageView headerItemCenterRight;
     public TextView headerItemTextViewFirst;
     public TextView headerItemTextViewSecond;

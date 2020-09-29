@@ -255,21 +255,6 @@ public class PasswordGeneratorActivity extends ActivityBase implements View.OnCl
             clipboard.setPrimaryClip(clip);
             Toast.makeText(this, "Password copied..!", Toast.LENGTH_SHORT).show();
         }
-
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-
-        } else {
-
-            reqNewInterstitial(this);
-
-        }
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                reqNewInterstitial(PasswordGeneratorActivity.this);
-            }
-        });
     }
 
 
