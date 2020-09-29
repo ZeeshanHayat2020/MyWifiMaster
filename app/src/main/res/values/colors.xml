@@ -16,6 +16,8 @@
 
     <color name="colorTextNormal">#7E7C7C</color>
 
+    <color name="colorRed">#ED291A</color>
+
 
     <color name="colorThumbChecked">#B718A1</color>
     <color name="colorTrackChecked">#B3B718A1</color>

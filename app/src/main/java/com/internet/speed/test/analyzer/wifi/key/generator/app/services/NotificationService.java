@@ -66,7 +66,7 @@ public class NotificationService extends Service {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(title)
                 .setContentText(text)
-                .setSmallIcon(R.drawable.apicon)
+                .setSmallIcon(R.mipmap.apicon)
                 .setContentIntent(pendingIntent)
                 .build();
         startForeground(1, notification);

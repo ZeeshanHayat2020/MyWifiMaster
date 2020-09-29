@@ -17,7 +17,7 @@ public class LanguageManager {
     public static final String LANGUAGE_KEY_ARABIC = "ar";
     public static final String LANGUAGE_KEY_RUSSIA = "ru";
     public static final String LANGUAGE_KEY_FRENCH = "fr";
-    public static final String LANGUAGE_KEY_CHINES = "zh-rCN";
+    public static final String LANGUAGE_KEY_CHINES = "zh";
     public static final String LANGUAGE_KEY_GERMAN = "de";
     public static final String LANGUAGE_KEY_INDONESIAN = "in";
     public static final String LANGUAGE_KEY_ITALIAN = "it";

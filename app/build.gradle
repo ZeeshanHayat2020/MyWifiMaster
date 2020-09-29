@@ -32,6 +32,17 @@ android {
         abortOnError false
     }
 
+    bundle {
+        density {
+            // Different APKs are generated for devices with different screen densities; true by default.
+            enableSplit false
+        }
+        language {
+            // This is disabled so that the App Bundle does NOT split the APK for each language.
+            // We're gonna use the same APK for all languages.
+            enableSplit false
+        }
+    }
     buildscript {
         repositories {
             jcenter()

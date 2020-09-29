@@ -72,6 +72,7 @@ import com.internet.speed.test.analyzer.wifi.key.generator.app.adapters.AdapterM
 import com.internet.speed.test.analyzer.wifi.key.generator.app.allRouterPassword.AllRouterPasswords;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.appsNetBlocker.NetBlockerMainActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.autoConnectWifi.AutoConnectWifi;
+import com.internet.speed.test.analyzer.wifi.key.generator.app.database.MyPreferences;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.interfaces.OnRecyclerItemClickeListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.models.ModelMain;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.services.NotificationService;
@@ -139,6 +140,7 @@ public class MainActivity extends ActivityBase {
     private String currentWifiStrength = "";
 
     private UIUpdationReceiver uiUpdationReceiver;
+    private MyPreferences myPreferences;
 
 
     @Override
@@ -167,6 +169,7 @@ public class MainActivity extends ActivityBase {
     }
 
     private void initViews() {
+        myPreferences = new MyPreferences(MainActivity.this);
         recyclerViewRoot = findViewById(R.id.acMain_RecyclerView_RootView);
         permissionRootView = findViewById(R.id.acMain_PermissionRootView);
         permissionMsgView = findViewById(R.id.acMain_PermissionMessage);
@@ -321,46 +324,52 @@ public class MainActivity extends ActivityBase {
     }
 
     private void setUpRecyclerView() {
+
+
         int[] imgIds = {
                 R.drawable.ic_item_main_scan_wifi,
                 R.drawable.ic_item_main_auto_wifi,
                 R.drawable.ic_item_main_generate_password,
                 R.drawable.ic_item_main_show_wifi_password,
+                R.drawable.ic_item_main_wifi_signal_strength,
+                R.drawable.ic_item_main_net_block,
+                R.drawable.ic_item_main_all_router_password,
+                R.drawable.ic_item_main_app_data_usage,
                 R.drawable.ic_item_main_hotspot,
                 R.drawable.ic_item_main_wifi_speed_test,
-                R.drawable.ic_item_main_wifi_information,
                 R.drawable.ic_item_main_bluetooth,
-                R.drawable.ic_item_main_live_location,
-                R.drawable.ic_item_main_wifi_signal_strength,
-                R.drawable.ic_item_main_app_data_usage,
-                R.drawable.ic_item_main_net_block,
-                R.drawable.ic_item_main_all_router_password
+                R.drawable.ic_item_main_wifi_information,
+                R.drawable.ic_item_main_live_location
 
         };
+
         String[] title = {
                 getString(R.string.scac_wifi),
                 getString(R.string.auto_wifi),
                 getString(R.string.gen_pass),
                 getString(R.string.show_pass),
+                getString(R.string.wifi_strength),
+                getString(R.string.net_block),
+                getString(R.string.defaul_router_pass),
+                getString(R.string.app_usage),
                 getString(R.string.hotspto),
                 getString(R.string.wifi_speed),
-                getString(R.string.wifi_info),
                 getString(R.string.bluetooth),
+                getString(R.string.wifi_info),
                 getString(R.string.libve_location),
-                getString(R.string.wifi_strength),
-                getString(R.string.app_usage),
-                getString(R.string.net_block),
-                getString(R.string.defaul_router_pass)
+
         };
+
         for (int i = 0; i < title.length; i++) {
             bottomViewList.add(new ModelMain(imgIds[i], title[i]));
         }
-        mAdapter = new AdapterMain(this, bottomViewList);
+        mAdapter = new AdapterMain(this, bottomViewList, myPreferences);
         recyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
         mAdapter.setOnRecyclerItemClickListener(new OnRecyclerItemClickeListener() {
             @Override
             public void onItemClicked(int position) {
+                myPreferences.setNewFeaturesChecked(true);
                 onItemsClick(position);
             }
 
@@ -529,69 +538,10 @@ public class MainActivity extends ActivityBase {
             }
             break;
             case 4: {
-                Intent intent = new Intent(Intent.ACTION_MAIN, null);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-                ComponentName cn = new ComponentName("com.android.settings", "com.android.settings.TetherSettings");
-                intent.setComponent(cn);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-            break;
-            case 5: {
-                if (mInterstitialAd != null) {
-                    if (mInterstitialAd.isLoaded()) {
-                        mInterstitialAd.show();
-                    } else {
-                        Intent i = new Intent(MainActivity.this, Speedtest.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(i);
-                    }
-
-                    mInterstitialAd.setAdListener(new AdListener() {
-                        @Override
-                        public void onAdClosed() {
-                            super.onAdClosed();
-                            Intent i = new Intent(MainActivity.this, Speedtest.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(i);
-                        }
-                    });
-
-                } else {
-                    Intent i = new Intent(MainActivity.this, Speedtest.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(i);
-                }
-            }
-            break;
-            case 6: {
-                intentToLocationRelatedActivities(new ActivityWifiInformation());
-            }
-            break;
-            case 7: {
-                Intent intent = new Intent(MainActivity.this, BluetoothConnectivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-            break;
-            case 8: {
-                intentToLocationRelatedActivities(new ActivityLiveLocation());
-            }
-            break;
-            case 9: {
-
                 intentToLocationRelatedActivities(new SignalGraphActivity());
             }
             break;
-            case 10: {
-                Intent intent = new Intent(this, ActivityAppUsage.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-            break;
-            case 11: {
-
-
+            case 5: {
                 if (mInterstitialAd != null) {
                     if (mInterstitialAd.isLoaded()) {
                         mInterstitialAd.show();
@@ -616,12 +566,87 @@ public class MainActivity extends ActivityBase {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
+
+
             }
             break;
-            case 12: {
+            case 6: {
                 Intent intent = new Intent(this, AllRouterPasswords.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+
+
+            }
+            break;
+            case 7: {
+                Intent intent = new Intent(this, ActivityAppUsage.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+
+            }
+            break;
+            case 8: {
+
+                Intent intent = new Intent(Intent.ACTION_MAIN, null);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                ComponentName cn = new ComponentName("com.android.settings", "com.android.settings.TetherSettings");
+                intent.setComponent(cn);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+
+            }
+            break;
+            case 9: {
+
+                if (mInterstitialAd != null) {
+                    if (mInterstitialAd.isLoaded()) {
+                        mInterstitialAd.show();
+                    } else {
+                        Intent i = new Intent(MainActivity.this, Speedtest.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
+                    }
+
+                    mInterstitialAd.setAdListener(new AdListener() {
+                        @Override
+                        public void onAdClosed() {
+                            super.onAdClosed();
+                            Intent i = new Intent(MainActivity.this, Speedtest.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
+                        }
+                    });
+
+                } else {
+                    Intent i = new Intent(MainActivity.this, Speedtest.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
+                }
+
+            }
+            break;
+            case 10: {
+
+
+                Intent intent = new Intent(MainActivity.this, BluetoothConnectivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+            }
+            break;
+            case 11: {
+
+                intentToLocationRelatedActivities(new ActivityWifiInformation());
+
+
+            }
+            break;
+            case 12: {
+
+                intentToLocationRelatedActivities(new ActivityLiveLocation());
+
             }
             break;
 
