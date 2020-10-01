@@ -1,12 +1,15 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app.adapters;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
@@ -37,12 +40,14 @@ public class AdapterShowPassword extends RecyclerView.Adapter<AdapterShowPasswor
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView textViewName;
         public TextView textViewPassword;
+        public ImageView btnMenu;
 
 
         public MyViewHolder(View view) {
             super(view);
             textViewName = view.findViewById(R.id.itemView_show_password_tvName);
             textViewPassword = view.findViewById(R.id.itemView_show_password_tvPassword);
+            btnMenu = view.findViewById(R.id.itemView_show_password_btnMenu);
 
 
         }
@@ -63,12 +68,59 @@ public class AdapterShowPassword extends RecyclerView.Adapter<AdapterShowPasswor
         holder.textViewPassword.setText("Password:" + passwordList.get(position));
 
 
+        holder.btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (onRecyclerItemClickeListener != null) {
+                    if (position != RecyclerView.NO_POSITION) {
+                        setItemViewMenu(view.getContext(), view, position);
+                    }
+                }
+            }
+        });
+
+
     }
 
 
     @Override
     public int getItemCount() {
         return passwordList.size();
+    }
+
+
+    private void setItemViewMenu(Context context, View view, final int position) {
+        PopupMenu popup = new PopupMenu(context, view);
+        popup.inflate(R.menu.menu_show_passwor);
+        popup.setGravity(Gravity.RIGHT);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_showPass_itemView_copy: {
+
+                        if (onRecyclerItemClickeListener != null) {
+                            if (position != RecyclerView.NO_POSITION) {
+                                onRecyclerItemClickeListener.onItemCopyClicked(position);
+                            }
+                        }
+                    }
+                    break;
+                    case R.id.menu_showPass_itemView_delete: {
+                        if (onRecyclerItemClickeListener != null) {
+                            if (position != RecyclerView.NO_POSITION) {
+                                onRecyclerItemClickeListener.onItemDeleteClicked(position);
+                            }
+                        }
+                    }
+                    break;
+                }
+                return false;
+            }
+        });
+        popup.show();
+
+
     }
 
 

@@ -22,7 +22,7 @@ import com.internet.speed.test.analyzer.wifi.key.generator.app.database.MyPrefer
 public class ActivityLanguage extends ActivityBase implements View.OnClickListener {
     private Button bntEng, btnArabic, btnChina,
             btnFrench, btnGerman, btnIndonesian, btnItalian,
-            btnPolish, btnPortuguese, btnRussian;
+            btnPolish, btnPortuguese, btnRussian, btnTurkish;
     private MyPreferences myPreferences;
     private RelativeLayout layoutHeader;
     public ImageView headerItemCenterRight;
@@ -51,7 +51,7 @@ public class ActivityLanguage extends ActivityBase implements View.OnClickListen
         btnPolish = (Button) findViewById(R.id.acLanguage_btnPolish);
         btnPortuguese = (Button) findViewById(R.id.acLanguage_btnPortuguese);
         btnRussian = (Button) findViewById(R.id.acLanguage_btnRussian);
-
+        btnTurkish = (Button) findViewById(R.id.acLanguage_btnTurkish);
 
 
         bntEng.setOnClickListener(this);
@@ -67,6 +67,7 @@ public class ActivityLanguage extends ActivityBase implements View.OnClickListen
         btnPolish.setOnClickListener(this);
         btnPortuguese.setOnClickListener(this);
         btnRussian.setOnClickListener(this);
+        btnTurkish.setOnClickListener(this);
 
     }
 
@@ -165,6 +166,11 @@ public class ActivityLanguage extends ActivityBase implements View.OnClickListen
             case R.id.acLanguage_btnRussian: {
                 setLanguage(true);
                 setNewLocal(LanguageManager.LANGUAGE_KEY_RUSSIA);
+            }
+            break;
+            case R.id.acLanguage_btnTurkish: {
+                setLanguage(true);
+                setNewLocal(LanguageManager.LANGUAGE_KEY_TURKISH);
             }
             break;
 

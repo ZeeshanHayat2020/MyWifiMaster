@@ -1,6 +1,7 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
@@ -63,6 +64,13 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.tasks.OnSuccessListener;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.ListDataActivity;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.R;
 import com.internet.speed.test.analyzer.wifi.key.generator.app.Speedtest;
@@ -93,6 +101,7 @@ public class MainActivity extends ActivityBase {
     public static final String KEY_INTENT_CURRENT_WIFI_NAME = "KEY_INTENT_CURRENT_WIFI_NAME";
     public static final String KEY_INTENT_CURRENT_WIFI_STRENGTH = "KEY_INTENT_CURRENT_WIFI_STRENGTH";
     public static final String ACTION_INTENT_FILTER_UI_UPDATE_RECEIVER = "ACTION_INTENT_FILTER_UI_UPDATE_RECEIVER";
+    private static final int REQUEST_CODE_FOR_IN_APP_UPDATE = 928;
     private RelativeLayout recyclerViewRoot;
     public RecyclerView recyclerView;
     RecyclerView.LayoutManager mLayoutManager;
@@ -141,6 +150,7 @@ public class MainActivity extends ActivityBase {
 
     private UIUpdationReceiver uiUpdationReceiver;
     private MyPreferences myPreferences;
+    private AppUpdateManager appUpdateManager;
 
 
     @Override
@@ -148,7 +158,6 @@ public class MainActivity extends ActivityBase {
         super.onCreate(savedInstanceState);
         setStatusBarGradient(this, R.color.colorWhite, R.color.colorWhite);
         setContentView(R.layout.activity_my_main);
-        MobileAds.initialize(this, getResources().getString(R.string.app_id));
         context = getApplicationContext();
         activity = this;
         wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
@@ -158,6 +167,7 @@ public class MainActivity extends ActivityBase {
         setUpRecyclerView();
         preferences = getSharedPreferences("PREFS", 0);
         InAppPrefManager.getInstance(this).setInAppStatus(false);
+        setUpInAppUpdate();
 
     }
 
@@ -165,8 +175,62 @@ public class MainActivity extends ActivityBase {
     protected void onResume() {
         super.onResume();
         reqNewInterstitial(this);
+        if (haveNetworkConnection()) {
+            checkForUpdate();
+        }
 
     }
+
+    private void setUpInAppUpdate() {
+        appUpdateManager = (AppUpdateManager) AppUpdateManagerFactory.create(this);
+        // Returns an intent object that you use to check for an update.
+        com.google.android.play.core.tasks.Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        // Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(AppUpdateInfo appUpdateInfo) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                        // For a flexible update, use AppUpdateType.FLEXIBLE
+                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                    try {
+                        appUpdateManager.startUpdateFlowForResult(
+                                // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                                appUpdateInfo,
+                                // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
+                                AppUpdateType.IMMEDIATE,
+                                // The current activity making the update request.
+                                MainActivity.this,
+                                // Include a request code to later monitor this update request.
+                                REQUEST_CODE_FOR_IN_APP_UPDATE);
+                    } catch (IntentSender.SendIntentException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
+    private void checkForUpdate() {
+        appUpdateManager.getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(AppUpdateInfo appUpdateInfo) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                    // If an in-app update is already running, resume the update.
+                    try {
+                        appUpdateManager.startUpdateFlowForResult(
+                                appUpdateInfo,
+                                AppUpdateType.IMMEDIATE,
+                                MainActivity.this,
+                                REQUEST_CODE_FOR_IN_APP_UPDATE);
+                    } catch (IntentSender.SendIntentException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+    }
+
 
     private void initViews() {
         myPreferences = new MyPreferences(MainActivity.this);
@@ -186,7 +250,6 @@ public class MainActivity extends ActivityBase {
         }
 
     }
-
 
     void setUpHeader() {
         layoutHeader = findViewById(R.id.header_acLanugage);
@@ -374,14 +437,15 @@ public class MainActivity extends ActivityBase {
             }
 
             @Override
-            public void onItemLongClicked(int position) {
+            public void onItemDeleteClicked(int position) {
 
             }
 
             @Override
-            public void onItemCheckBoxClicked(View view, int position) {
+            public void onItemCopyClicked(int position) {
 
             }
+
         });
     }
 
@@ -428,7 +492,6 @@ public class MainActivity extends ActivityBase {
                     startActivity(intent);
                 } else {
                     enableLoc();
-
                 }
             }
         }
@@ -579,21 +642,51 @@ public class MainActivity extends ActivityBase {
             }
             break;
             case 7: {
-                Intent intent = new Intent(this, ActivityAppUsage.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                    mInterstitialAd.setAdListener(new AdListener() {
+                        @Override
+                        public void onAdClosed() {
+                            super.onAdClosed();
+                            Intent intent = new Intent(MainActivity.this, ActivityAppUsage.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    });
+                } else {
+                    reqNewInterstitial(this);
+                    Intent intent = new Intent(this, ActivityAppUsage.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
 
 
             }
             break;
             case 8: {
 
-                Intent intent = new Intent(Intent.ACTION_MAIN, null);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-                ComponentName cn = new ComponentName("com.android.settings", "com.android.settings.TetherSettings");
-                intent.setComponent(cn);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                    mInterstitialAd.setAdListener(new AdListener() {
+                        @Override
+                        public void onAdClosed() {
+                            super.onAdClosed();
+                            Intent intent = new Intent(Intent.ACTION_MAIN, null);
+                            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                            ComponentName cn = new ComponentName("com.android.settings", "com.android.settings.TetherSettings");
+                            intent.setComponent(cn);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+                    });
+                } else {
+                    Intent intent = new Intent(Intent.ACTION_MAIN, null);
+                    intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                    ComponentName cn = new ComponentName("com.android.settings", "com.android.settings.TetherSettings");
+                    intent.setComponent(cn);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
 
 
             }
@@ -832,6 +925,21 @@ public class MainActivity extends ActivityBase {
     protected void onDestroy() {
         super.onDestroy();
         isLeftApp = true;
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE_FOR_IN_APP_UPDATE) {
+            if (resultCode != RESULT_OK) {
+                View parentLayout = findViewById(android.R.id.content);
+                Snackbar snackbar = Snackbar
+                        .make(parentLayout, "Installation Failed!", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        }
     }
 
 }

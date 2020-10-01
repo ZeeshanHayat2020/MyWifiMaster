@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.NetworkInfo;
@@ -22,10 +24,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -34,6 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,6 +50,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
 import com.example.flatdialoglibrary.dialog.FlatDialog;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -166,6 +173,7 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                 }, 2000);
             }
         });
+        reqNewInterstitial(this);
 
     }
 
@@ -188,6 +196,7 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     View.OnClickListener MyOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            view.setEnabled(false);
             view.clearAnimation();
             animationView.playAnimation();
             animationView.setSpeed(2);
@@ -199,8 +208,10 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                     if (adapter != null) {
                         adapter.notifyDataSetChanged();
                     }
+                    view.setEnabled(true);
                 }
-            }, 4000);
+            }, 3000);
+
         }
     };
 
@@ -208,92 +219,113 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     public void OnWifiClickListener(View view, final int position) {
         this.position = position;
         final String selectedSSID = scan_Results.get(position).SSID;
-        oldSSIDName = selectedSSID;
+        oldSSIDName = "\"" + selectedSSID + "\"";
 
-        if (Build.VERSION.SDK_INT >= 29) {
-            startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-        } else {
-            if (((Button) view).getText().equals("Forget")) {
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
-          /*  List<WifiConfiguration> list = wifi_Manager.getConfiguredNetworks();
-            for (WifiConfiguration i : list) {
-                wifi_Manager.removeNetwork(i.networkId);
-                wifi_Manager.saveConfiguration();
-            }*/
+
+        if (((Button) view).getText().equals("Forget")) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            if (Build.VERSION.SDK_INT >= 23) {
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+            } else {
                 try {
                     int networkId = wifi_Manager.getConnectionInfo().getNetworkId();
                     wifi_Manager.removeNetwork(networkId);
                     wifi_Manager.saveConfiguration();
                 } catch (Exception e) {
-                    Log.d(TAG, "Catch" + e);
+                    Log.d(TAG, "Catch Exception" + e);
                 }
-
-
-           /* WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-            List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
-            for (WifiConfiguration i : list) {
-                //int networkId = wifiManager.getConnectionInfo().getNetworkId();
-                wifiManager.removeNetwork(i.networkId);
-                wifiManager.saveConfiguration();
-            }*/
-                Log.d(TAG, "OnWifiClickListener: Should forget");
-
-            } else {
-
-
-                final FlatDialog flatDialog = new FlatDialog(AvailableWifiActivity.this);
-                flatDialog.setTitle(getString(R.string.please_enter_password))
-                        .setTitleColor(getResources().getColor(R.color.colorPrimary))
-                        .setFirstTextFieldHint(getString(R.string.eg_wifi_password))
-                        .setFirstTextFieldHintColor(getResources().getColor(R.color.colorPrimary))
-                        .setFirstTextFieldBorderColor(getResources().getColor(R.color.colorPrimaryDark))
-                        .setFirstButtonText(getString(R.string.connect))
-                        .setFirstTextFieldTextColor(getResources().getColor(R.color.colorPrimary))
-                        .setSecondButtonText(getString(R.string.cancel))
-                        .setBackgroundColor(getResources().getColor(R.color.white))
-                        .setFirstButtonTextColor(getResources().getColor(R.color.white))
-                        .setSecondButtonTextColor(getResources().getColor(R.color.white))
-                        .setFirstButtonColor(getResources().getColor(R.color.colorAccent))
-                        .setSecondButtonColor(getResources().getColor(R.color.colorAccent))
-                        .withFirstButtonListner(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                String password = flatDialog.getFirstTextField();
-                                if (password.isEmpty()) {
-                                    Toast.makeText(AvailableWifiActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    if (!ConnectToNetworkWPA(selectedSSID, password)) {
-                                        Toast.makeText(AvailableWifiActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
-                                        flatDialog.dismiss();
-                                    }
-                                    flatDialog.dismiss();
-                                }
-
-
-                                //===========================connect to wifi===============================
-
-                            }
-                        }).withSecondButtonListner(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        flatDialog.dismiss();
-                    }
-                }).show();
             }
+            Log.d(TAG, "OnWifiClickListener: Should forget");
+
+        } else {
+
+            openConnectDialog(selectedSSID);
+
         }
 
 
     }
 
+    private void openConnectDialog(String selectedSSID) {
+
+        final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_edit_text, null);
+        dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        final EditText editText = (EditText) dialogView.findViewById(R.id.dialog_etFileName);
+        Button btnConnect = (Button) dialogView.findViewById(R.id.dialogBtn_connect);
+        Button btnCancel = (Button) dialogView.findViewById(R.id.dialgBtn_Cancel);
+        editText.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        btnConnect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                String password = editText.getText().toString();
+
+                if (Build.VERSION.SDK_INT >= 29) {
+
+                    if (!databaseHelper.Checkpwd(password)) {
+                        databaseHelper.addData(selectedSSID, password);
+                        Log.d(TAG, "ReConnecting..." + " should entry to Data Base");
+                    }
+                    startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                } else {
+
+
+                    if (password.isEmpty()) {
+                        Toast.makeText(AvailableWifiActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+                    } else {
+                        if (!ConnectToNetworkWPA(selectedSSID, password)) {
+                            Toast.makeText(AvailableWifiActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                            dialogBuilder.dismiss();
+                        }
+                        dialogBuilder.dismiss();
+                    }
+                }
+
+                dialogBuilder.dismiss();
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                    mInterstitialAd.setAdListener(new AdListener() {
+                        @Override
+                        public void onAdClosed() {
+                            super.onAdClosed();
+                            dialogBuilder.dismiss();
+                        }
+                    });
+                } else {
+                    dialogBuilder.dismiss();
+                }
+
+            }
+        });
+
+        dialogBuilder.setView(dialogView);
+        dialogBuilder.show();
+
+    }
 
     private boolean ConnectToNetworkWPA(String networkSSID, String password) {
         try {
@@ -311,7 +343,7 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
             WifiManager wifiManager = (WifiManager) AvailableWifiActivity.this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             Objects.requireNonNull(wifiManager).addNetwork(conf);
 
-            Log.d(TAG, "Connecting..." +networkSSID);
+            Log.d(TAG, "Connecting..." + networkSSID);
 
 
             @SuppressLint("MissingPermission")
@@ -321,6 +353,7 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                     wifiManager.disconnect();
                     wifiManager.enableNetwork(i.networkId, true);
                     wifiManager.reconnect();
+                    wifiManager.saveConfiguration();
                     Log.d(TAG, "MatchName" + i.SSID + " " + conf.preSharedKey);
                     if (!databaseHelper.Checkpwd(password)) {
                         databaseHelper.addData(networkSSID, password);
@@ -339,12 +372,6 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
             return false;
         }
     }
-    //==============================Save Wifi Password to phpMyadmin======================================
-
-
-    //==================================================In App Purchase=================================================
-
-    //========================================End=========================================================
 
     public class wifi_BroadCast_Receiver extends BroadcastReceiver {
         @Override
@@ -450,16 +477,16 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                     case CONNECTED:
                         hideProgress();
                         if (!oldSSIDName.equals("")) {
-                            final String oldSSID = scan_Results.get(position).SSID;
                             WifiInfo mInfo = wifi_Manager.getConnectionInfo();
                             String newSSID = mInfo.getSSID();
-                            /*if (newSSID.contains("\"")){
-                                Log.d(TAG, "Connected Name contains marker" );
-                            }*/
-                            if (oldSSID.contains(newSSID)){
-
+                            if (!oldSSIDName.equals(newSSID)) {
+                                Log.d(TAG, "Failed to connect ");
+                                Toast.makeText(AvailableWifiActivity.this, "Failed to connect", Toast.LENGTH_LONG).show();
+                            } else {
+                                Log.d(TAG, "Connected successFully ");
+                                Toast.makeText(AvailableWifiActivity.this, "Connected successFully", Toast.LENGTH_LONG).show();
                             }
-                            Log.d(TAG, "Connected " + "oldSSID : " + oldSSIDName + "newSSID: " + newSSID);
+                            Log.d(TAG, "Connected " + " oldSSID : " + oldSSIDName + " newSSID: " + newSSID);
                         }
 
                         break;

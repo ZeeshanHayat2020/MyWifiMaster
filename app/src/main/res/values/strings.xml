@@ -5,10 +5,10 @@
 
     <!--    TEST ADS -->
 
-    <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+<!--    <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
     <string name="Banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="Interstitial" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="nativead" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="nativead" translatable="false">ca-app-pub-3940256099942544/2247696110</string>-->
 
 
     <!--  <string name="test_product_id" translatable="false" >android.test.purchased</string>
@@ -16,9 +16,9 @@
     <string name="license_key" translatable="false" >MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnYnyohjpLClvq57xNZsAlGdcpN+cFI1/3bKMRdin3cKPU8jzNA7MPldDsxt3zeGhkPIpRkffBfkB2/E2apEmnbgEvc1AsFnzigUtKqi10rApDArV412pJAZRFED/eMMRURyg247nj1WUjri7014f8OclwNCHXRjRBDjkcSG731rBsKKCvthG0903VEcihxTAxHd4hV+Gpy5fNaokwGINjvId2Hb22u7+vgY+OHm5lyWIeTNCP8IIYPHfZiv0aDj8I7W8QtgYmkAndltA/loga6b7zP2bySQ+pHbGL3Uw9hIQsC4qhb8aQuzz1d2g/dwu/pHAgIshgaN/LL+s0CZ7TQIDAQAB</string>
 -->
 
-          <!--  <string name="app_id" translatable="false">ca-app-pub-7796659861450905~6965662202</string>
+            <string name="app_id" translatable="false">ca-app-pub-7796659861450905~6965662202</string>
             <string name="Banner" translatable="false">ca-app-pub-7796659861450905/7480667527</string>
-            <string name="Interstitial" translatable="false">ca-app-pub-7796659861450905/2228340847</string>-->
+            <string name="Interstitial" translatable="false">ca-app-pub-7796659861450905/2228340847</string>
 
     <string name="wifi_master_has_all_the_nearby_wifi_connection_so_you_can_connect_to_them_at_any_time_you_want" translatable="false">Wifi master has all the nearby wifi connection so you can connect to them at any time you want.</string>
     <string name="there_is_a_password_generator_that_suggests_some_passwords_for_you_to_secure_your_wifi_connection_you_can_generate_then_and_use_them_to_get_a_security_password_on_your_wifi_connection_so_no_one_can_use_it_without_your_permission" translatable="false">There is a password generator that suggests some passwords for you to secure your wifi connection. You can generate then and use them to get a security password on your wifi connection so no one can use it without your permission.</string>
@@ -52,6 +52,7 @@
     <string name="portuguese" translatable="false">portuguesa</string>
     <string name="russian" translatable="false">русский</string>
     <string name="spanish" translatable="false">española</string>
+    <string name="turkish" translatable="false">Türkçe</string>
 
 
     <string name="trun_on_auto_wifi_service">If You turn On Auto wifi the service will Run On background that will turn on Your Wifi After Every 30 Minutes if Wifi Is Off</string>
@@ -187,6 +188,8 @@
     <string name="app_usage">App Data Usage</string>
     <string name="net_block">Net Block</string>
     <string name="defaul_router_pass">Default Router Password</string>
+    <string name="delete">Delete</string>
+    <string name="copy">Copy</string>
 
     <string-array name="array_palette">
         <item>#B718A1</item>

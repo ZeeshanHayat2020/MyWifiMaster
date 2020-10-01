@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,10 +60,9 @@ public class Available_Wifi_ListAdapter extends RecyclerView.Adapter<Available_W
 
         holder.txtSS_ID.setText(scan_results.get(position).SSID);
         if (scan_results.get(position).SSID.equals(current)) {
-//            holder.checkConnection.setText("Connected");
-            holder.btnConnect.setText("Forget");
-//            holder.btnConnect.setEnabled(true);
-
+            if (Build.VERSION.SDK_INT < 29) {
+                holder.btnConnect.setText("Forget");
+            }
         }
 
         if (level <= 0 && level >= -50) {
@@ -94,6 +94,7 @@ public class Available_Wifi_ListAdapter extends RecyclerView.Adapter<Available_W
         //        private final TextView checkConnection;
         private final ImageView imageView;
         private final Button btnConnect;
+
         final OnWifiClickListener onWifiClickListener;
 
         MyViewHolder(@NonNull View view, OnWifiClickListener onWifiClickListener) {

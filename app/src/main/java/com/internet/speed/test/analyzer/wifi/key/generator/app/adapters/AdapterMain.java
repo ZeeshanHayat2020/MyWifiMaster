@@ -45,6 +45,7 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+
         public TextView newFeaturesView;
         public ImageView imageView;
         public TextView textView;

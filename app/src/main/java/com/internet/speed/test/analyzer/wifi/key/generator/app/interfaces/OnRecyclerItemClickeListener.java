@@ -6,7 +6,7 @@ public interface OnRecyclerItemClickeListener {
 
     void onItemClicked(int position);
 
-    void onItemLongClicked(int position);
+    void onItemDeleteClicked(int position);
 
-    void onItemCheckBoxClicked(View view, int position);
+    void onItemCopyClicked(int position);
 }

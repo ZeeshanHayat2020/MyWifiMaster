@@ -47,6 +47,7 @@
         android:paddingRight="@dimen/_5sdp"
         android:text="Go to Available Wifi"
         android:textColor="@color/colorWhite"
+        android:visibility="gone"
 
         />
 

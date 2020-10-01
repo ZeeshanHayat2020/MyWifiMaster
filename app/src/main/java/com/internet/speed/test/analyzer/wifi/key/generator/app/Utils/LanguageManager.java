@@ -23,6 +23,7 @@ public class LanguageManager {
     public static final String LANGUAGE_KEY_ITALIAN = "it";
     public static final String LANGUAGE_KEY_POLISH = "pl";
     public static final String LANGUAGE_KEY_PORTUGUESE = "pt";
+    public static final String LANGUAGE_KEY_TURKISH = "tr";
 
     private static final String LANGUAGE_KEY = "language_key";
 

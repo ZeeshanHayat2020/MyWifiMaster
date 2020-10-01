@@ -1,6 +1,8 @@
 package com.internet.speed.test.analyzer.wifi.key.generator.app;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -171,6 +173,36 @@ public class ListDataActivity extends ActivityBase {
         mAdapter = new AdapterShowPassword(this, nameList, passwrodList);
         recyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
+        mAdapter.setOnRecyclerItemClickListener(new OnRecyclerItemClickeListener() {
+            @Override
+            public void onItemClicked(int position) {
+
+
+            }
+
+            @Override
+            public void onItemDeleteClicked(int position) {
+                String name = nameList.get(position);
+                mDatabaseHelper.deleteData(name);
+                nameList.remove(nameList.get(position));
+                passwrodList.remove(passwrodList.get(position));
+                mAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onItemCopyClicked(int position) {
+                String pass = passwrodList.get(position);
+                if (!pass.isEmpty()) {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("Password", pass);
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(ListDataActivity.this, "Password copied..!", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
 
     }
 

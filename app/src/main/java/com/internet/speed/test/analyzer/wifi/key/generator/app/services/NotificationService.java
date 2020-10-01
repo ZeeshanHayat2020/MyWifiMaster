@@ -7,8 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
+import android.provider.Settings;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -84,16 +88,20 @@ public class NotificationService extends Service {
         timerTask = new TimerTask() {
             @Override
             public void run() {
-                getSignalStrength();
-                new Handler(getMainLooper()).postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        setNotification();
-                        sendBroadCast();
-                    }
-                }, 1000);
+                if (!wifiManager.isWifiEnabled()) {
+                    stopSelf();
 
+                } else {
+                    getSignalStrength();
+                    new Handler(getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            setNotification();
+                            sendBroadCast();
+                        }
+                    }, 1000);
 
+                }
             }
         };
         timer.schedule(timerTask, 2000, 50000);
@@ -111,6 +119,7 @@ public class NotificationService extends Service {
         if (timerTask != null) {
             timerTask.cancel();
         }
+        stopForeground(true);
     }
 
     @Nullable

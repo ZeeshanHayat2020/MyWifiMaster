@@ -80,6 +80,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void deleteData(String columnName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, COL2 + " = ?",
+                new String[]{String.valueOf(columnName)});
+        db.close();
+    }
+
     public Cursor getData() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
@@ -198,9 +205,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return stringBuffer.toString();
     }
-
-
-
 
 
     //todo: get pass number
