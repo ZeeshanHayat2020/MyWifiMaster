@@ -14,7 +14,9 @@ import android.location.LocationManager;
 import android.net.NetworkInfo;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -65,7 +67,7 @@ import java.util.Objects;
 
 public class AvailableWifiActivity extends ActivityBase implements Available_Wifi_ListAdapter.OnWifiClickListener {
 
-    private static final String TAG = "AvailableWifiActivity";
+    private static final String TAG = "AvailableWifiTAG";
     private WifiManager wifi_Manager;
     private ArrayList<ScanResult> scan_Results;
     private RecyclerView wifi_recyclerview;
@@ -87,6 +89,8 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     public TextView headerItemTextViewSecond;
     DatabaseHelper databaseHelper;
     private ProgressDialog progressDialog;
+    private int position = 0;
+    private String oldSSIDName = "";
 
 
     @Override
@@ -202,6 +206,10 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
 
     @Override
     public void OnWifiClickListener(View view, final int position) {
+        this.position = position;
+        final String selectedSSID = scan_Results.get(position).SSID;
+        oldSSIDName = selectedSSID;
+
         if (Build.VERSION.SDK_INT >= 29) {
             startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
         } else {
@@ -221,10 +229,14 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                 wifi_Manager.removeNetwork(i.networkId);
                 wifi_Manager.saveConfiguration();
             }*/
-                WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                int networkId = wifiManager.getConnectionInfo().getNetworkId();
-                wifiManager.removeNetwork(networkId);
-                wifiManager.saveConfiguration();
+                try {
+                    int networkId = wifi_Manager.getConnectionInfo().getNetworkId();
+                    wifi_Manager.removeNetwork(networkId);
+                    wifi_Manager.saveConfiguration();
+                } catch (Exception e) {
+                    Log.d(TAG, "Catch" + e);
+                }
+
 
            /* WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             List<WifiConfiguration> list = wifiManager.getConfiguredNetworks();
@@ -233,10 +245,10 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                 wifiManager.removeNetwork(i.networkId);
                 wifiManager.saveConfiguration();
             }*/
-                Log.d("Available Wifi", "OnWifiClickListener: Should forget");
+                Log.d(TAG, "OnWifiClickListener: Should forget");
 
             } else {
-                final String selectedSSID = scan_Results.get(position).SSID;
+
 
                 final FlatDialog flatDialog = new FlatDialog(AvailableWifiActivity.this);
                 flatDialog.setTitle(getString(R.string.please_enter_password))
@@ -295,12 +307,11 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
             conf.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
             conf.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
 
-            Log.d("connecting", conf.SSID + " " + conf.preSharedKey);
 
             WifiManager wifiManager = (WifiManager) AvailableWifiActivity.this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             Objects.requireNonNull(wifiManager).addNetwork(conf);
 
-            Log.d("after connecting", conf.SSID + " " + conf.preSharedKey);
+            Log.d(TAG, "Connecting..." +networkSSID);
 
 
             @SuppressLint("MissingPermission")
@@ -310,60 +321,26 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                     wifiManager.disconnect();
                     wifiManager.enableNetwork(i.networkId, true);
                     wifiManager.reconnect();
-                    Log.d("re connecting", i.SSID + " " + conf.preSharedKey);
+                    Log.d(TAG, "MatchName" + i.SSID + " " + conf.preSharedKey);
                     if (!databaseHelper.Checkpwd(password)) {
                         databaseHelper.addData(networkSSID, password);
-                        Log.d("re connecting", "Should Entery to database");
+                        Log.d(TAG, "ReConnecting..." + " should entry to Data Base");
                     }
                     break;
                 } else {
-                    Log.d("Wrong Password", i.SSID + " " + conf.preSharedKey);
+                    Log.d(TAG, "Wrong Password" + i.SSID + " " + conf.preSharedKey);
                 }
             }
             //WiFi Connection success, return true
             return true;
         } catch (Exception ex) {
             Toast.makeText(AvailableWifiActivity.this, "Wrong Password", Toast.LENGTH_LONG).show();
-            Log.d("after connecting", "Wrong Password");
+            Log.d(TAG, "after connecting  Wrong Password");
             return false;
         }
     }
     //==============================Save Wifi Password to phpMyadmin======================================
 
- /*   private void Save_Password_to_localHost(final String name, final String lat, final String lon, final String password) {
-        StringRequest request = new StringRequest(Request.Method.POST, URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(AvailableWifiActivity.this, response, Toast.LENGTH_LONG).show();
-                        Log.d("TAG", "onResponse: " + response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(AvailableWifiActivity.this, "Something went wrong\n" + error.toString(), Toast.LENGTH_LONG).show();
-                        Log.d("volleyError", error.toString(), error);
-                        Log.e("TAG", "onErrorResponse: " + error);
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> key = new HashMap<>();
-                key.put("name", name);
-                key.put("password", password);
-                key.put("lati", lat);
-                key.put("longi", lon);
-                return key;
-            }
-        };
-        request.setRetryPolicy(new DefaultRetryPolicy(5000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-        RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(this).getApplicationContext(), new HurlStack());
-        requestQueue.add(request);
-
-
-    }*/
 
     //==================================================In App Purchase=================================================
 
@@ -372,7 +349,7 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     public class wifi_BroadCast_Receiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.d(TAG, "wifi_BroadCast_Receiver");
+            Log.d(TAG, "Scan Receiver");
             scan_Results = (ArrayList<ScanResult>) wifi_Manager.getScanResults();
             adapter.notifyDataSetChanged();
         }
@@ -471,12 +448,20 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
                         showProgress("Please wait, wifi is connecting");
                         break;
                     case CONNECTED:
-                        Log.d(TAG, "Connected");
                         hideProgress();
-                        WifiConfiguration conf = new WifiConfiguration();
-                        String name = conf.SSID;
-                        String pass = conf.preSharedKey;
-                        Log.d(TAG, "Connected" + "Name:" + name + "Pass:" + pass);
+                        if (!oldSSIDName.equals("")) {
+                            final String oldSSID = scan_Results.get(position).SSID;
+                            WifiInfo mInfo = wifi_Manager.getConnectionInfo();
+                            String newSSID = mInfo.getSSID();
+                            /*if (newSSID.contains("\"")){
+                                Log.d(TAG, "Connected Name contains marker" );
+                            }*/
+                            if (oldSSID.contains(newSSID)){
+
+                            }
+                            Log.d(TAG, "Connected " + "oldSSID : " + oldSSIDName + "newSSID: " + newSSID);
+                        }
+
                         break;
                     case DISCONNECTING:
                         Log.d(TAG, "DisConnecting");
@@ -514,4 +499,41 @@ public class AvailableWifiActivity extends ActivityBase implements Available_Wif
     private void hideProgress() {
         progressDialog.hide();
     }
+
+
+
+     /*   private void Save_Password_to_localHost(final String name, final String lat, final String lon, final String password) {
+        StringRequest request = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(AvailableWifiActivity.this, response, Toast.LENGTH_LONG).show();
+                        Log.d("TAG", "onResponse: " + response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(AvailableWifiActivity.this, "Something went wrong\n" + error.toString(), Toast.LENGTH_LONG).show();
+                        Log.d("volleyError", error.toString(), error);
+                        Log.e("TAG", "onErrorResponse: " + error);
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> key = new HashMap<>();
+                key.put("name", name);
+                key.put("password", password);
+                key.put("lati", lat);
+                key.put("longi", lon);
+                return key;
+            }
+        };
+        request.setRetryPolicy(new DefaultRetryPolicy(5000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(this).getApplicationContext(), new HurlStack());
+        requestQueue.add(request);
+
+
+    }*/
 }
